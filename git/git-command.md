@@ -10,3 +10,9 @@
 8. `git reset --hard HEAD^`		回到上一版本        
 9. `git reset --hard HEAD^^`	回到上上一个版本
 10. `git reset --hard HEAD~100` 回到上100个版本
+11. `git reset --hard \<id\>`   回到某个提交的版本，例如:`git reset --hard ea3457`      
+12. `git reflog`	记录每一次执行的命令，查看命令历史               
+13. `git checkout -- \<file\>` 撤销对file修改。即，返回文件最后一次git commit或者git add时的状态，
+     如果文件进入暂存区域此命令无法撤销。
+14. `git reset HEAD \<file\>`   将文件从暂存区域撤回，即:unstage    
+
