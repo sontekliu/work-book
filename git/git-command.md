@@ -15,4 +15,6 @@
 13. `git checkout -- \<file\>` 撤销对file修改。即，返回文件最后一次git commit或者git add时的状态，
      如果文件进入暂存区域此命令无法撤销。
 14. `git reset HEAD \<file\>`   将文件从暂存区域撤回，即:unstage    
+15. `git rm \<file\>`   删除文件      
+16. `git mv \<file\> \<file2\>`   文件重命名         
 
