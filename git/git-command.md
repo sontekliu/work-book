@@ -17,4 +17,13 @@
 14. `git reset HEAD <file>`   将文件从暂存区域撤回，即:unstage    
 15. `git rm <file>`   删除文件      
 16. `git mv <file> <file2>`   文件重命名         
-
+17. `git remote add origin git@server-name:path/repo-name.git`	关联远程仓库	
+18. `git push -u origin master`		第一次推送master分支的所有内容       
+19. `git push origin master`		除第一次外推送最新修改      
+20. `git clone git@server-name:path/repo-name.git`	从远程仓库克隆    
+21. `git branch`	查看拥有分支
+22. `git branch name`	创建分支
+23. `git branch -d name`	删除分支
+24.	`git checkout name` 切换到某分支
+25.	`git checkout -b name` 创建+切换分支
+26.	`git merge name`	合并name分支到当前分支
