@@ -24,6 +24,46 @@
 21. `git branch`	查看拥有分支
 22. `git branch name`	创建分支
 23. `git branch -d name`	删除分支
-24.	`git checkout name` 切换到某分支
-25.	`git checkout -b name` 创建+切换分支
-26.	`git merge name`	合并name分支到当前分支
+24. `git branch -D name`	强行删除分支     
+25.	`git checkout name` 切换到某分支
+26.	`git checkout -b name` 创建+切换分支
+27.	`git merge name`	合并name分支到当前分支
+28.	`git log --graph --pretty=oneline --abbrev-commit`  查看分支合并情况，`--abbrev-commit`简化ID的显示   
+29.	`git stash`	   把当前工作的现场"储藏"起来     
+30.	`git stash list`	查看"储藏"列表     
+31.	`git stash apply`	恢复"储藏"现场，但是stash内容并不删除，即，git stash list 还可以查看    
+32.	`git stash drop`	删除stash内容，即，git stash list查看不到     
+33.	`git stash pop`	    恢复"储藏"现场，并删除stash内容         
+34.	`git remote`	    查看远程库的信息      
+34.	`git remote -v`	    查看远程库的详细信息         
+34.	`git push origin dev`	    推送dev分支到远程仓库          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
