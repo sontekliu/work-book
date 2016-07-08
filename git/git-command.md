@@ -27,4 +27,3 @@
 24.	`git checkout name` 切换到某分支
 25.	`git checkout -b name` 创建+切换分支
 26.	`git merge name`	合并name分支到当前分支
-27.	`git commit -m "bbb"`
