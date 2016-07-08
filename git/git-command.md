@@ -42,35 +42,17 @@
 37.	`git branch --set-upstream branch-name origin/branch-name`   建立本地分支和远程分支的关联          
 38.	`git tag`    查看所有标签      
 39.	`git tag <name>`    打标签    
-40.	`git tag <name> commit_id`    在某次提交上打标签    
-41.	`git show <tagname>`          查看标签信息      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+40.	`git tag <tagname> commit_id`    在某次提交上打标签    
+41.	`git tag -a <tagname> -m "备注" commit_id`    在某次提交上打标签并添加备注     
+42.	`git show <tagname>`          查看标签信息      
+43.	`git tag -d v1.1`      删除标签          
+44.	`git push origin v1.1`    推送某个标签到远程仓库      
+45.	`git push origin --tags`    推送所有尚未推送到远程的本地标签      
+46.	`git push origin :refs/tags/<tagname>`  删除远程仓库标签     
+47.	`git push remote-name local-branch:remote-branch`  删除远程分支     
+48.	`git config --global alias.co checkout`   配置别名           
+49.	`git config --global alias.ci commit`     配置别名           
+50.	`git config --global alias.br branch`     配置别名           
+51.	`git config --global alias.st status`     配置别名          
 
 
