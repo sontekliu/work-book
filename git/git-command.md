@@ -49,7 +49,7 @@
 44.	`git push origin v1.1`    推送某个标签到远程仓库      
 45.	`git push origin --tags`    推送所有尚未推送到远程的本地标签      
 46.	`git push origin :refs/tags/<tagname>`  删除远程仓库标签     
-47.	`git push remote-name local-branch:remote-branch`  删除远程分支     
+47.	`git push origin :remote-branch`  删除远程分支     
 48.	`git config --global alias.co checkout`   配置别名           
 49.	`git config --global alias.ci commit`     配置别名           
 50.	`git config --global alias.br branch`     配置别名           
