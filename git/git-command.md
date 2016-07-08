@@ -40,6 +40,10 @@
 35.	`git checkout -b dev origin/dev`    在本地创建和远程分支对应的分支     	
 36.	`git pull`	从远程仓库拉取最新修改，并在本地合并          
 37.	`git branch --set-upstream branch-name origin/branch-name`   建立本地分支和远程分支的关联          
+38.	`git tag`    查看所有标签      
+39.	`git tag <name>`    打标签    
+40.	`git tag <name> commit_id`    在某次提交上打标签    
+41.	`git show <tagname>`          查看标签信息      
 
 
 
