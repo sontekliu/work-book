@@ -37,6 +37,9 @@
 34.	`git remote`	    查看远程库的信息      
 34.	`git remote -v`	    查看远程库的详细信息         
 34.	`git push origin dev`	    推送dev分支到远程仓库          
+35.	`git checkout -b dev origin/dev`    在本地创建和远程分支对应的分支     	
+36.	`git pull`	从远程仓库拉取最新修改，并在本地合并          
+37.	`git branch --set-upstream branch-name origin/branch-name`   建立本地分支和远程分支的关联          
 
 
 
