@@ -1,34 +1,30 @@
 ### CentOS YUM源的配置
 
-**YUM简介** 
+**YUM简介**      
 yum（全称为 Yellow dog Updater, Modified）是一个在Fedora和RedHat以及SUSE中的Shell前端软件包管理器。基於RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。
 
 **本地YUM源的配置**
 
 1、挂载系统安装光盘，命令如下：
+```
 
-# mount /dev/cdrom /mnt/cdrom/ 或者 # mount /dev/hdc   /media/cdrom
+# mount /dev/cdrom /mnt/cdrom/ 
+或者
+# mount /dev/hdc   /media/cdrom
 
-2、找到/etc/yum.repo.d/目录
-
-3、下面有 CentOS-Base.repo和CentOS-Media.repo两个文件，分别对其备份为.bak文件
-
-4、删除CentOS-Base.repo，否则先在网络源中寻找适合的包，改名之后直接从本地源读取。
-
-5、修改CentOS-Media.repo 为：
-
+```
+2、找到/etc/yum.repo.d/目录          
+3、下面有 CentOS-Base.repo和CentOS-Media.repo两个文件，分别对其备份为.bak文件         
+4、删除CentOS-Base.repo，否则先在网络源中寻找适合的包，改名之后直接从本地源读取。        
+5、修改CentOS-Media.repo 为：       
+```
 [CentOS-Media]
-
 name=CentOS-Media   #名称随便起
-
 baseurl=file:///media/cdrom/   #mount 镜像文件的路径
-
 gpgcheck=0  # 1表示启用，0表示不启用
-
 enabled=1  # 1表示启用，0表示不启用
-
 gpgkey=file:///usr/share/doc/centos-release-4/RPM-GPG-KEY-centos4
-
+```
 6、执行 yum clean all / yum makecache 启用当前的yum源
 
 网络YUM源的配置
