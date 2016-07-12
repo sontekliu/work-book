@@ -28,51 +28,88 @@ colorscheme louver
 set nu
 set numberwidth=4
 set history=500
+"总是显示状态栏
 set laststatus=2
+" 状态栏显示正在输入的命令
 set showcmd
+" 左下角显示当前Vim模式
 set showmode
+" 设置末行的高度
 set cmdheight=1
+"显示标尺
 set ruler
+" 突出显示当前行(加下划线)
+set cursorline
+" 高亮显示当前行
+set cursorcolumn
 
 "tab and indent
 set expandtab
 set smarttab
+" TAB键的宽度
 set tabstop=4
-set shiftwidth=4
-set autoindent
-set cindent
+" 统一缩进为4
 set softtabstop=4
+" 统一缩进为4
+set shiftwidth=4
+" 自动缩进
+set autoindent
+" 自动缩进
+set cindent
 set mouse=a
 
 "files,backup,encoding
+"从不备份
 set nobackup
+"禁止生成临时文件
 set noswapfile
+"自动保存
 set autowrite
 set autoread
 set encoding=utf-8
 set fillchars+=stl:\ ,stlnc:\
 set guifont=Courier_New:h16:cANSI
-set clipboard=unnamed
+"侦测文件类型，特定文件类型载入相关缩进，允许插件
 filetype plugin indent on
 
 "Configure backspace to be able
+" 正常使用退格键，正常处理 indent，eol，start等
 set backspace=indent,eol,start
 set backspace=2
+" 设置魔术
+set magic
 
 "Configure text search
+"搜索字符高亮显示
 set hlsearch
+"搜索字符高亮显示
 set incsearch
+"高亮显示匹配的括号
 set showmatch
+"匹配括号高亮显示的时间，单位是十分之一秒
 set matchtime=1
+"忽略大小写
 set ignorecase
 set smartcase
-set magic
 set lazyredraw
 set nowrapscan
 
 "Other config
+" 在处理未保存或者只读文件时，弹出确认
 set confirm
+" 共享剪贴板
 set clipboard+=unnamed
+" GUI隐藏工具栏
+set guioptions-=T
+" GUI隐藏菜单栏
+set guioptions-=m
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+" Vim命令行模式智能补全
+set wildmenu
+
 "禁止使用上下左右键
 map <UP> <NOP>
 map <DOWN> <NOP>
