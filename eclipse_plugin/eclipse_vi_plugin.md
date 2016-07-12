@@ -3,7 +3,7 @@
 1. viPlugin是什么      
 &nbsp;&nbsp;&nbsp;&nbsp;viPlugin是一个eclipse针对vi的插件，使用此插件可以让你在使用eclipse的时候使用vi命令，极大的提高开发效率，百利无一害。     
 
-2. viPlugin的安装
+2. viPlugin的安装     
 	2.1 点击eclipse中的help --> Install New Software...       
 	2.2 在弹出的窗口中点击Add。添加网址：http://www.viplugin.com/，Name随便输入，点击OK     
 	2.3 选中Eclipse Commander，ScriptEclipse，viPlugin，点击Next，直到Finish       
