@@ -1,6 +1,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;今天向大家推荐一款eclipse插件viPlugin，对于熟悉vi编程的人来说真是太好了，此插件一定可以大大提高你的编码效率，废话少说，咱们先来认识一下此插件    
 
-1. viPlugin是什么
+1. viPlugin是什么      
 &nbsp;&nbsp;&nbsp;&nbsp;viPlugin是一个eclipse针对vi的插件，使用此插件可以让你在使用eclipse的时候使用vi命令，极大的提高开发效率，百利无一害。     
 
 2. viPlugin的安装
