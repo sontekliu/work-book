@@ -1,0 +1,21 @@
+
+
+Vim 安装YouCompleteMe插件
+    vim --version | grep python 
+    若出现 -python  则需重新安装vim并添加python支持
+    否则会出现 YouCompleteMe unavailable:requires Vim compiled width Python 2.x support
+    重新启用Python编译Vim
+    1. 首先下载vim源码，地址为：git clone https://github.com/vim/vim.git
+    2. 下载Python 重新安装python
+    3. #./configure --prefix=/usr/local/python2.7
+       #make
+       #make install
+       #rm -rf /usr/bin/python
+       #ln -s /usr/local/python2.7/bin/python /usr/bin/python
+       python 安装完成
+    4. 解压之后，cd 到 src 目录
+        #./confihure -h   #查看编译帮助
+        #./configure --enable-pythoninterp=yes --prefix=/usr/local/vim74 --with-python-config-dir=/usr/local/python2.7/lib/python2.7/config
+        #make 
+        #make install
+        vim 安装完成

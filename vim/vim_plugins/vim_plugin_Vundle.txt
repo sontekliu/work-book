@@ -1,0 +1,57 @@
+
+
+
+Vim 管理插件的插件 Vundle
+    1. Vundle的安装
+        1)  首先下载Vundle.vim文件
+            git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+        2)  配置插件
+        在你的.vimrc 文件中添加如下配置
+        +--------------------------------------------------------------------------------+
+        |    set nocompatible              " be iMproved, required                       |
+        |    filetype off                  " required                                    |
+        |    "set the runtime path to include Vundle and initialize                      |
+        |    set rtp+=~/.vim/bundle/Vundle.vim                                           |
+        |    call vundle#begin()                                                         |
+        |    " alternatively, pass a path where Vundle should install plugins            |
+        |    "call vundle#begin('~/some/path/here')                                      |
+        |                                                                                |
+        |    " 让Vundle管理插件                                                          |
+        |    Plugin 'VundleVim/Vundle.vim'                                               |
+        |                                                                                |
+        |    " The following are examples of different formats supported.                |
+        |    " 插件内容必须在 call vundle#begin 和 call vundle#end 之间                  |
+        |    " plugin on GitHub repo                                                     |
+        |    Plugin '用户名/仓库名'                                                      |
+        |    " plugin from http://vim-scripts.org/vim/scripts.html                       |
+        |    Plugin 'L9'                                                                 |
+        |    " Git plugin not hosted on GitHub                                           |
+        |    Plugin 'git://git.wincent.com/command-t.git'                                |
+        |    " git repos on your local machine (i.e. when working on your own plugin)    |
+        |    Plugin 'file:///home/gmarik/path/to/plugin'                                 |
+        |    " The sparkup vim script is in a subdirectory of this repo called vim.      |
+        |    " Pass the path to set the runtimepath properly.                            |
+        |    Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}                                  |
+        |    " Avoid a name conflict with L9                                             |
+        |    Plugin 'user/L9', {'name': 'newL9'}                                         |
+        |    "All of your Plugins must be added before the following line                |
+        |    call vundle#end()            " required                                     |
+        +--------------------------------------------------------------------------------+
+        3)Vundle使用
+            :PluginList         #列出安装的插件
+            :PluginInsall       #安装插件;加上！表示用于更新
+            :PluginUpdate       #更新插件
+            :PluginSearch foo   #搜索插件 foo 追加！清除本地缓存
+            :PluginClean        #删除插件，追加！自动移除不再使用的插件,注意要先注释或者删除.vimrc配置的插件
+
+        官方网址:https://github.com/VundleVim/Vundle.vim
+        资料网址:http://ju.outofmemory.cn/entry/79671
+
+
+
+
+
+
+
+
+

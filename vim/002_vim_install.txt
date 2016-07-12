@@ -1,0 +1,46 @@
+
+
+
+安装Vim
+    1、MS-Windows安装
+        首先登录 http://www.vim.org 下载vim的exe版本，即:gvim.exe
+        按照windows安装其他软件的方式，Next，Next，直到Finish
+    2、Unix 安装
+        (1) 源码安装
+        从官方网站下载源码，并解压。tar -zxvf vim74.tar.gz
+        假如你了解git，可以直接下载最新的源码。
+        #git clone https://github.com/vim/vim.git
+        #cd vim74/src
+        #make
+        如果编译错误，请仔细查看错误信息，百度，或者Google解决
+        测试编译是否成功
+        make test
+        如果测试成功，最终你会看到
+        test result
+        ALL DONE
+        如果得到的是 “TEST FAILURE”的信息，则表示测试失败，如果失败的少，Vim
+        可能还会工作，不过不太完美，如果看到大量的错误信息或者测试无法完成，
+        那一定是有麻烦了，那么尝试自己解决。
+        (2) yum 安装(初学者推荐)
+        #yum install vim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

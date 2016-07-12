@@ -1,0 +1,29 @@
+
+
+Vim插件之--Java自动提示功能
+在使用vim编写java程序的时候希望拥有自动提示功能，javacomplete插件可以完成此功能
+	
+	下载地址，http://www.vim.org/scripts/script.php?script_id=1785
+	安装方法:
+		1.	下载javacomplete.zip，然后解压，文件如下
+			autoload
+				javacomplete.vim
+				java_parser.vim
+				Reflection.java
+			doc
+				javacomplete.txt	
+		2.	将解压的文件cp到~.vim/相对应的目录下，若无此目录，请自建
+		3.  修改.vimrc文件，添加如下：
+			if has("autocmd")
+				autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+				autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+				autocmd Filetype java inoremap <buffer> . .<C-X><C-O><C-P>		#输入"."时提示
+			endif
+		4.	CTRL-X CTRL-O 启动提示功能
+
+
+
+
+
+
+
