@@ -1,0 +1,102 @@
+"call pathogen#infect()
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/taglist.vim'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'javacomplete.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'tpope/vim-surround'
+Plugin 'L9'
+Plugin 'vim-scripts/summerfruit256.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'eclipse.vim'
+Plugin 'altercation/solarized'
+call vundle#end()
+
+"syntax and theme
+syntax on
+colorscheme louver
+
+"Show line number command,status line and so on
+set nu
+set numberwidth=4
+set history=500
+set laststatus=2
+set showcmd
+set showmode
+set cmdheight=1
+set ruler
+
+"tab and indent
+set expandtab
+set smarttab
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set cindent
+set softtabstop=4
+set mouse=a
+
+"files,backup,encoding
+set nobackup
+set noswapfile
+set autowrite
+set autoread
+set encoding=utf-8
+set fillchars+=stl:\ ,stlnc:\
+set guifont=Courier_New:h16:cANSI
+set clipboard=unnamed
+filetype plugin indent on
+
+"Configure backspace to be able
+set backspace=indent,eol,start
+set backspace=2
+
+"Configure text search
+set hlsearch
+set incsearch
+set showmatch
+set matchtime=1
+set ignorecase
+set smartcase
+set magic
+set lazyredraw
+set nowrapscan
+
+"Other config
+set confirm
+set clipboard+=unnamed
+"禁止使用上下左右键
+map <UP> <NOP>
+map <DOWN> <NOP>
+map <LEFT> <NOP>
+map <RIGHT> <NOP>
+inoremap <UP> <NOP>
+inoremap <DOWN> <NOP>
+inoremap <LEFT> <NOP>
+inoremap <RIGHT> <NOP>
+
+"taglist config
+let Tlist_Ctags_Cmd='/usr/bin/ctags'
+let Tlist_Show_One_File=1
+let Tlist_Use_Right_Window=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_WinWidth=20
+noremap <F8> :TlistToggle<CR>
+"NERDTree config
+noremap <F2> :NERDTreeToggle<CR>
+"去除搜索高亮 CTRL+n
+noremap <C-n> :nohlsearch<CR>
+"javacomplete config
+if has("autocmd")
+	autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+	autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+	autocmd Filetype java inoremap <buffer> . .<C-X><C-O><C-P>
+endif
