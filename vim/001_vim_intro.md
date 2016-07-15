@@ -1,7 +1,4 @@
-
-
-
-简介      
+### 简介      
 
     Vim 的意思是Vi IMprove 即:Vi 改进版，以前是 Vi IMitation 即:Vi 模仿版     
 
