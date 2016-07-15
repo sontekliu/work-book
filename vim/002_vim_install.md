@@ -2,7 +2,7 @@
 
 1. MS-Windows安装    
 
-首先登录 http://www.vim.org 下载vim的exe版本，即:gvim.exe
+首先登录 http://www.vim.org 下载vim的exe版本，即:gvim.exe      
 按照windows安装其他软件的方式，Next，Next，直到Finish
 
 2. Unix 安装     
