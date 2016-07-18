@@ -1,6 +1,6 @@
 ### 文件查看命令
 
-1. cat     
+**1. cat**    
 cat [-AnbvTE] filename         
 
 > 选项与参数      
@@ -14,8 +14,9 @@ cat [-AnbvTE] filename
 -T	: 将[tab]按键以 ^I 显示出来            
 ```
 
-2. tac         
-tac与cat相反，cat是将文件从第一行到最后一行显示，而tac则是将文件从最后一行到第一行显示
+**2. tac**    
+
+> tac与cat相反，cat是将文件从第一行到最后一行显示，而tac则是将文件从最后一行到第一行显示
 
 3. nl [-bnw] filename         
 > 选项与参数         
