@@ -78,11 +78,11 @@ q		: 退出less命令
 
 > 修改文件时间，文件的时间有：访问时间、修改时间、改变时间，通过stat命令可查看这三个时间         
 
-__modification time(mtime)__    
+*modification time(mtime)*   
 	当文档的内容数据变更时，就会升级这个时间，内容数据是指文件的内容，而不是文件的属性或权限       
-**status time(ctime)**    
+*status time(ctime)*    
 	当文档的状态改变时，就会升级此时间，例如，权限与属性的更改。      
-**access time(atime)**      
+*access time(atime)*      
 	当文档的内容被取用时，就会升级此时间，例如，cat filename 就会升级此时间           
 
 > 选项与参数        
