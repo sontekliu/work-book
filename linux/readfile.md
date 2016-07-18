@@ -18,7 +18,8 @@ cat [-AnbvTE] filename
 
 > tac与cat相反，cat是将文件从第一行到最后一行显示，而tac则是将文件从最后一行到第一行显示
 
-3. nl [-bnw] filename         
+**3. nl [-bnw] filename**   
+
 > 选项与参数         
 ```
 -b	: 指定行号显示的方式，主要有两种            
@@ -31,7 +32,8 @@ cat [-AnbvTE] filename
 -w	: 行号栏位的占用位数         
 ```
 
-4. more	filename       
+**4. more	filename**   
+
 > 按页显示文件内容，到文件结尾时退出more命令       
 ```
 [space]	: 向下翻页     
@@ -41,7 +43,8 @@ q		: 表示退出more不再显示文件内容
 /string	: 向下搜索字符串        
 ```	
 
-5. less filename        
+**5. less filename**   
+
 > 按页显示文件内容，到文件结束后不退出less命令       
 ```
 [space]	: 向下翻页        
@@ -51,20 +54,23 @@ q		: 表示退出more不再显示文件内容
 q		: 退出less命令           
 ```
 
-6. head [-n number] filename        
+**6. head [-n number] filename**    
+
 > 选项与参数      
 ```
 -n	: 后面跟数字，表示显示文档的前number行     
 ```
 
-7. tail [-n number] filename         
+**7. tail [-n number] filename**   
+
 > 选项与参数         
 ```
 -n	: 后面跟数字，表示显示文档的后number行          
 -f	: 表示动态的显示文档的内容，对于查看日志特别有用        
 ```
 
-8. touch
+**8. touch**    
+
 > 修改文件时间，文件的时间有：访问时间、修改时间、改变时间，通过stat命令可查看这三个时间         
 **modification time(mtime)**    
 	当文档的内容数据变更时，就会升级这个时间，内容数据是指文件的内容，而不是文件的属性或权限       
