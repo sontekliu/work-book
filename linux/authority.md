@@ -2,26 +2,26 @@
 
 > 主要介绍如果修改目录或者文件的所有者，所属组以及权限等
 
-# 首先添加几个群组以及用户
-# groupadd sontek
-# groupadd mygroup
-# useradd -g sontek -G mygroup sontek
+首先添加几个群组以及用户            
+groupadd sontek            
+groupadd mygroup          
+useradd -g sontek -G mygroup sontek               
 
 1、改变所属群组 (chgrp --> change group)
 
-chgrp [-R] groupName dirname/filename
-例如：chgrp sontek .vimrc 
+chgrp [-R] groupName dirname/filename    
+例如：chgrp sontek .vimrc      
 
 2、改变所有者 (chown --> change owner)
 
-chown [-R] userName dirname/filename
-chown [-R] userName:groupName dirname/filename
-例如：chown sontek:sontek .vimrc
+chown [-R] userName dirname/filename     
+chown [-R] userName:groupName dirname/filename    
+例如：chown sontek:sontek .vimrc       
 
 3、改变文件权限 (chmod)
 
-chmod [-R] 权限 dirname/filename
-例如：chmod 777 .vimrc
+chmod [-R] 权限 dirname/filename          
+例如：chmod 777 .vimrc         
 
 4、权限对目录和文件的影响
 
