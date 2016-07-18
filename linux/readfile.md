@@ -1,8 +1,7 @@
 ### 文件查看命令
 
-1. cat    
-
-cat [-AnbvTE] filename
+1. cat     
+cat [-AnbvTE] filename         
 选项与参数      
 -A	: 相当于-vET的整合选项,可以列出一些特殊字符而不是空白而已      
 -b	: 列出行号，仅针对非空白行，空白行不显示行号         
@@ -12,7 +11,6 @@ cat [-AnbvTE] filename
 -T	: 将[tab]按键以 ^I 显示出来            
 
 2. tac         
-
 tac与cat相反，cat是将文件从第一行到最后一行显示，而tac则是将文件从最后一行到第一行显示
 
 3. nl [-bnw] filename         
