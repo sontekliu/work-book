@@ -84,7 +84,9 @@ q		: 退出less命令
 	当文档的状态改变时，就会升级此时间，例如，权限与属性的更改。      
 **access time(atime)**      
 	当文档的内容被取用时，就会升级此时间，例如，cat filename 就会升级此时间           
+
 > 选项与参数        
+
 ```
 -a	: 修改访问时间，例如，touch -a 02_readfile.txt           
 -m	: 修改修改时间，例如，touch -m 02_readfile.txt             
