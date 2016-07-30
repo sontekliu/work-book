@@ -25,7 +25,7 @@ service mysql stop #停止数据库
 
 4、修改root密码 
 ```
-mysqladmin -u root password ‘passwdvalue’
+mysqladmin -u root password 'lsjlsj'
 ```
 
 5、登录数据库     
@@ -33,7 +33,18 @@ mysqladmin -u root password ‘passwdvalue’
 mysql -h 192.168.1.100 -P 3306 -u root -p
 ```
 
-6、注意事项：       
+6、赋予远程访问的权限
+```
+首先登录mysql     
+grant all privileges on *.* to 'root'@'%' identified by '123456' with grant option   
+```
+
+7、注意事项：       
 * 关闭selinux    
 * mysql的默认安装路径为：/usr/share/mysql 数据库的默认位置为：/var/lib/mysql    
 * 此时 /etc/my.cnf 仅仅包含一句 指向 /etc/my.cnf.d目录，此时修改MySQL的配置可以修改/etc/my.cnf.d/server.cnf，但是不能删除 my.cnf文件
+
+
+
+
+
