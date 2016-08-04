@@ -1,10 +1,10 @@
 ### Redis 安装(Linux)
 
-1. 下载Redis安装包   
+**1. 下载Redis安装包**   
 
 	浏览器输入: http://redis.io Redis官方网址，下载stable version版本 
 
-2. 解压缩安装   
+**2. 解压缩安装**  
 
 ```
 	tar -zxvf redis-3.2.3.tar.gz 
@@ -24,7 +24,7 @@
 	redis-server                    #redis启动服务工具
 ```
 
-3. 启动Redis服务     
+**3. 启动Redis服务**  
 
 ```
 	$ cd /usr/local/bin
