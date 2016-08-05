@@ -25,12 +25,12 @@ timeout          | 300                         | 客户端闲置多久后关闭�
 loglevel         | debug/verbose/notice/warning| 日志级别
 logfile          | stdout                      | 日志记录方式，默认stdout，redis守候启动，日志输出到 /dev/null
 database         | 10                          | 数据库数量
-save             | <seconds> <changes>         | save 900 10 表示指定多久内有多少次更新就将数据同步到数据文件
+save             | \<seconds\> \<changes\>         | save 900 10 表示指定多久内有多少次更新就将数据同步到数据文件
 rdbcompression   | yes                         | 存储本地数据库时，是否压缩
 dbfilename       | dump.rdb                    | 指定本地数据库文件名，默认dump.rdb
 dir              | ./                          | 指定本地数据库的存放目录
-slaveof          | <masterip> <masterport>     | 当本机为slaveof时，设置master的ip和port，redis启动时，自动从master上数据同步
-masterauth       | <master-password>           | 如果master设置了密码，slav链接master的密码
+slaveof          | \<masterip\> \<masterport\>     | 当本机为slaveof时，设置master的ip和port，redis启动时，自动从master上数据同步
+masterauth       | \<master-password\>           | 如果master设置了密码，slav链接master的密码
 
 
 
