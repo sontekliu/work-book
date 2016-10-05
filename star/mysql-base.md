@@ -113,7 +113,7 @@ MySQL密码修改:
 1. # mysqladmin -u root -h HOSTNAME password  'NEW_PASSWORD' -p 'OLD_PASSWORD'
 2. # mysql> SET PASSWORD FOR 'USERNAME'@'HOST' = PASSWORD('NEW_PASSWORD')
 3. # mysql> UPDATE mysql.user SET PASSWORD = PASSWORD('NEW_PASSWORD') WHERE
-	FLSUH 重读用户授权表
+	FLSUH PRIVILEGES; 重读用户授权
 
 
 
