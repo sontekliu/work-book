@@ -1,62 +1,62 @@
-1¡¢forwordºÍredirectÇø±ð
-    forwordÊÇÔÚÈÝÆ÷ÄÚ²¿ÊµÏÖµÄÍ¬Ò»¸öWEBÓ¦ÓÃ³ÌÐòµÄ×ª·¢£¬¿Í»§¶Ëä¯ÀÀÆ÷Ö»·¢³öÒ»´ÎÇëÇó£¬
-    ä¯ÀÀÆ÷µØÖ·²»»á·¢Éú±ä»¯£¬Á½¸öÐÅÏ¢×ÊÔ´¹²ÏíÍ¬Ò»¸örequest¶ÔÏó£¬Êý¾Ý¿ÉÒÔ¹²Ïí£¬forword
-    ²»ÄÜ¿çÓò·ÃÎÊ
+ï»¿1ã€forwordå’ŒredirectåŒºåˆ«
+    forwordæ˜¯åœ¨å®¹å™¨å†…éƒ¨å®žçŽ°çš„åŒä¸€ä¸ªWEBåº”ç”¨ç¨‹åºçš„è½¬å‘ï¼Œå®¢æˆ·ç«¯æµè§ˆå™¨åªå‘å‡ºä¸€æ¬¡è¯·æ±‚ï¼Œ
+    æµè§ˆå™¨åœ°å€ä¸ä¼šå‘ç”Ÿå˜åŒ–ï¼Œä¸¤ä¸ªä¿¡æ¯èµ„æºå…±äº«åŒä¸€ä¸ªrequestå¯¹è±¡ï¼Œæ•°æ®å¯ä»¥å…±äº«ï¼Œforword
+    ä¸èƒ½è·¨åŸŸè®¿é—®
 
-    redirect¿ÉÒÔÖØ¶¨Ïòµ½ÈÎºÎURL£¬ÕâÖÖÊÇÍ¨¹ýÐÞ¸ÄhttpÍ·À´ÊµÏÖµÄ£¬ÖØ¶¨ÏòÖ®ºóä¯ÀÀÆ÷µÄ
-    µØÖ·»á·¢Éú±ä»¯£¬·þÎñÆ÷¶ËÔÚÏìÓ¦µÚÒ»´ÎÇëÇóµÄÊ±ºò£¬ÈÃä¯ÀÀÆ÷ÔÙÏòÁíÒ»¸öURL·¢³öÇëÇó£¬
-    ´Ó¶ø´ïµ½×ª·¢µÄÄ¿µÄ£¬Æä±¾ÖÊÊÇÁ½´ÎHTTPÇëÇó£¬Éú³ÉÁ½¸örequest¶ÔÏó£¬Êý¾Ý²»¿ÉÒÔ¹²Ïí£»
-    ä¯ÀÀÆ÷URLµØÖ·»á·¢Éú±ä»¯£»redirect¿ÉÒÔ¿çÓò·ÃÎÊ
+    redirectå¯ä»¥é‡å®šå‘åˆ°ä»»ä½•URLï¼Œè¿™ç§æ˜¯é€šè¿‡ä¿®æ”¹httpå¤´æ¥å®žçŽ°çš„ï¼Œé‡å®šå‘ä¹‹åŽæµè§ˆå™¨çš„
+    åœ°å€ä¼šå‘ç”Ÿå˜åŒ–ï¼ŒæœåŠ¡å™¨ç«¯åœ¨å“åº”ç¬¬ä¸€æ¬¡è¯·æ±‚çš„æ—¶å€™ï¼Œè®©æµè§ˆå™¨å†å‘å¦ä¸€ä¸ªURLå‘å‡ºè¯·æ±‚ï¼Œ
+    ä»Žè€Œè¾¾åˆ°è½¬å‘çš„ç›®çš„ï¼Œå…¶æœ¬è´¨æ˜¯ä¸¤æ¬¡HTTPè¯·æ±‚ï¼Œç”Ÿæˆä¸¤ä¸ªrequestå¯¹è±¡ï¼Œæ•°æ®ä¸å¯ä»¥å…±äº«ï¼›
+    æµè§ˆå™¨URLåœ°å€ä¼šå‘ç”Ÿå˜åŒ–ï¼›redirectå¯ä»¥è·¨åŸŸè®¿é—®
 
-2¡¢POSTÇëÇóºÍGETÇëÇóµÄÇø±ð
-    (1)¡¢GETÊÇ´Ó·þÎñÆ÷ÉÏ»ñÈ¡Êý¾Ý£¬POSTÊÇÏò·þÎñÆ÷´«ËÍÊý¾Ý
-    (2)¡¢×öÊý¾Ý²éÑ¯Ê±£¬½¨ÒéÊ¹ÓÃGET£¬ÔÚ×öÊý¾ÝÌí¼Ó¡¢ÐÞ¸Ä¡¢É¾³ýÊ±½¨ÒéÊ¹ÓÃPOST
-    (3)¡¢GETÇëÇóÄÜ±»»º´æ£¬POST²»ÄÜ±»»º´æÏÂÀ´
-    (4)¡¢GETÇëÇó»á±£´æÔÚä¯ÀÀÆ÷µÄÀúÊ·¼ÇÂ¼ÖÐ£¬POST²»»á±£´æÔÚä¯ÀÀÆ÷ÀúÊ·¼ÇÂ¼ÖÐ
-    (5)¡¢GETÇëÇóÓÐ³¤¶ÈÏÞÖÆ(ä¯ÀÀÆ÷¶ÔurlµÄ³¤¶È×öÁËÏÞÖÆ£¬¶øhttpÇëÇó²¢Ã»ÓÐ¹æ¶¨³¤¶È)£¬
-        POSTÃ»ÓÐ³¤¶ÈÏÞÖÆ
-    (6)¡¢GETÇëÇó²ÎÊýÔÚµØÖ·À¸ÖÐÏÔÊ¾£¬POST²»ÔÚµØÖ·À¸ÖÐÏÔÊ¾
-    (7)¡¢GETÊý¾ÝÀàÐÍÖ»ÔÊÐíASCII×Ö·ûÀàÐÍ£¬POSTÃ»ÓÐÏÞÖÆ£¬ÔÊÐí¶þ½øÖÆÊý¾Ý
-2¡¢mysql£¬ÒýÇæ£¬Ë÷Òý£¬A,B,C£¬A,B£¬AÕâÑù´´½¨Ë÷ÒýÓÐÊ²Ã´ÎÊÌâ
-3¡¢JAVAÄÚ´æÄ£ÐÍ
+2ã€POSTè¯·æ±‚å’ŒGETè¯·æ±‚çš„åŒºåˆ«
+    (1)ã€GETæ˜¯ä»ŽæœåŠ¡å™¨ä¸ŠèŽ·å–æ•°æ®ï¼ŒPOSTæ˜¯å‘æœåŠ¡å™¨ä¼ é€æ•°æ®
+    (2)ã€åšæ•°æ®æŸ¥è¯¢æ—¶ï¼Œå»ºè®®ä½¿ç”¨GETï¼Œåœ¨åšæ•°æ®æ·»åŠ ã€ä¿®æ”¹ã€åˆ é™¤æ—¶å»ºè®®ä½¿ç”¨POST
+    (3)ã€GETè¯·æ±‚èƒ½è¢«ç¼“å­˜ï¼ŒPOSTä¸èƒ½è¢«ç¼“å­˜ä¸‹æ¥
+    (4)ã€GETè¯·æ±‚ä¼šä¿å­˜åœ¨æµè§ˆå™¨çš„åŽ†å²è®°å½•ä¸­ï¼ŒPOSTä¸ä¼šä¿å­˜åœ¨æµè§ˆå™¨åŽ†å²è®°å½•ä¸­
+    (5)ã€GETè¯·æ±‚æœ‰é•¿åº¦é™åˆ¶(æµè§ˆå™¨å¯¹urlçš„é•¿åº¦åšäº†é™åˆ¶ï¼Œè€Œhttpè¯·æ±‚å¹¶æ²¡æœ‰è§„å®šé•¿åº¦)ï¼Œ
+        POSTæ²¡æœ‰é•¿åº¦é™åˆ¶
+    (6)ã€GETè¯·æ±‚å‚æ•°åœ¨åœ°å€æ ä¸­æ˜¾ç¤ºï¼ŒPOSTä¸åœ¨åœ°å€æ ä¸­æ˜¾ç¤º
+    (7)ã€GETæ•°æ®ç±»åž‹åªå…è®¸ASCIIå­—ç¬¦ç±»åž‹ï¼ŒPOSTæ²¡æœ‰é™åˆ¶ï¼Œå…è®¸äºŒè¿›åˆ¶æ•°æ®
+2ã€mysqlï¼Œå¼•æ“Žï¼Œç´¢å¼•ï¼ŒA,B,Cï¼ŒA,Bï¼ŒAè¿™æ ·åˆ›å»ºç´¢å¼•æœ‰ä»€ä¹ˆé—®é¢˜
+3ã€JAVAå†…å­˜æ¨¡åž‹
     http://ifeve.com/java-memory-model-0/ 
-4¡¢À¬»ø»ØÊÕËã·¨
-5¡¢Êý¾Ý¿âÊÂÎï¸ôÀë¼¶±ð
-6¡¢¶àÏß³Ì±à³Ì
-7¡¢String a = "a" + "b" + "c";²úÉú¼¸¸öÊµÀý
-8¡¢¿ª±ÕÔ­Ôò£¬µ¥Ò»Ô­Ôò
-9¡¢SpringMVC·µ»Øjson×Ö·û´®µÄ¼¸ÖÖ·½Ê½
-    (1)¡¢Ê¹ÓÃJSON¹¤¾ß£¬ÈçGson£¬fastjson¡¢jacksonÐòÁÐ»¯³Éjson£¬ÔÙÊ¹ÓÃ
-        HttpServletResponse¶ÔÏó½øÐÐÊä³ö¡£
-    (2)¡¢ÎªÃ¿¸öjsonÊÓÍ¼µÄControllerÅäÖÃÒ»¸öJsonview,·½·¨·µ»ØÖµÊÇModelAndView
-    (3)¡¢×¢½â·½Ê½£¬ÔÚ·½·¨ÉÏÌí¼ÓResponBody£¬ÅäÖÃÎÄ¼þÖÐ¿ªÆô<mvc:annotation-driven>
-10¡¢ÊÂÎïÌØÐÔ£¬ACID
-    Ô­×ÓÐÔ(Atomicity)¡¢Ò»ÖÂÐÔ(Consistency)¡¢¸ôÀëÐÔ(Isolation)¡¢³Ö¾ÃÐÔ(Durability)
-11¡¢0.1 + 0 == 0.3
-12¡¢JAVAÖÐÈçºÎÊµÏÖÏß³Ì£¬Runnable»¹ÊÇThread£¿
-    ÔÚÓïÑÔ²ãÃæÓÐÁ½ÖÖ·½Ê½£¬¼Ì³ÐThreadÀàºÍÊµÏÖRunnable½Ó¿Ú£¬JAVA²»Ö§³Ö¶à¼Ì³Ð£¬
-    µ«ÊÇÖ§³Ö¶àÊµÏÖ£¬Ë÷ÒýÊ¹ÓÃÊµÏÖRunnable½Ó¿Ú»á¸üºÃÒ»Ð©¡£
+4ã€åžƒåœ¾å›žæ”¶ç®—æ³•
+5ã€æ•°æ®åº“äº‹ç‰©éš”ç¦»çº§åˆ«
+6ã€å¤šçº¿ç¨‹ç¼–ç¨‹
+7ã€String a = "a" + "b" + "c";äº§ç”Ÿå‡ ä¸ªå®žä¾‹
+8ã€å¼€é—­åŽŸåˆ™ï¼Œå•ä¸€åŽŸåˆ™
+9ã€SpringMVCè¿”å›žjsonå­—ç¬¦ä¸²çš„å‡ ç§æ–¹å¼
+    (1)ã€ä½¿ç”¨JSONå·¥å…·ï¼Œå¦‚Gsonï¼Œfastjsonã€jacksonåºåˆ—åŒ–æˆjsonï¼Œå†ä½¿ç”¨
+        HttpServletResponseå¯¹è±¡è¿›è¡Œè¾“å‡ºã€‚
+    (2)ã€ä¸ºæ¯ä¸ªjsonè§†å›¾çš„Controlleré…ç½®ä¸€ä¸ªJsonview,æ–¹æ³•è¿”å›žå€¼æ˜¯ModelAndView
+    (3)ã€æ³¨è§£æ–¹å¼ï¼Œåœ¨æ–¹æ³•ä¸Šæ·»åŠ ResponBodyï¼Œé…ç½®æ–‡ä»¶ä¸­å¼€å¯<mvc:annotation-driven>
+10ã€äº‹ç‰©ç‰¹æ€§ï¼ŒACID
+    åŽŸå­æ€§(Atomicity)ã€ä¸€è‡´æ€§(Consistency)ã€éš”ç¦»æ€§(Isolation)ã€æŒä¹…æ€§(Durability)
+11ã€0.1 + 0 == 0.3
+12ã€JAVAä¸­å¦‚ä½•å®žçŽ°çº¿ç¨‹ï¼ŒRunnableè¿˜æ˜¯Threadï¼Ÿ
+    åœ¨è¯­è¨€å±‚é¢æœ‰ä¸¤ç§æ–¹å¼ï¼Œç»§æ‰¿Threadç±»å’Œå®žçŽ°RunnableæŽ¥å£ï¼ŒJAVAä¸æ”¯æŒå¤šç»§æ‰¿ï¼Œ
+    ä½†æ˜¯æ”¯æŒå¤šå®žçŽ°ï¼Œç´¢å¼•ä½¿ç”¨å®žçŽ°RunnableæŽ¥å£ä¼šæ›´å¥½ä¸€äº›ã€‚
 
-13¡¢JAVAÖÐRunnableºÍCallableÓÐÊ²Ã´²»Í¬?
-    RunnableºÍCallable¶¼ÔÚ´ú±íÄÇÐ©ÔÚ²»Í¬µÄÏß³ÌÖÐÖ´ÐÐÈÎÎñ£¬Runnable´ÓJDK1.0¿ª
-    Ê¼¾ÍÓÐÁË£¬CallableÊÇÔÚJDK1.5Ôö¼ÓµÄ£¬CallableµÄcall()·½·¨¿ÉÒÔ·µ»ØÖµºÍÅ×³ö
-    Òì³££¬¶øRunnableµÄrun()·½·¨Ã»ÓÐÕâÐ©¹¦ÄÜ£¬ÁíÍâCallable»¹¿ÉÒÔ·µ»¹ÔØÓÐ¼ÆËã
-    ½á¹ûµÄFuture¶ÔÏó
+13ã€JAVAä¸­Runnableå’ŒCallableæœ‰ä»€ä¹ˆä¸åŒ?
+    Runnableå’ŒCallableéƒ½åœ¨ä»£è¡¨é‚£äº›åœ¨ä¸åŒçš„çº¿ç¨‹ä¸­æ‰§è¡Œä»»åŠ¡ï¼ŒRunnableä»ŽJDK1.0å¼€
+    å§‹å°±æœ‰äº†ï¼ŒCallableæ˜¯åœ¨JDK1.5å¢žåŠ çš„ï¼ŒCallableçš„call()æ–¹æ³•å¯ä»¥è¿”å›žå€¼å’ŒæŠ›å‡º
+    å¼‚å¸¸ï¼Œè€ŒRunnableçš„run()æ–¹æ³•æ²¡æœ‰è¿™äº›åŠŸèƒ½ï¼Œå¦å¤–Callableè¿˜å¯ä»¥è¿”è¿˜è½½æœ‰è®¡ç®—
+    ç»“æžœçš„Futureå¯¹è±¡
 
-14¡¢wait(),notify()¡¢notifyAll()ÕâÈý¸ö·½·¨ÎªÊ²Ã´ÔÚObjectÀàÉùÃ÷£¬notify()ºÍ
-    notifyAll()·½·¨µÄÇø±ð£¿
-    ÓÉÓÚÃ¿¸ö¶ÔÏó¶¼ÓµÓÐmonitor(Ëø)£¬ËùÒÔÈÃµ±Ç°Ïß³ÌµÈ´ý/Í¨ÖªÄ³¸ö¶ÔÏóµÄËø£¬
-    µ±È»Ó¦¸ÃÍ¨¹ýÕâ¸ö¶ÔÏóÀ´²Ù×÷£¬¶ø²»ÊÇÓÃµ±Ç°Ïß³ÌÀ´²Ù×÷£¬ÒòÎªµ±Ç°Ïß³Ì¿ÉÄÜ
-    µÈ´ý¶à¸öÏß³ÌµÄËø£¬Èç¹ûÍ¨¹ýÏß³ÌÀ´²Ù×÷ÄÇ¾Í·Ç³£¸´ÔÓÁË¡£
-    µ÷ÓÃÄ³¸ö¶ÔÏóµÄwait()ºÍnotify()·½·¨Ê±£¬µ±Ç°Ïß³Ì±ØÐëÓµÓÐÕâ¸ö¶ÔÏóµÄËø£¬Òò´Ë
-    µ÷ÓÃwait()ºÍnotify()·½·¨±ØÐë·ÅÔÚÍ¬²½¿éºÍÍ¬²½·½·¨ÖÐ½øÐÐ¡£
-    notify()·½·¨ÄÜ¹»»½ÐÑÒ»¸öÕýÔÚµÈ´ý¸Ã¶ÔÏóµÄmonitorµÄÏß³Ì£¬µ±ÓÐ¶à¸öÏß³Ì¶¼
-    ÔÚµÈ´ý¸Ã¶ÔÏóµÄmonitorµÄ»°£¬ÔòÖ»ÄÜ»½ÐÑÆäÖÐÒ»¸öÏß³Ì£¬¾ßÌå»½ÐÑÄÄ¸öÏß³ÌÔò
-    ²»µÃ¶øÖª;
-    nofityAll()·½·¨ÄÜ¹»»½ÐÑËùÓÐÕýÔÚµÈ´ý¸Ã¶ÔÏóµÄmonitorµÄÏß³Ì£¬ÕâÒ»µãÓë
-    notify()·½·¨ÊÇ²»Í¬µÄ;
-    notify()ºÍnotifyAll()·½·¨Ö»ÊÇ»½ÐÑµÈ´ý¸Ã¶ÔÏóµÄmonitorµÄÏß³Ì£¬²¢²»¾ö¶¨
-    ÄÄ¸öÏß³ÌÄÜ¹»»ñÈ¡µ½monitor
+14ã€wait(),notify()ã€notifyAll()è¿™ä¸‰ä¸ªæ–¹æ³•ä¸ºä»€ä¹ˆåœ¨Objectç±»å£°æ˜Žï¼Œnotify()å’Œ
+    notifyAll()æ–¹æ³•çš„åŒºåˆ«ï¼Ÿ
+    ç”±äºŽæ¯ä¸ªå¯¹è±¡éƒ½æ‹¥æœ‰monitor(é”)ï¼Œæ‰€ä»¥è®©å½“å‰çº¿ç¨‹ç­‰å¾…/é€šçŸ¥æŸä¸ªå¯¹è±¡çš„é”ï¼Œ
+    å½“ç„¶åº”è¯¥é€šè¿‡è¿™ä¸ªå¯¹è±¡æ¥æ“ä½œï¼Œè€Œä¸æ˜¯ç”¨å½“å‰çº¿ç¨‹æ¥æ“ä½œï¼Œå› ä¸ºå½“å‰çº¿ç¨‹å¯èƒ½
+    ç­‰å¾…å¤šä¸ªçº¿ç¨‹çš„é”ï¼Œå¦‚æžœé€šè¿‡çº¿ç¨‹æ¥æ“ä½œé‚£å°±éžå¸¸å¤æ‚äº†ã€‚
+    è°ƒç”¨æŸä¸ªå¯¹è±¡çš„wait()å’Œnotify()æ–¹æ³•æ—¶ï¼Œå½“å‰çº¿ç¨‹å¿…é¡»æ‹¥æœ‰è¿™ä¸ªå¯¹è±¡çš„é”ï¼Œå› æ­¤
+    è°ƒç”¨wait()å’Œnotify()æ–¹æ³•å¿…é¡»æ”¾åœ¨åŒæ­¥å—å’ŒåŒæ­¥æ–¹æ³•ä¸­è¿›è¡Œã€‚
+    notify()æ–¹æ³•èƒ½å¤Ÿå”¤é†’ä¸€ä¸ªæ­£åœ¨ç­‰å¾…è¯¥å¯¹è±¡çš„monitorçš„çº¿ç¨‹ï¼Œå½“æœ‰å¤šä¸ªçº¿ç¨‹éƒ½
+    åœ¨ç­‰å¾…è¯¥å¯¹è±¡çš„monitorçš„è¯ï¼Œåˆ™åªèƒ½å”¤é†’å…¶ä¸­ä¸€ä¸ªçº¿ç¨‹ï¼Œå…·ä½“å”¤é†’å“ªä¸ªçº¿ç¨‹åˆ™
+    ä¸å¾—è€ŒçŸ¥;
+    nofityAll()æ–¹æ³•èƒ½å¤Ÿå”¤é†’æ‰€æœ‰æ­£åœ¨ç­‰å¾…è¯¥å¯¹è±¡çš„monitorçš„çº¿ç¨‹ï¼Œè¿™ä¸€ç‚¹ä¸Ž
+    notify()æ–¹æ³•æ˜¯ä¸åŒçš„;
+    notify()å’ŒnotifyAll()æ–¹æ³•åªæ˜¯å”¤é†’ç­‰å¾…è¯¥å¯¹è±¡çš„monitorçš„çº¿ç¨‹ï¼Œå¹¶ä¸å†³å®š
+    å“ªä¸ªçº¿ç¨‹èƒ½å¤ŸèŽ·å–åˆ°monitor
 
 
 
