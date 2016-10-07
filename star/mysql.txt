@@ -81,7 +81,7 @@ SQL模型：
 MySQL服务器变量：
     作用域：
         全局变量:show global variables; select @@global.sql_mode
-        回话变量:show session variables;select @@session.sqlmode
+        会话变量:show session variables;select @@session.sqlmode
         设定变量:SET global|session 变量名='value'
 
     生效时间：
@@ -101,6 +101,13 @@ SQL语句：
     视图
     DML
 
+数据库
+	CREATE DATABASE | SCHEMA [IF NOT EXISTS] db_name [CHARACTER SET = ] [COLLATE = ]
+	DROP DATABASE | SCHEMA [IF EXISTS] db_name
+表
+	1、直接定义一张空表
+	2、从其他表中查询出数据，并以之创建新表
+	3、以其他表为模板创建一个空表
 键都是索引，主键和唯一键都是特殊的索引，B+Tree
 
 show indexes from table_name 显示某张表上的索引
