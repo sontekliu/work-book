@@ -45,7 +45,11 @@ CentOS5.x和CentOS6.x不需要做任何修改即可。
 
 
 国内YUM源：
-http://mirrors.163.com/.help/CentOS-Base-163.repo/ #网易YUM源
+http://mirrors.163.com/ #网易YUM源
+http://mirrors.163.com/.help/centos.html #网易YUM源
 http://mirrors.sohu.com/help/CentOS-Base-sohu.repo #搜狐YUM源
-执行 yum clean all / yum makecache 启用当前的yum源
+执行 
+	yum clean all
+	yum makecache 
+启用当前的yum源
 
