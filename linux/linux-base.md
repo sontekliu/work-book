@@ -35,13 +35,13 @@
 	chkconfig iptables --list
 
 4.	配置ssh免登陆
-	1)首先生成公钥和私钥，生成方式如下：
-	ssh-keygen -t rsa	# 默认在 ~/.ssh目录下生成id_rsa(私钥)、id_rsa.pub()
-	-t 表示指定加密方式
-	2)将公钥上传到要免登陆的服务器，并导入到认证文件中
-	scp ~/.ssh/id_rsa.pub xxx@host:/home/xxx/id_rsa.pub
-	cat ~/id_rsa.pub >> ~/.ssh/authorized.keys
-	或者直接
-	ssh-copy-id desc_host(目标主机)
-	3)测试
-	ssh des_host
+	1)首先生成公钥和私钥，生成方式如下：    
+	ssh-keygen -t rsa	# 默认在 ~/.ssh目录下生成id_rsa(私钥)、id_rsa.pub()   
+	-t 表示指定加密方式  
+	2)将公钥上传到要免登陆的服务器，并导入到认证文件中  
+	scp ~/.ssh/id_rsa.pub xxx@host:/home/xxx/id_rsa.pub  
+	cat ~/id_rsa.pub >> ~/.ssh/authorized.keys       
+	或者直接         
+	ssh-copy-id desc_host(目标主机)        
+	3)测试  
+	ssh des_host       
