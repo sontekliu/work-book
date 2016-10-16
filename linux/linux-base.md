@@ -1,6 +1,6 @@
 ##Linux 一些基础配置
 
-1.	配置IP
+#### 1. 配置IP
 ```
 	DEVICE=eth0
 	BOOTPROTO=static
@@ -12,7 +12,7 @@
 	DNS1=8.8.8.8
 	DNS2=8.8.4.4
 ```
-2.	配置主机(该配置需重启)
+#### 2. 配置主机(该配置需重启)
 ```
 	vim /etc/sysconfig/network
 	将HOSTNAME改成自己要设置的主机名称
@@ -24,7 +24,8 @@
 	如：
 		192.168.1.120	sontekliu
 ```
-3.	关闭防火墙
+##### 3. 关闭防火墙  
+```
 	查看防火墙状态
 	service iptables status
 	停用、启用、重启防火墙
@@ -33,8 +34,10 @@
 	chkconfig iptables off
 	查看防火墙开机启用状态
 	chkconfig iptables --list
+```
 
-4.	配置ssh免登陆
+#### 4. 配置ssh免登陆         
+```
 	1)首先生成公钥和私钥，生成方式如下：    
 	ssh-keygen -t rsa	# 默认在 ~/.ssh目录下生成id_rsa(私钥)、id_rsa.pub()   
 	-t 表示指定加密方式  
@@ -45,3 +48,4 @@
 	ssh-copy-id desc_host(目标主机)        
 	3)测试  
 	ssh des_host       
+```
