@@ -2,7 +2,7 @@
 
 #### 1. 下载hadoop软件包
 ```
-	访问 http://archive.apache.org/disk/ 下载hadoop的安装包
+	访问 http://archive.apache.org/dist/ 下载hadoop的安装包
 ```
 
 #### 2. 解压到指定目录
