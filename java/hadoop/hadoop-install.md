@@ -39,7 +39,7 @@
 		</property>
 	<configuration
 ```
-#### 6. 修改$HADOOP_HOME/etc/hadoop/hmdfs-site.xml
+#### 6. 修改$HADOOP_HOME/etc/hadoop/hdfs-site.xml
 ```
     <configuration>
 		<!-- 指定HDFS保存数据副本的数量,本搭建为伪分布式，此值设置为1，若为分布式一般设置为3 -->

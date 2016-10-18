@@ -43,7 +43,7 @@
 	-t 表示指定加密方式  
 	2)将公钥上传到要免登陆的服务器，并导入到认证文件中  
 	scp ~/.ssh/id_rsa.pub xxx@host:/home/xxx/id_rsa.pub  
-	cat ~/id_rsa.pub >> ~/.ssh/authorized.keys       
+	cat ~/id_rsa.pub >> ~/.ssh/authorized_keys       
 	或者直接         
 	ssh-copy-id desc_host(目标主机)        
 	3)测试  
