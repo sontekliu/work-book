@@ -45,6 +45,9 @@ MySQL 的安装方式有多种：
 15、清除匿名用户
 	drop user ''@'localhost';
 	drop user ''@'localhost.localdomain'
+16、修改root密码   
+	mysql> UPDATE user SET password = PASSWORD('lsjlsj') WHERE user = 'root';
+	mysql> FLUSH PRIVILEGES;
 ```
 
 
