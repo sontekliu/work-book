@@ -2,13 +2,14 @@
 ```
 	参考官方文档:http://dev.mysql.com/doc/refman/5.5/en/binary-installation.html
 ```
-MySQL 的安装方式有多种，
-1、基于源代码的安装
-2、基于rpm包的安装
-3、基于MySQL二进制发行版的安装
+MySQL 的安装方式有多种：   
+1、基于源代码的安装   
+2、基于rpm包的安装  
+3、基于MySQL二进制发行版的安装      
 本文主要讲解的是基于MySQL二进制发行版的安装，MySQL二进制发行版主要是指官方已经
-编译好，并压缩好的.tar.gz文件，直接解压缩进行相关的配置即可。
+编译好，并压缩好的.tar.gz文件，直接解压缩进行相关的配置即可。   
 
+```
 1、首先官方网站下载MySQL二进制发行版包
 2、创建mysql组以及mysql用户
 	groupadd mysql
@@ -44,7 +45,7 @@ MySQL 的安装方式有多种，
 15、清除匿名用户
 	drop user ''@'localhost';
 	drop user ''@'localhost.localdomain'
-	
+```
 
 
 
