@@ -12,4 +12,5 @@
 #### 3. 执行命令，同步时间
 
 	ntpdate	us.pool.ntp.org
+	ntpdate	time.nist.org
 
