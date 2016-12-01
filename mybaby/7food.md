@@ -11,7 +11,7 @@
 中间过程可随时加水
 
 参考资料：   
-	BabyTree [http://www.babytree.com/ask/detail/60700]   
-	摇篮 [http://www.yaolan.com/nutrition/201203022031927.shtml]   
-	PCbaby百科 [http://baike.pcbaby.com.cn/qzbd/940057.html]   
-	19楼 [http://www.19lou.com/forum-16-thread-27817696-1-1.html]  
+	[BabyTree] (http://www.babytree.com/ask/detail/60700, "BabyTree")  
+	[摇篮] (http://www.yaolan.com/nutrition/201203022031927.shtml, "摇篮")   
+	[PCbaby百科] (http://baike.pcbaby.com.cn/qzbd/940057.html, "PCbaby百科")  
+	[19楼] (http://www.19lou.com/forum-16-thread-27817696-1-1.html, "19楼")
