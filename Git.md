@@ -12,9 +12,24 @@
 
 [综合性]
 
-* [酷壳](http://coolshell.cn)
 * [并发编程网](http://ifeve.com)
+* [ImportNew](http://www.importnew.com)
+* [土木坛子](https://tumutanzi.com)
+
 
 [MySQL&&Oracle]
 
 * [OurMySQL](http://ourmysql.com)
+
+
+[个人博客]
+
+* [JavaLiu](http://javaliu.com)
+* [酷壳](http://coolshell.cn)
+* [你假笨](http://lovestblog.cn)
+* [极简小站](http://mousycoder.com)
+* [Vimer的程序世界](http://www.vimer.cn)
+* [地瓜哥](http://www.diguage.com)
+
+
+
