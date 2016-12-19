@@ -31,6 +31,11 @@
 * [Vimer的程序世界](http://www.vimer.cn)
 * [地瓜哥](http://www.diguage.com)
 * [刘伟卫](https://waylau.com)
+* [鸟窝](http://colobu.com)
+* [深度思考](http://it.deepinmind.com/index.html)
+* [简书-占小狼](http://www.jianshu.com/users/90ab66c248e6/latest_articles)
+* [BYSocket](http://www.bysocket.com)
+* [花钱的年华](http://calvin1978.blogcn.com)
 
 
 
