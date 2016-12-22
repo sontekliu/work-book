@@ -36,6 +36,7 @@
 * [简书-占小狼](http://www.jianshu.com/users/90ab66c248e6/latest_articles)
 * [BYSocket](http://www.bysocket.com)
 * [花钱的年华](http://calvin1978.blogcn.com)
+* [程序猿DD](http://blog.didispace.com)
 
 
 
