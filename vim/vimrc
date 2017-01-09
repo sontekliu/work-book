@@ -138,3 +138,6 @@ if has("autocmd")
 	autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 	autocmd Filetype java inoremap <buffer> . .<C-X><C-O><C-P>
 endif
+
+
+
