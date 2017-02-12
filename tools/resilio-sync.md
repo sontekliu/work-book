@@ -51,6 +51,8 @@
         systemctl --user disable resilio-sync  
         systemctl --user status resilio-sync   
     ```
+4. 在2.2版本之前不支持Linux Gui版，使用浏览器进行访问
+    `http://localhost:8888/gui
 
 #### Resilio Sync 的卸载
 
