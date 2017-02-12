@@ -2,16 +2,18 @@
 
 #### For Debian-based Linux (Debian, Ubuntu, Zorin, Elementary)
 
-1. 创建文件 `/etc/apt/sources.list.d/resilio-sync.list
-2. 写入如下内容:
-    `deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free`
+1. 创建文件 `/etc/apt/sources.list.d/resilio-sync.list`
+2. 写入如下内容:   
+    `deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free`  
     或者执行如下命令：
-    echo "deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free" | sudo tee /etc/apt/sources.list.d/resilio-sync.list
-3. 执行如下命令，添加public key 
+    `echo "deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free" | sudo tee /etc/apt/sources.list.d/resilio-sync.list`
+3. 执行如下命令，添加public key :    
     `wget -qO - https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add -`
-4. 安装 Resilio-sync 
+4. 安装 Resilio-sync   
+```
     sudo apt-get update
     sudo apt-get install resilio-sync
+```
 
 
 #### For RPM-based Linux (Red Hat, Fedora, CentOS, OpenSUSE)
