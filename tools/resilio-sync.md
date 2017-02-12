@@ -11,8 +11,8 @@
     `wget -qO - https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add -`
 4. 安装 Resilio-sync   
     ```
-    sudo apt-get update
-    sudo apt-get install resilio-sync
+        sudo apt-get update
+        sudo apt-get install resilio-sync
     ```
 
 
