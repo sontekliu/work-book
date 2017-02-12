@@ -18,37 +18,39 @@
 
 #### For RPM-based Linux (Red Hat, Fedora, CentOS, OpenSUSE)
 
-1. 创建文件 `/etc/yum.repos.d/resilio-sync.repo`
+1. 创建文件: `/etc/yum.repos.d/resilio-sync.repo`
 2. 添加如下内容：
 ```
-[resilio-sync]
-name=Resilio Sync
-baseurl=http://linux-packages.resilio.com/resilio-sync/rpm/$basearch
-enabled=1
-gpgcheck=1
+    [resilio-sync]
+    name=Resilio Sync
+    baseurl=http://linux-packages.resilio.com/resilio-sync/rpm/$basearch
+    enabled=1
+    gpgcheck=1
 ```
 3. 添加Public Key：
 ```
-rpm --import https://linux-packages.resilio.com/resilio-sync/key.asc
+    rpm --import https://linux-packages.resilio.com/resilio-sync/key.asc
 ```
 4. 安装Resilio-sync
 ```
-yum update
-yum install resilio-sync
+    yum update
+    yum install resilio-sync
 ```
 
 #### Resilio Sync 的使用
 
-1. 使用当前用户启用Resilio-sync 服务，编辑如下内容
-    edit file /usr/lib/systemd/user/resilio-sync.service and change "WantedBy=multi-user.target" to "WantedBy=default.target". Save. Then enable the service:
-2. 启用Resilios-sync服务
-    systemctl --user enable resilio-sync
+1. 使用当前用户启用Resilio-sync 服务，编辑如下内容:
+    `edit file /usr/lib/systemd/user/resilio-sync.service and change "WantedBy=multi-user.target" to "WantedBy=default.target". Save. `
+2. 启用Resilios-sync服务   
+    `systemctl --user enable resilio-sync`
 3. Systemctl 还可以运行如下命令:
+```
     systemctl --user start resilio-sync
     systemctl --user stop resilio-sync
     systemctl --user enable resilio-sync
     systemctl --user disable resilio-sync
     systemctl --user status resilio-sync
+```
 
 
 
