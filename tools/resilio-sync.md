@@ -52,7 +52,13 @@
         systemctl --user status resilio-sync   
     ```
 
+#### Resilio Sync 的卸载
 
+1. For Debian-based Linux:     
+    `sudo apt-get purge btsync`
+
+2. For RPM-based Linux   
+    `sudo yum remove btsync`
 
 
 
