@@ -5,6 +5,23 @@
     外部命令:在文件系统的某个路径下有一个与命令名称相应的可执行文件
 type: 显示指定命令属于哪种命令
 
+获得命令的使用帮助
+内部命令:
+    help COMMAND
+外部命令:
+    COMMAND --help
+内、外部命令手册：manual
+    man COMMAND
+man 分章节，whatis COMMAND 显示命令所在章节
+1: 用户命令（/bin, /usr/bin, /usr/local/bin）
+2: 系统调用
+3: 库调用
+4: 特殊文件（设备文件） man tty
+5: 文件格式（配置文件的语法）man passwd
+6: 游戏
+7: 杂项(Miscellaneous)
+8: 管理命令（/sbin, /usr/sbin, /usr/local/sbin）
+
 1. pwd(print working dircetory) 显示当前目录
 
 2. cd(change directory) 切换目录
@@ -40,6 +57,10 @@ type: 显示指定命令属于哪种命令
     -i: 显示文件的inode节点
     -r: 逆序显示文件
     -R: 递归显示
+
+4. 时间管理（date）
+    硬件时钟hwclock
+    系统时钟date
 
 3. 查看各个文件夹的大小
 du -h --max-depth=1
