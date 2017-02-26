@@ -22,6 +22,18 @@ man 分章节，whatis COMMAND 显示命令所在章节
 7: 杂项(Miscellaneous)
 8: 管理命令（/sbin, /usr/sbin, /usr/local/sbin）
 
+MAN:
+    <> : 必选
+    [] : 可选
+    ... : 可以出现多次
+    | : 多选一
+
+在线手册
+info COMMAND （man的补充，使用不多）
+
+文档 : /usr/share/doc
+
+
 1. pwd(print working dircetory) 显示当前目录
 
 2. cd(change directory) 切换目录
@@ -61,8 +73,13 @@ man 分章节，whatis COMMAND 显示命令所在章节
 4. 时间管理（date）
     硬件时钟hwclock
     系统时钟date
+    hwclock 显示硬件时钟
+    hwclock -w 更改硬件时钟为系统时钟
+    hwclock -s 更改系统时间为硬件时钟。
 
-3. 查看各个文件夹的大小
+5. cal : calender 日历
+
+6. 查看各个文件夹的大小
 du -h --max-depth=1
 
 
