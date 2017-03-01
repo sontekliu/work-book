@@ -79,7 +79,24 @@ info COMMAND （man的补充，使用不多）
 
 5. cal : calender 日历
 
-6. 查看各个文件夹的大小
+6. mkdir 创建目录
+    -p : 一次性创建多个目录，mkdir -p /root/x/y/z
+    -v : verbose 显示详细信息
+    mkdir -pv /mnt/test/{x/m,y}
+    mkdir -pv /test2/{a,d}_{b,c}
+
+7. rmdir 删除目录
+    删除非空目录
+
+8. 文件创建和删除
+touch 改变文件时间戳
+    -a : 修改文件的访问时间
+    -m : 修改文件的修改时间
+    -t : 修改文件的修改和访问时间
+    -c : 不创建文件
+stat  查看文件或者文件系统的状态
+
+9. 查看各个文件夹的大小
 du -h --max-depth=1
 
 
