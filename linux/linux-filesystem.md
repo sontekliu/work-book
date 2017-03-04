@@ -26,4 +26,33 @@ rootfs : 根文件系统
 /usr/local : 第三方软件安装的位置
 
 
+复制和移动文件
+
+1. cp（copy）
+cp SRC DEST
+    -R(r)   递归复制目录及其文件
+    -f      强行复制
+    -i      提示是否覆盖
+    -p      保留原来的属主、属组，权限，时间戳
+    -a      归档复制，常用于备份
+
+2. mv move
+mv SRC DEST
+
+3. install 复制文件
+    -d DIRECTORY ... : 创建目录
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
