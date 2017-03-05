@@ -40,6 +40,7 @@ cat [-AnbvTE] filename
 ```
 [space]	: 向下翻页     
 [Enter]	: 向下翻一行          
+b       : 向上翻一屏(未到达文件尾部)
 q		: 表示退出more不再显示文件内容           
 :f		: 显示文档名称以及目前显示的行数          
 /string	: 向下搜索字符串        
@@ -94,5 +95,18 @@ q		: 退出less命令
 -t	: use [[CC]YY]MMDDhhmm[.ss] instead of current time          
 ```
 
+**9. cut **
+
+> 切割文件
+
+> 选项与参数
+
+```
+-d(delimit) :  指定字段分隔符，默认是空格
+-f(field) :  指定要显示的字段，
+    -f 2    表示显示第二列
+    -f 1, 3 表示显示第一个字段和第3个字段
+    -f 1-3  表示显示一到三，三个字段值
+```
 
 
