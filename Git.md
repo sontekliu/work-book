@@ -15,6 +15,7 @@
 * [并发编程网](http://ifeve.com)
 * [ImportNew](http://www.importnew.com)
 * [土木坛子](https://tumutanzi.com)
+* [Google翻译](https://translate.glgoo.com)
 
 
 [MySQL&&Oracle]
