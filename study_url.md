@@ -7,6 +7,7 @@
   小幽学习          | http://www.xiaoushuo.com                   | 各种基础教程
   Git Pro           | http://git.oschina.net/progit/index.html   | Git Pro 教程
   Javascript        | http://www.javascriptcn.com                | javascript教程网
+  WEB开发           | https://developer.mozilla.org/zh-CN        | Web开发学习
   lantern           | http://lantern.bcoder.cn                   | 蓝灯
 
 
