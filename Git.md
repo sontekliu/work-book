@@ -6,6 +6,7 @@
 2      | phodal                | https://github.com/phodal             | 2016.07.12  |
 3      | Ruan YiFeng	       | https://github.com/ruanyf             | 2016.07.12  |
 4      | waylau	               | https://github.com/waylau             | 2016.12.09  |
+5      | FOOFISH               | https://github.com/lzjun567           | 2017.06.02  |
 
 
 ### 一些我关注的Blog
@@ -40,6 +41,7 @@
 * [程序猿DD](http://blog.didispace.com)
 * [蒋鑫](http://www.worldhello.net)
 * [Judas.n](http://code.youmeek.com)
+* [FOOFISH](https://foofish.net)
 
 
 
