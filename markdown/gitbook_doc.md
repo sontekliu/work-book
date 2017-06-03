@@ -29,26 +29,10 @@
 
 * npm install gitbook-cli -g
 * gitbook -V 
-```
-CLI version: 2.3.0
-GitBook version:3.2.2
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    ```
+    CLI version: 2.3.0
+    GitBook version:3.2.2
+    ```
 
 
 
