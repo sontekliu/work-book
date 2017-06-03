@@ -9,21 +9,21 @@
 
 #### 2. Gitbook 安装
 
-安装 **Gitbook** 之前需要先安装 `Node.js`。
+安装 **Gitbook** 之前需要先安装 `Node.js`。  
 **Node.js 安装**
 
 本教程主要倾向于在Linux平台下`Node.js`的安装，其他平台请另行百度或者Google。
 
 * 首先[Node.js](http://nodejs.cn)官网下载对应平台的版本
 * 解压 `tar -xvJf node-v6.10.3-linux-x64.tar.zx`
-* 配置环境变量
+* 配置环境变量  
         * vim /etc/profile
         * export NODE_HOME=*path*/node-v6.10.3-linux-x64
         * export PATH=$NODE_HOME/bin:$PATH
         * 使配置文件生效 source /etc/profile
 * 验证是否安装成功 `$ node -v`，若输出 `v6.10.3` ，则表示安装成功。
 
-** Gitbook 安装**
+**Gitbook 安装**
 
 
 
