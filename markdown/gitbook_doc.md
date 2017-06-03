@@ -17,10 +17,10 @@
 * 首先[Node.js](http://nodejs.cn)官网下载对应平台的版本
 * 解压 `tar -xvJf node-v6.10.3-linux-x64.tar.zx`
 * 配置环境变量  
-    * vim /etc/profile   
-    * export NODE\_HOME=`*path*`/node-v6.10.3-linux-x64   
-    * export PATH=$NODE\_HOME/bin:$PATH   
-    * 使配置文件生效 source /etc/profile   
+    - vim /etc/profile   
+    - export NODE\_HOME=`*path*`/node-v6.10.3-linux-x64   
+    - export PATH=$NODE\_HOME/bin:$PATH   
+    - 使配置文件生效 source /etc/profile   
 * 验证是否安装成功 `$ node -v`，若输出 `v6.10.3` ，则表示安装成功。
 
 **Gitbook 安装**
