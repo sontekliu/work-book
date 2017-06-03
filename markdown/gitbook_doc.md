@@ -1,13 +1,13 @@
-### Gitbook 教程
+## Gitbook 教程
 
-#### 1. Gitbook简介
+### 1. Gitbook简介
 **GitBook** 是一个基于 `Node.js` 的命令行工具，可使用 `Git` 和 `Markdown` 来制作精美的电子书。**GitBook** 支持输出以下几种文档格式   
 
 * 静态站点：GitBook默认输出该种格式
 * PDF：需要安装gitbook-pdf依赖
 * eBook：需要安装ebook-convert
 
-#### 2. Gitbook 安装
+### 2. Gitbook 安装
 
 安装 **Gitbook** 之前需要先安装 `Node.js`。  
 **Node.js 安装**
