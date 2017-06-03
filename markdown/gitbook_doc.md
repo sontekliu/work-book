@@ -25,6 +25,28 @@
 
 **Gitbook 安装**
 
+安装完 `Node.js` 之后，默认安装了 `NPM`。下面我们使用 `NPM` 安装 **Gitbook**  
+
+* npm install gitbook-cli -g
+* gitbook -V 
+```
+CLI version: 2.3.0
+GitBook version:3.2.2
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
