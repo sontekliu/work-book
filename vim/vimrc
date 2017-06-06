@@ -12,27 +12,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'elzr/vim-json'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+" Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/mathjax-support-for-mkdp'
-Plugin 'iamcco/markdown-preview.vim'
-" Plugin 'suan/vim-instant-markdown'
+" Plugin 'iamcco/markdown-preview.vim'
+Plugin 'suan/vim-instant-markdown'
 Plugin 'rudes/vim-java'
 call vundle#end()
 filetype plugin indent on
-
-let g:vim_markdown_folding_disabled=1
-let g:vim_markdown_frontmatter=1
-let g:vim_markdown_folding_style_pythonic=1
-let g:vim_markdown_folding_level=6
-let g:vim_markdown_conceal=0
-
-let g:mkdp_path_to_chrome='google-chrome'
-" let g:mkdp_auto_start=1
-" let g:mkdp_auto_open=0
-nmap <silent> <F8> <plug>MarkdownPreview
-imap <silent> <F8> <plug>MarkdownPreview
-nmap <silent> <F9> <plug>StopMarkdownPreview
-imap <silent> <F9> <plug>StopMarkdownPreview
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 自定义配置
