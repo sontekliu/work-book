@@ -1,4 +1,4 @@
-# Vim Catgs Plugin
+# Vim Ctags Plugin
 
 ctags程序其实是叫 `Exuberant Ctags`，是 Unix 上面 ctags 程序的替代品，并且比他功能强大，是大多数Linux发行版上默认的 ctags 程序。tags文件是由ctags程序生存的一个索引文件。那么 tags 文件是做什么用的呢？    
 
