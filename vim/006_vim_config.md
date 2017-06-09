@@ -1,8 +1,5 @@
-
-
-
 #### Vim vimrc config file
-
+```
     " 关闭与Vi的兼容模式
     set nocompatible
     " 指明在插入模式下哪儿里允许<BS>删除光标前面的字符，三个值分别为：行首空白字符，
@@ -51,3 +48,4 @@
     set iskeyword=@,48-57,_,192-255
     " 显示命令行的高度
     set cmdheight=3
+```
