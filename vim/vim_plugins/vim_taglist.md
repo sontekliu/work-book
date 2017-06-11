@@ -18,7 +18,7 @@ let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 let Tlist_WinHeight=30
 let Tlist_WinWidth=30
 " taglist 已tag名字排序，默认按出现顺序排序
-let Tlist_Sort_Type=name
+let Tlist_Sort_Type='name'
 " 只显示当前文件的tag
 let Tlist_Show_One_File=1
 " 如果taglist是最后一个窗口，则退出Vim
