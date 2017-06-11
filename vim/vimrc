@@ -150,6 +150,9 @@ set report=0
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 " 去掉输入错误的提示声音
 set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 " 增强模式中的命令行自动完成操作,行模式下使用tab键即可补全
 set wildmenu
 " 查找到文件头部或者尾部之后停止查找，默认是折回继续查找
