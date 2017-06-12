@@ -237,5 +237,7 @@ set tags=/home/sontek/opt/myapp/jdk1.8.0_121/tags
 " set tags=/home/sontek/opt/gitspace/work-base/tags,/home/sontek/opt/myapp/jdk1.8.0_121/tags,/home/sontek/opt/respo/tags
 
 
-
-
+" 让配置立即生效
+" autocmd BufWritePost $MYVIMRC source $MYVIMRC
+"
+"
