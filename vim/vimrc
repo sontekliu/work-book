@@ -214,7 +214,7 @@ noremap <C-a> ggVG
 """""""""""""""""""""""""""""""""""""""""""""""""
 "taglist config
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-let Tlist_Sort_Type=name
+let Tlist_Sort_Type='name'
 let Tlist_Show_One_File=1
 let Tlist_Use_Right_Window=1
 let Tlist_Exit_OnlyWindow=1
@@ -223,6 +223,9 @@ let Tlist_Process_File_Always=1
 let Tlist_GainFocus_On_ToggleOpen=1
 " let Tlist_Auto_Open=1
 noremap <F8> :TlistToggle<CR>
+
+" Markdown config
+let g:vim_markdown_folding_disabled=1
 "NERDTree config
 noremap <F2> :NERDTreeToggle<CR>
 "javacomplete config
