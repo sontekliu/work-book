@@ -194,7 +194,7 @@ imap <C-B> bi**<Esc>ea**<Space><Esc>
 nmap <C-B> bi**<Esc>ea**<Space><Esc>  
 "去除搜索高亮 CTRL+n
 noremap <C-N> :nohlsearch<CR>
-let mapleader=";"
+let mapleader=","
 " jk 键代替ESC键 
 inoremap jk <Esc> 
 " H 代替 ^ 表示跳转到行首
