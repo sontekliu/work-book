@@ -199,8 +199,8 @@ let mapleader=","
 inoremap jk <Esc> 
 " H 代替 ^ 表示跳转到行首
 noremap H ^
-" L 代替 $ 表示跳转到行尾
-noremap L $
+" L 代替 g_ 表示跳转到行尾
+noremap L g_
 " 空格键代替:
 noremap <space> :
 " 表示全选
