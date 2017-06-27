@@ -11,8 +11,8 @@ Nginx 安装时需要依赖以下几个模块，请提前安装
 2. PCRE库的安装   
     官网：http://www.pcre.org 下载最新版本后，进行如下操作：
     ```
-        $ tar -zxvf pcre2-10.21.tar.gz
-        $ cd pcre2-10.21
+        $ tar -zxvf pcre-8.40.tar.gz
+        $ cd pcre-8.40
         $ sudo ./configure --prefix=/usr/local/pcre
         $ sudo make
         $ sudo make install
@@ -30,20 +30,36 @@ Nginx 安装时需要依赖以下几个模块，请提前安装
         $ sudo make
         $ sudo make install
     ```
-    
-4. Nginx的安装   
+
+4. openssl的安装   
+    官网：https://www.openssl.org
     ```
-        $ tar -zxvf nginx-1.10.3.tar.gz
-        $ cd nginx-1.10.3
-        $ sudo ./configure --prefix=/usr/local/nginx
+        $ tar -zxvf openssl-1.0.21.tar.gz
+        $ cd openssl-1.0.21
+        $ ./config
+        $ ./config -t
+        $ make depend
         $ sudo make
         $ sudo make install
     ```
     
-5. Nginx 配置文件    
+5. Nginx的安装   
+    ```
+        $ tar -zxvf nginx-1.10.3.tar.gz
+        $ cd nginx-1.10.3
+        $ sudo ./configure --prefix=/usr/local/nginx 
+                --with-http_ssl_module 
+                --with-openssl=/usr/local/ssl
+                --with-pcre=../pcre-8.40 
+                --with-zlib=../zlib-1.2.11 
+        $ sudo make
+        $ sudo make install
+    ```
+    
+6. Nginx 配置文件    
     `$ vim /usr/local/nginx/conf/nginx.conf`
     
-6. 检测Nginx的配置文件是否正确，建议每次修改配置文件后均需检测一下   
+7. 检测Nginx的配置文件是否正确，建议每次修改配置文件后均需检测一下   
     `$ /usr/local/nginx/sbin/nginx -t`        
     出现如下信息，代表成功：     
     ```
@@ -51,14 +67,14 @@ Nginx 安装时需要依赖以下几个模块，请提前安装
         nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
     ```
     
-7. 启动、停止、重启Nginx   
+8. 启动、停止、重启Nginx   
     ```
         $ sudo /usr/local/nginx/sbin/nginx              # 启动
         $ sudo /usr/local/nginx/sbin/nginx -s stop      # 停止
         $ sudo /usr/local/nginx/sbin/nginx -s reload    # 重启
     ```
     
-8. 设置开机启动   
+9. 设置开机启动   
     编辑/etc下面的rc.local    
     `$ sudo vim /etc/rc.local`   
     添加：   
