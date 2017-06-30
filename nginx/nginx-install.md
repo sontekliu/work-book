@@ -1,4 +1,4 @@
-### nginx 的安装
+# nginx 的安装
 
 Nginx 是一个高性能的HTTP和反向代理服务器。   
 Nginx 官方网址是：http://nginx.org         
