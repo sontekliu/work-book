@@ -10,8 +10,8 @@
 
 Nginx 启动之后，可以有两种方式控制Nginx程序：
 
-> 第一，使用 `nginx` 命令，使用 `-s` 参数，例如：`/usr/local/nginx/sbin/nginx -s stop`
-> 第二，向 Nginx主进程 发送信号，默认主进程号的位置是：`/usr/local/nginx/logs/nginx.pid`
+> 第一，使用 `nginx` 命令，使用 `-s` 参数，例如：`/usr/local/nginx/sbin/nginx -s stop`   
+> 第二，向 Nginx主进程 发送信号，默认主进程号的位置是：`/usr/local/nginx/logs/nginx.pid`   
 
 ```
     TERM, INT   快速杀掉进程
