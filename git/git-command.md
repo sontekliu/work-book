@@ -33,6 +33,7 @@
 | 5    | `git diff`                                          | 查看未添加到暂存的变更
 | 5    | `git diff --cached`                                 | 查看已添加暂存但还未commit的变更
 | 5    | `git diff HEAD^`                                    | 比较与上一版本的差异
+| 5    | `git diff origin/master master`                     | 比较本地已提交，而远程没有的东西
 | 8    | `git reset --hard HEAD`                             | 将当前版本重置为 HEAD，常用于 merge 失败回退
 | 8    | `git reset --hard HEAD^`                            | 回到上一版本
 | 9    | `git reset --hard HEAD^^`                           | 回到上上一个版本
