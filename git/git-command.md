@@ -18,35 +18,34 @@
 
 #### Git 常用 
 
-|序号  | 命令                                            | 说明
-|:----:|-------------------------------------------------|-------------------------------------------------------------
-| 1    | `git init`                                      | 初始化仓库
-| 4    | `git status`                                    | 查看工作区状态
-| 2    | `git add <file>...`                             | 向暂存区域添加文件
-| 3    | `git commit -m "备注内容"`                      | 向数据仓库提交修改内容
-| 3    | `git commit -am "备注内容"`                     | add 和 commit 合并为一步
-| 19   | `git push origin master`                        | 将当前分支提交到远程分支
-| 18   | `git push -u origin master`                     | 第一次推送master分支的所有内容
-| 20   | `git clone git@server-name:path/repo-name.git`  | 从远程仓库克隆
-| 15   | `git rm <file>`                                 | 删除文件
-| 16   | `git mv <file> <file2>`                         | 文件重命名
-| 5    | `git diff`                                      | 查看未添加到暂存的变更
-| 5    | `git diff --cached`                             | 查看已添加暂存但还未commit的变更
-| 5    | `git diff HEAD^`                                | 比较与上一版本的差异
-| 8    | `git reset --hard HEAD`                         | 将当前版本重置为 HEAD，常用于 merge 失败回退
-| 8    | `git reset --hard HEAD^`                        | 回到上一版本
-| 9    | `git reset --hard HEAD^^`                       | 回到上上一个版本
-| 10   | `git reset --hard HEAD~100`                     | 回到上100个版本
-| 11   | `git reset --hard <id>`                         | 回到某个提交的版本，例如:`git reset --hard ea3457`
-| 13   | `git checkout -- <file>`                        | 撤销对file修改。即，返回文件最后一次git commit或者git add时的状态，如果文件进入暂存区域此命令无法撤销。
-| 14   | `git reset HEAD <file>`                         | 将文件从暂存区域撤回，即:unstage
-| 12   | `git reflog`                                    | 记录每一次执行的命令，查看命令历史
-| 29   | `git stash`                                     | 把当前工作的现场"储藏"起来
-| 30   | `git stash list`                                | 查看"储藏"列表
-| 31   | `git stash apply`                               | 恢复"储藏"现场，但是stash内容并不删除，即，git stash list 还可以查看
-| 32   | `git stash drop`                                | 删除stash内容，即，git stash list查看不到
-| 33   | `git stash pop`                                 | 恢复"储藏"现场，并删除stash内容
-| 37   | `git branch --set-upstream branch-name origin/branch-name` | 建立本地分支和远程分支的关联
+|序号  | 命令                                                | 说明
+|:----:|-----------------------------------------------------|-------------------------------------------------------------
+| 1    | `git init`                                          | 初始化仓库
+| 4    | `git status`                                        | 查看工作区状态
+| 2    | `git add <file>...`                                 | 向暂存区域添加文件
+| 3    | `git commit -m "备注内容"`                          | 向数据仓库提交修改内容
+| 3    | `git commit -am "备注内容"`                         | add 和 commit 合并为一步
+| 19   | `git push origin master`                            | 将当前分支提交到远程分支
+| 18   | `git push -u origin master`                         | 第一次推送master分支的所有内容
+| 20   | `git clone git@server-name:path/repo-name.git`      | 从远程仓库克隆
+| 15   | `git rm <file>`                                     | 删除文件
+| 16   | `git mv <file> <file2>`                             | 文件重命名
+| 5    | `git diff`                                          | 查看未添加到暂存的变更
+| 5    | `git diff --cached`                                 | 查看已添加暂存但还未commit的变更
+| 5    | `git diff HEAD^`                                    | 比较与上一版本的差异
+| 8    | `git reset --hard HEAD`                             | 将当前版本重置为 HEAD，常用于 merge 失败回退
+| 8    | `git reset --hard HEAD^`                            | 回到上一版本
+| 9    | `git reset --hard HEAD^^`                           | 回到上上一个版本
+| 10   | `git reset --hard HEAD~100`                         | 回到上100个版本
+| 11   | `git reset --hard <id>`                             | 回到某个提交的版本，例如:`git reset --hard ea3457`
+| 13   | `git checkout -- <file>`                            | 撤销对file修改。即，返回文件最后一次git commit或者git add时的状态，如果文件进入暂存区域此命令无法撤销。
+| 14   | `git reset HEAD <file>`                             | 将文件从暂存区域撤回，即:unstage
+| 12   | `git reflog`                                        | 记录每一次执行的命令，查看命令历史
+| 29   | `git stash`                                         | 把当前工作的现场"储藏"起来
+| 30   | `git stash list`                                    | 查看"储藏"列表
+| 31   | `git stash apply`                                   | 恢复"储藏"现场，但是stash内容并不删除，即，git stash list 还可以查看
+| 32   | `git stash drop`                                    | 删除stash内容，即，git stash list查看不到
+| 33   | `git stash pop`                                     | 恢复"储藏"现场，并删除stash内容
 
 #### Git 日志
 
