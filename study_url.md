@@ -15,6 +15,7 @@ javascript --> nodejs --> React --> Angular --> vue
   Javascript        | http://www.javascriptcn.com                | javascript教程网
   WEB开发           | https://developer.mozilla.org/zh-CN        | Web开发学习
   lantern           | http://lantern.bcoder.cn                   | 蓝灯
+  半步多	    | http://jadyer.cn                   	 | 半步多博客
 
 
 
