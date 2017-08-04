@@ -66,6 +66,7 @@
     $ ./rslsync --dump-sample-config > bitsync.conf
 ```
 3. 修改配置文件，如图:
+
 ![resilio-sync-config](./image/resilio-sync-config.png)
 
 4. 启动软件
@@ -73,6 +74,7 @@
     $ ./rslsync --config bitsync.conf
 ```
 5. 打开浏览器，输入: `http://127.0.0.1:9999` 显示如下图表示启动成功
+
 ![resilio-sync-index](./image/resilio-sync-index.jpg)
 
 
