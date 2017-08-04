@@ -1,5 +1,7 @@
 # Resilio-sync Install 
 
+> https://www.btsynckeys.com
+
 ### For Debian-based Linux (Debian, Ubuntu, Zorin, Elementary)
 
 1. 创建文件 `/etc/apt/sources.list.d/resilio-sync.list`
