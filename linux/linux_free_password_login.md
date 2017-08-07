@@ -12,7 +12,7 @@
 2. 将 A 机器下的 `/root/.ssh/id_rsa.pub` 复制到 B 机器的 `/root/.ssh/authorized_keys` 文件里，需先在 B 机器创建 `/root/.ssh` 目录  
 
     ```
-    [root@A~]# scp /root/.ssh/id_rsa.pub root@192.168.1.200:/root/.ssh/authorized_keys
+    [root@A~]# scp -p /root/.ssh/id_rsa.pub root@192.168.1.200:/root/.ssh/authorized_keys
     ```
     此时需要输入 B 机器的密码，因为此时还未免密码。
 
@@ -28,5 +28,8 @@
     [root@A~] ssh root@192.168.1.200
     ```
     现在 A 机器登陆 B 机器不需要密码即可登陆。
+
+5. 当 C 机器也要免密登陆 B 的时候，一定要将 C 的 `id_rsa.pub` 追加到 B 机器 `authorized_keys` 里面，不要对其覆盖。
+
 
 
