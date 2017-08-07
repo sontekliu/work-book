@@ -11,10 +11,12 @@
 | 05   | `git config --global color.diff auto`         | 配置自动着色 
 | 06   | `git config --global color.branch auto`       | 配置自动着色 
 | 07   | `git config --global color.interactive auto`  | 配置自动着色
-| 08   | `git config --global alias.co checkout`       | 配置别名
-| 09   | `git config --global alias.ci commit`         | 配置别名
-| 10   | `git config --global alias.br branch`         | 配置别名
-| 11   | `git config --global alias.st status`         | 配置别名
+| 08   | `git config --global core.editor vim`         | 配置Git编辑工具
+| 09   | `git config --global merge.tool vimdiff`      | 配置Git合并工具
+| 10   | `git config --global alias.co checkout`       | 配置别名
+| 11   | `git config --global alias.ci commit`         | 配置别名
+| 12   | `git config --global alias.br branch`         | 配置别名
+| 13   | `git config --global alias.st status`         | 配置别名
 
 #### Git 常用 
 
