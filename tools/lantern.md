@@ -2,6 +2,7 @@
 
 >> 官方地址：http://lantern.bcoder.cn
 >> 官方地址：https://github.com/gitlantern/lantern
+>> 官方地址：https://getlantern.org
 
 1. 首先安装 gdebi 的安装工具    
 下载的lantern为.deb格式的文件，我们只能通过dpkg -i或者 gdebi的方式安装   
