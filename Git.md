@@ -42,6 +42,7 @@
 * [蒋鑫](http://www.worldhello.net)
 * [Judas.n](http://code.youmeek.com)
 * [FOOFISH](https://foofish.net)
+* [Linux大鹏](http://roclinux.cn)
 
 
 
