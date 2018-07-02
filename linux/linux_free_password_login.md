@@ -19,6 +19,7 @@
 3. 修改 authorized_keys 的权限为 600  
 
     ```
+    [root@B~]# chmod 700 /root/.ssh
     [root@B~]# chmod 600 /root/.ssh/authorized_keys
     ```
 
