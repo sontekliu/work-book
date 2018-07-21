@@ -310,9 +310,7 @@ https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
   $ mkdir -p ~/opt/mysoftware
   ```
 
-  配置环境变量
-
-  $ vim .zshrc  添加如下内容
+  配置环境变量，编辑 `~/.zshrc`  文件，添加如下配置
 
   ```shell
   export JAVA_HOME=~/opt/mysoftware/jdk1.8.0_151
@@ -330,22 +328,40 @@ https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
   Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)
   ```
 
-1. 安装 maven
-  $ tar -zxvf apache-maven-3.5.4-bin.tar.gz -C opt/mysoftware
-  配置环境变量
-   $ vim .zshrc  添加如下内容
-  ```
-  export MVN_HOME=~/opt/mysoftware/maven3.5.4
+* 安装 maven
+
+  首先从 `Apache Maven` 官网，下载  `maven` 软件包，然后对其解压配置即可。
+
+   ```shell
+  $ tar -zxvf apache-maven-3.5.4-bin.tar.gz -C opt/mysoftware/maven-3.5.4
+   ```
+
+  配置环境变量，编辑 `~/.zshrc`  文件，添加如下配置
+
+  ```shell
+  export MVN_HOME=~/opt/mysoftware/maven-3.5.4
   export PATH=$MVN_HOME/bin:$PATH
   ```
+
+  启用配置，查看安装版本
+
+  ```shell
    $ source .zshrc
    $ mvn -v
-  编辑
-  $MVN_HOME/conf/settings.xml
-  修改如下
-  <localRepository>~/opt/repo<localRepository>
+   Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-18T02:33:14+08:00)
+  Maven home: /home/sontek/opt/mysoftware/maven-3.5.4
+  Java version: 1.8.0_181, vendor: Oracle Corporation, runtime: /home/sontek/opt/mysoftware/jdk-1.8/jre
+  Default locale: en_US, platform encoding: UTF-8
+  OS name: "linux", version: "4.9.0-7-amd64", arch: "amd64", family: "unix"
+  ```
 
-2. 安装IDEA
+  配置 `Maven` 本地仓库，先创建如下目录 `~/opt/repo`，然后编辑 `$MVN_HOME/conf/settings.xml` 文件，修改内容如下：
+
+   ```shell
+  <localRepository>~/opt/repo<localRepository>
+   ```
+
+1. 安装IDEA
   从官网下载 Linux 版本的IDEA
   $ tar -zxvf ideaIU-2018.1.6.tar.gz -C opt/mysoftware
   激活IDEA 请参考 http://idea.liyang.io/
