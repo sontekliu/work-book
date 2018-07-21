@@ -62,9 +62,37 @@
 
      ![](./images/networking-hostonly.png)
 
-     启动 `Debain` 
+     启动 `Debain` ,打开终端，输入 `ip addr` 查看网络接口设备，如图：
 
-     
+     ![](./images/networking-dev.png)
+
+     `enp0s3` 为 `NAT` 网卡设备，`enp0s8`  为 `Host-Only` 网卡设备，下面进行配置：
+
+     首先将 `/etc/network/interface.d/setup` 文件中关于 `eth0` 的配置注释掉，原内容如下：
+
+     ![](./images/networking-setup.png)
+
+     修改后如下：
+
+     ![](./images/networking-setuped.png)
+
+     编辑 `/etc/network/interface` 文件，注意不要配置网关（gateway），内容如下：
+
+     ![](./images/networking-nat-hostonly-config.png)
+
+     此时已配置完毕，重启网络，并测试，如下：
+
+     ```shell
+     # systemctl restart networking      重启网络
+     # ip addr							查看IP信息
+     # ping www.baidu.com				测试是否可以访问外网
+     ```
+
+     在宿主主机测试是否能访问 `Debian` ，如下：
+
+     ```shell
+     ping 192.168.56.10         # host-only 配置的IP
+     ```
 
    * 桥接
 
