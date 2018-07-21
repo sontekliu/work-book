@@ -361,40 +361,48 @@ https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
   <localRepository>~/opt/repo<localRepository>
    ```
 
-1. 安装IDEA
-  从官网下载 Linux 版本的IDEA
-  $ tar -zxvf ideaIU-2018.1.6.tar.gz -C opt/mysoftware
-  激活IDEA 请参考 http://idea.liyang.io/
-  https://blog.csdn.net/qq_35246620/article/details/79050895
+* 安装IDEA
 
-  
+  从官网下载 `Linux` 版本的 `IDEA`，并解压：
 
-  
+   ```shell
+  $ tar -zxvf ideaIU-2018.1.6.tar.gz -C opt/mysoftware/
+  $ cd ~/opt/mysoftware/idea-IU/bin
+  $ ./idea.sh							# 启动 IDEA
+   ```
 
-  
+  激活 `IDEA`，访问如下网站进行激活。连接如下：
 
-  
+  [激活IDEA](http://idea.lanyus.com/)
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
