@@ -20,9 +20,56 @@
 	wq! 保存退出 vi
 ```
 
-3. `Debian` 网络配置 （root用户操作），关于 `Debian`
+3. `Debian` 网络配置 （root用户操作），关于 `Debian` 的网络配置稍微复杂点，下面一一讲解。
+
+   首先，`Debian` 使用两种方式配置网络，第一种是  `/etc/init.d/networking`，以下以 `networking`简称，第二种是 `/etc/init.d/network-manager`，以下以 `network-manager` 简称，两者之间只取其一，即尽量不要让两者同时使用。
+
+   > 使用 networking 配置网络
+
+   首先禁用 `network-manager`，启用 `networking`，然后重启。
+
+   ```shell
+   # systemctl stop network-manager      停用 network-manager
+   # systemctl status network-manager    查看 network-manager 状态
+   # systemctl disable network-manager   开机不启动 network-manager
+   
+   # systemctl enable networking         开机启动 networking
+   # systemctl start networking          启动 networking
+   # systemctl status networking         查看 networking 状态
+   
+   # reboot
+   ```
+
+   `Virtual Box` 安装系统时，默认网络配置为 `NAT` 即 `网络地址转换NAT` ，这种方式配置的网络，本机不能访问安装的 `Debian` 虚拟机，但是 `Debian`  虚拟机可以访问外网。如果要实现虚拟机里面的 `Debian` 既能访问外网，又能实现与宿主主机的访问，有两种方式：`NAT + Host-Only` 方式，桥接方式。
+
+   * NAT + Host-Only 既实现连接 `Internet` ，又能与宿主主机通信。
+
+     将系统关机 `# shutdown -h now`
+
+     启动 `Virtual Box` 按下 `Ctrl + g` 全局配置网络。如图所示
+
+     ![](./images/network-hostonly-config.png) 
+
+     点击右侧的编辑按钮，配置静态IP 和 DHCP 如图所示：
+
+     ![](images/network-hostonly-static.png)
+
+     ![](./images/network-hostonly-dhcp.png)
+
+     给 `Debian` 虚拟机分别配置 `NAT` 和 `Host-Only` 两个网卡
+
+     ![](./images/networking-nat.png)
+
+     ![](./images/networking-hostonly.png)
+
+     启动 `Debain` 
+
+     
+
+   * 桥接
 
 ```
+
 	# vim /etc/network/interfaces
 	# 查看 设备名称 
 	# ip addr 
