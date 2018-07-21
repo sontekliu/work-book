@@ -68,7 +68,7 @@
 
      `enp0s3` 为 `NAT` 网卡设备，`enp0s8`  为 `Host-Only` 网卡设备，下面进行配置：
 
-     首先将 `/etc/network/interface.d/setup` 文件中关于 `eth0` 的配置注释掉，原内容如下：
+     首先将 `/etc/network/interfaces.d/setup` 文件中关于 `eth0` 的配置注释掉，原内容如下：
 
      ![](./images/networking-setup.png)
 
@@ -76,7 +76,7 @@
 
      ![](./images/networking-setuped.png)
 
-     编辑 `/etc/network/interface` 文件，注意不要配置网关（gateway），内容如下：
+     编辑 `/etc/network/interfaces` 文件，注意不要配置网关（gateway），内容如下：
 
      ![](./images/networking-nat-hostonly-config.png)
 
@@ -84,6 +84,7 @@
 
      ```shell
      # systemctl restart networking      重启网络
+     # systemctl status  networking      查看状态
      # ip addr							查看IP信息
      # ping www.baidu.com				测试是否可以访问外网
      ```
@@ -96,7 +97,7 @@
 
    * 桥接
 
-     在以桥接的方式配置网络之前，恢复刚 `NAT + Host-Only` 的配置，如果没有进行  `NAT + Host-Only`的配置则忽略。
+     在以桥接的方式配置网络之前，恢复刚刚 `NAT + Host-Only` 的配置，如果没有进行  `NAT + Host-Only`的配置则忽略。
 
      首先启动  `Virtual Box` 进行网络配置，配置单个网卡，并且连接方式为桥接，如图：
 
@@ -126,7 +127,7 @@
      在宿主主机测试是否能访问 `Debian` ，如下：
 
      ```shell
-     ping 192.168.1.102         # 这是我机器动态生成的IP，你的可能不同
+     ping 192.168.1.120         # 这是我机器动态生成的IP，你的可能不同
      ```
 
 4. 安装open-ssh，并配置
