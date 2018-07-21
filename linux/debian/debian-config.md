@@ -24,7 +24,7 @@
 
    首先，`Debian` 使用两种方式配置网络，第一种是  `/etc/init.d/networking`，以下以 `networking`简称，第二种是 `/etc/init.d/network-manager`，以下以 `network-manager` 简称，两者之间只取其一，即尽量不要让两者同时使用。
 
-   > 使用 networking 配置网络
+   > 第一、使用 networking 配置网络
 
    首先禁用 `network-manager`，启用 `networking`，然后重启。
 
@@ -68,7 +68,7 @@
 
      `enp0s3` 为 `NAT` 网卡设备，`enp0s8`  为 `Host-Only` 网卡设备，下面进行配置：
 
-     首先将 `/etc/network/interfaces.d/setup` 文件中关于 `eth0` 的配置注释掉，原内容如下：
+     首先将 `/etc/network/interfaces.d/setup` 文件中关于 `eth0` 的配置注释掉，否则在启动网络服务时，会出现如下错误：ifup：bring up eth0 fail，原内容如下：
 
      ![](./images/networking-setup.png)
 
@@ -103,7 +103,7 @@
 
      ![](./images/networking-bridge.png)
 
-     启动 `Debian` ，首先将 `/etc/network/interface.d/setup` 文件中关于 `eth0` 的配置注释掉，原内容如下：
+     启动 `Debian` ，首先将 `/etc/network/interface.d/setup` 文件中关于 `eth0` 的配置注释掉，否则在启动网络服务时，会出现如下错误：ifup：bring up eth0 fail，原内容如下：
 
      ![](./images/networking-setup.png)
 
@@ -130,7 +130,47 @@
      ping 192.168.1.120         # 这是我机器动态生成的IP，你的可能不同
      ```
 
+   > 第二、使用 network-manager 的方式配置网络
+
+     `network-manager` 可以使用图形界面的方式配置网络，它适用于笔记本电脑，因为它可以记住无线网络的密码，到达之后，可以直接连接上。`network-manager` 配置网络比较简单，下面我就简单介绍。
+
+   还原一切刚才以 `networking` 方式配置网络的修改（很重要）。
+
+   还是老样子，关闭 `networking` ， 启用 `network-manager `
+
+   ```shell
+   # systemctl stop networking      	  停用 networking
+   # systemctl status networking.        查看 networking 状态
+   # systemctl disable networking.       开机不启动 networking
+   
+   # systemctl enable network-manager    开机启动 network-manager
+   # systemctl start network-manager     启动 network-manager
+   # systemctl status network-manager    查看 network-manager 状态
+   
+   # reboot
+   
+   ```
+
+   查看已配置的网络：
+
+   ![](./images/network-manager-show.png)
+
+   网络配置
+
+   ![](./images/network-manager-pre-config.png)
+
+   添加网络配置
+
+   ![](./images/network-manager-add.png)
+
+   选择网络类型，无线（Wi-Fi）或者以太网（Ethernet）:
+
+   ![](./images/network-manager-add-select.png)
+
+   图形界面的配置比较简单，以下步骤自己配置即可。
+
 4. 安装open-ssh，并配置
+
    # apt install ssh
    # vim /etc/ssh/sshd_config
    // 见阮一峰配置
@@ -164,6 +204,7 @@
   将如下内容替换即可
   ZSH_THEME="robbyrussell"  --> ZSH_THEME="ys"
   $ source ./.zshrc   使修改生效
+
 7. 安装搜狗输入法(安装前看看有啥输入法)
    到搜狗输入法官方网站，下载 linux 版搜狗拼音输入法
    $ sudo dpkg -i sogoupinyin_version_amd64.deb
@@ -171,9 +212,11 @@
    $ sudo apt install libqt4-declarative zip fcitx-libs
    继续安装搜狗拼音输入法
    $ sudo reboot
+
 8. 安装 i3 窗口管理器
    $ sudo apt install i3
    https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
+
 9. 安装JDK
   Oracle 官网下载 JDK
   tar -zxvf jdk-8u151-linux-x64.tar.gz
@@ -186,6 +229,7 @@
   export PATH=$JAVA_HOME/bin:$PATH
   ```
   $ source .zshrc
+
 10. 安装 maven
   $ tar -zxvf apache-maven-3.5.4-bin.tar.gz -C opt/mysoftware
   配置环境变量
@@ -200,6 +244,7 @@
   $MVN_HOME/conf/settings.xml
   修改如下
   <localRepository>~/opt/repo<localRepository>
+
 11. 安装IDEA
    从官网下载 Linux 版本的IDEA
    $ tar -zxvf ideaIU-2018.1.6.tar.gz -C opt/mysoftware
