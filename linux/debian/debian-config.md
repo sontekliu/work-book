@@ -255,50 +255,67 @@ deb-src http://mirrors.aliyun.com/debian-security stretch/updates main contrib n
 # apt upgrade				# 升级软件包
 ```
 
+### 5. 安装基本的软件包
 
+* 安装 vim，zsh，git，wget，curl，net-tools
 
-1. 安装 zsh, on-my-zsh, Vim, git 并配置（普通用户）
-  vim
-  $ sudo apt install vim
-  zsh
-  $ sudo apt install zsh
-  git
-  $ sudo apt install git
-  oh-my-zsh
-  $ sudo apt install curl wget
+  ```shell
+  $ sudo apt install vim zsh git wget curl net-tools
+  ```
+
+* 安装 oh-my-zsh
+
+  ```shell
   $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  可以更换主题
-  vim .zshrc 
-  将如下内容替换即可
-  ZSH_THEME="robbyrussell"  --> ZSH_THEME="ys"
-  $ source ./.zshrc   使修改生效
+  # 更换主题
+  $ vim .zshrc
+  # 将 ZSH_THEME="robbyrussell"  --> ZSH_THEME="ys"
+  $ source .zshrc   # 使其生效
+  ```
 
-2. 安装搜狗输入法(安装前看看有啥输入法)
-   到搜狗输入法官方网站，下载 linux 版搜狗拼音输入法
-   $ sudo dpkg -i sogoupinyin_version_amd64.deb
-   // 安装错误图片
-   $ sudo apt install libqt4-declarative zip fcitx-libs
-   继续安装搜狗拼音输入法
-   $ sudo reboot
+### 6. 安装搜狗拼音输入法
 
-3. 安装 i3 窗口管理器
+到搜狗输入法官方网站，下载 linux 版搜狗拼音输入法，然后对其进行安装：
+
+ ```shell
+$ sudo dpkg -i sogoupinyin_2.2.0.0108_amd64.deb
+ ```
+
+出现如下错误：
+
+![](./images/sogou-pinyin.png)
+
+根据提示显示是缺少软件包，安装缺少软件包
+
+```shell
+$ sudo apt install libqt4-declarative zip fcitx-libs
+```
+
+继续执行安装搜狗拼音输入法。然后重启。
+
+### 7. 安装窗口管理器（i3）
+
+### 8. 安装 Java 开发环境
+
+1. 安装 i3 窗口管理器
    $ sudo apt install i3
    https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
 
-4. 安装JDK
-  Oracle 官网下载 JDK
-  tar -zxvf jdk-8u151-linux-x64.tar.gz
-  $ mkdir -p ~/opt/mysoftware
-  配置环境变量
-  $ vim .zshrc  添加如下内容
-  ```
-   export JAVA_HOME=~/opt/mysoftware/jdk1.8.0_151
-  export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
-  export PATH=$JAVA_HOME/bin:$PATH
-  ```
-  $ source .zshrc
+2. 
 
-5. 安装 maven
+   Oracle 官网下载 JDK
+   tar -zxvf jdk-8u151-linux-x64.tar.gz
+   $ mkdir -p ~/opt/mysoftware
+   配置环境变量
+   $ vim .zshrc  添加如下内容
+   ```
+    export JAVA_HOME=~/opt/mysoftware/jdk1.8.0_151
+   export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
+   export PATH=$JAVA_HOME/bin:$PATH
+   ```
+   $ source .zshrc
+
+3. 安装 maven
   $ tar -zxvf apache-maven-3.5.4-bin.tar.gz -C opt/mysoftware
   配置环境变量
    $ vim .zshrc  添加如下内容
@@ -313,7 +330,7 @@ deb-src http://mirrors.aliyun.com/debian-security stretch/updates main contrib n
   修改如下
   <localRepository>~/opt/repo<localRepository>
 
-6. 安装IDEA
+4. 安装IDEA
   从官网下载 Linux 版本的IDEA
   $ tar -zxvf ideaIU-2018.1.6.tar.gz -C opt/mysoftware
   激活IDEA 请参考 http://idea.liyang.io/
