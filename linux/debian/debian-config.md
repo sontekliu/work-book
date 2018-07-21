@@ -1,25 +1,27 @@
-# Debian Install
+# Debian 安装之后的配置
 
-1. 安装 Virtual-Box Tools
-```
-	# cp  -R /media/cdrom0 /tmp
+安装完 `debian` 之后，需要进行一些配置，才能使得  `Debian` 使用起来更加方便，下面就一步一步配置 `Debian` 打造专属自己的开发环境。
+
+1. 为了使用`Virtual Box` 的增强功能，需要安装 Virtual-Box Tools，首先挂载 `Virtual Box Tools`，然后执行如下命令（root 用户操作）：
+```shell
+	# cp -R /media/cdrom0 /tmp
 	# cd /tmp/cdrom0/
-	# ./autorun.sh  或者 ./VBoxLinuxAdditions.run
+	# ./VBoxLinuxAdditions.run
 	# reboot
 ```
 
-2. 添加 sudo 权限 （root用户操作）
-```
+2. 添加 `sudo` 权限，使得普通用户也有 `root` 权限（root用户操作）, `Debian` 默认安装了 `sudo` 否则，应该首先安装 `sudo`，使用此命令 `# apt install sudo`
+```shell
 	# vi /etc/sudoers
 	找到 
-	# User privilege specification
 	root 	ALL=(ALL:ALL) ALL
 	添加如下内容
 	sontek  ALL=(ALL:ALL) ALL
 	wq! 保存退出 vi
 ```
 
-3. debian 网络配置 (root用户操作)
+3. `Debian` 网络配置 （root用户操作），关于 `Debian`
+
 ```
 	# vim /etc/network/interfaces
 	# 查看 设备名称 
