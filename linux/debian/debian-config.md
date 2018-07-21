@@ -295,32 +295,47 @@ $ sudo apt install libqt4-declarative zip fcitx-libs
 
 ### 7. 安装窗口管理器（i3）
 
+安装 i3 窗口管理器
+$ sudo apt install i3
+https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
+
 ### 8. 安装 Java 开发环境
 
-1. 安装 i3 窗口管理器
-   $ sudo apt install i3
-   https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
+* 安装 JDK
 
-2. 
+  从Oracle 官网下载 JDK，下载JDK1.8
 
-   Oracle 官网下载 JDK
-   tar -zxvf jdk-8u151-linux-x64.tar.gz
-   $ mkdir -p ~/opt/mysoftware
-   配置环境变量
-   $ vim .zshrc  添加如下内容
-   ```
-    export JAVA_HOME=~/opt/mysoftware/jdk1.8.0_151
-   export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
-   export PATH=$JAVA_HOME/bin:$PATH
-   ```
-   $ source .zshrc
+  ```shell
+  $ tar -zxvf jdk-8u151-linux-x64.tar.gz
+  $ mkdir -p ~/opt/mysoftware
+  ```
 
-3. 安装 maven
+  配置环境变量
+
+  $ vim .zshrc  添加如下内容
+
+  ```shell
+  export JAVA_HOME=~/opt/mysoftware/jdk1.8.0_151
+  export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
+  export PATH=$JAVA_HOME/bin:$PATH
+  ```
+
+  启用配置，查看安装版本
+
+  ```shell
+  $ source .zshrc
+  $ java -version
+  java version "1.8.0_181"
+  Java(TM) SE Runtime Environment (build 1.8.0_181-b13)
+  Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)
+  ```
+
+1. 安装 maven
   $ tar -zxvf apache-maven-3.5.4-bin.tar.gz -C opt/mysoftware
   配置环境变量
    $ vim .zshrc  添加如下内容
   ```
-   export MVN_HOME=~/opt/mysoftware/maven3.5.4
+  export MVN_HOME=~/opt/mysoftware/maven3.5.4
   export PATH=$MVN_HOME/bin:$PATH
   ```
    $ source .zshrc
@@ -330,7 +345,7 @@ $ sudo apt install libqt4-declarative zip fcitx-libs
   修改如下
   <localRepository>~/opt/repo<localRepository>
 
-4. 安装IDEA
+2. 安装IDEA
   从官网下载 Linux 版本的IDEA
   $ tar -zxvf ideaIU-2018.1.6.tar.gz -C opt/mysoftware
   激活IDEA 请参考 http://idea.liyang.io/
