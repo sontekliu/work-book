@@ -191,31 +191,73 @@
 # apt install openssh-server
 ```
 
+默认安装的 `ssh`  配置文件不完整，需要对其进行简单的配置，编辑主配置文件，如下：
+
+```shell
+# vi /etc/ssh/sshd_config
 ```
-vi /etc/ssh/sshd_config
+
+将如下内容的注释去掉，即将其前面的  `#` 去掉
+
+```shell
+Port 22 								# 也可以修改为其他端口
+PermitRootLogin no						# 禁止 root 登录
+PermitEmptyPasswords no					# 禁止无密码登录
+PasswordAuthentication yes				# 允许使用密码登录
+
+PubkeyAuthentication yes				# 允许使用认证登录
+AuthorizedKeysFile .ssh/authorized_keys # 认证文件位置
+
+# 文件末尾添加如下内容
+AllowUsers sontek	
+
 ```
 
+重启 `sshd` 服务
 
+```shell
+# systemctl restart ssh       # 重启服务
 
-// 见阮一峰配置
+# 补充命令如下
+# systemctl start ssh
+# systemctl stop ssh
+# systemctl status ssh
+```
 
 ### 4. 更换镜像源
 
-1. 更换阿里云镜像或者 163 的也可以 (root用户操作)
-  # cp /etc/apt/sources.list /etc/apt/sources.list.bak
-  输入如下内容
-  deb http://mirrors.aliyun.com/debian stretch main contrib non-free
-  deb-src http://mirrors.aliyun.com/debian stretch main contrib non-free
-  deb http://mirrors.aliyun.com/debian stretch-updates main contrib non-free
-  deb-src http://mirrors.aliyun.com/debian stretch-updates main contrib non-free
-  deb http://mirrors.aliyun.com/debian-security stretch/updates main contrib non-free
-  deb-src http://mirrors.aliyun.com/debian-security stretch/updates main contrib non-free
-  执行如下命令
-  apt update
-  apt list --upgradable
-  apt upgrade
+为了提高访问速度，可将 `Debian` 的镜像地址换成阿里云镜像或者是 `163` ，更换阿里云镜像如下：
 
-2. 安装 zsh, on-my-zsh, Vim, git 并配置（普通用户）
+备份原镜像文件
+
+ ```shell
+# cp /etc/apt/sources.list /etc/apt/sources.list.bak
+ ```
+
+修改  `/etc/apt/sources.list` 改为如下内容：
+
+```shell
+deb http://mirrors.aliyun.com/debian stretch main contrib non-free
+deb-src http://mirrors.aliyun.com/debian stretch main contrib non-free
+
+deb http://mirrors.aliyun.com/debian stretch-updates main contrib non-free
+deb-src http://mirrors.aliyun.com/debian stretch-updates main contrib non-free
+
+deb http://mirrors.aliyun.com/debian-security stretch/updates main contrib non-free
+deb-src http://mirrors.aliyun.com/debian-security stretch/updates main contrib non-free
+```
+
+更新镜像，执行如下命令
+
+```shell
+# apt update				# 更新镜像
+# apt list --upgradable		# 列出可升级软件包
+# apt upgrade				# 升级软件包
+```
+
+
+
+1. 安装 zsh, on-my-zsh, Vim, git 并配置（普通用户）
   vim
   $ sudo apt install vim
   zsh
@@ -231,7 +273,7 @@ vi /etc/ssh/sshd_config
   ZSH_THEME="robbyrussell"  --> ZSH_THEME="ys"
   $ source ./.zshrc   使修改生效
 
-3. 安装搜狗输入法(安装前看看有啥输入法)
+2. 安装搜狗输入法(安装前看看有啥输入法)
    到搜狗输入法官方网站，下载 linux 版搜狗拼音输入法
    $ sudo dpkg -i sogoupinyin_version_amd64.deb
    // 安装错误图片
@@ -239,11 +281,11 @@ vi /etc/ssh/sshd_config
    继续安装搜狗拼音输入法
    $ sudo reboot
 
-4. 安装 i3 窗口管理器
+3. 安装 i3 窗口管理器
    $ sudo apt install i3
    https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
 
-5. 安装JDK
+4. 安装JDK
   Oracle 官网下载 JDK
   tar -zxvf jdk-8u151-linux-x64.tar.gz
   $ mkdir -p ~/opt/mysoftware
@@ -256,7 +298,7 @@ vi /etc/ssh/sshd_config
   ```
   $ source .zshrc
 
-6. 安装 maven
+5. 安装 maven
   $ tar -zxvf apache-maven-3.5.4-bin.tar.gz -C opt/mysoftware
   配置环境变量
    $ vim .zshrc  添加如下内容
@@ -271,7 +313,7 @@ vi /etc/ssh/sshd_config
   修改如下
   <localRepository>~/opt/repo<localRepository>
 
-7. 安装IDEA
+6. 安装IDEA
   从官网下载 Linux 版本的IDEA
   $ tar -zxvf ideaIU-2018.1.6.tar.gz -C opt/mysoftware
   激活IDEA 请参考 http://idea.liyang.io/
