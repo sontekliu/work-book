@@ -428,9 +428,10 @@ https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
     $ sudo apt install screenfetch
     ```
 * 科学上网 Shadowsocks  
-    首先访问 [Github](https://github.com/shadowsocks) 找到 `shadowsocks-qt5` 项目
-    根据其 wiki 提示进行安装即可
-    如果是 `Chromium` 浏览器还需要安装插件，下载插件地址请点击[这里](https://)
+    首先访问 [Github](https://github.com/shadowsocks) 找到 `shadowsocks-qt5` 项目  
+    根据其 wiki 提示进行安装即可  
+    如果是 `Chromium` 浏览器还需要安装插件，下载插件地址请点击[这里](https://github.com/FelisCatus/SwitchyOmega)  
+    找到其对应的发行版，然后安装 `Chromium` 插件，对其进行配置即可。
 
 * 安装微信  
     访问 [Github](https://github.com/geeeeeeeeek/electronic-wechat) 按照上面的说明一步一步操作即可
