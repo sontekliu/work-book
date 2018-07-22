@@ -375,34 +375,70 @@ https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
 
   [激活IDEA](http://idea.lanyus.com/)
 
+### 9. 安装常用软件
 
+* 安装 NodeJS  
+    上 `Nodejs` 官网，下载对应平台的软件包，解压到指定目录，并配置环境变量，我的配置如下：
+    ```
+    $ vim ~/.zshrc
+    # 添加如下配置
+    export NODE_HOME=~/opt/mysoftware/node-8
+    export PATH=$NODE_HOME/bin:$PATH
 
+    # 使配置生效
+    $ source .zshrc
+    ```
 
+* 安装 Chromium 浏览器
+    ```
+    $ sudo apt update
+    $ sudo apt install chromium 
+    ```
 
+* 安装 Filezilla
+    ```
+    $ sudo apt update
+    $ sudo apt install filezilla
+    ```
 
+* 安装视频播放器 VLC
+    ```
+    $ sudo apt install vlc
+    # 使用 VLC
+    $ vlc xxx.mp4
+    ```
+* 安装网易云音乐客户端
+    首先上网易云音乐官网下载对应的客户端
+    ```
+    $ sudo dpkg -i  netease-cloud-music_1.1.0_ubuntu_amd64.deb
+    ```
 
+* 安装邮件客户端
+    ```
+    $ sudo apt install thunderbird
+    ```
 
+* 安装 SVN
+    ```
+    $ sudo apt install subversion
+    ```
 
+* 安装 screenfetch 打印操作系统的 `logo` 和使用状态  
+    ```
+    $ sudo apt install screenfetch
+    ```
+* 科学上网 Shadowsocks  
+    首先访问 [Github](https://github.com/shadowsocks) 找到 `shadowsocks-qt5` 项目
+    根据其 wiki 提示进行安装即可
+    如果是 `Chromium` 浏览器还需要安装插件，下载插件地址请点击[这里](https://)
 
+* 安装微信  
+    访问 [Github](https://github.com/geeeeeeeeek/electronic-wechat) 按照上面的说明一步一步操作即可
+    下载对应的发布版本，并解压到制定的目录，然后启动微信客户端
+    ```
+    $ cd elecontronic-wechat
+    $ ./elecontronic-wechat
+    ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* 安装 QQ
 
