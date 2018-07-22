@@ -296,7 +296,46 @@ $ sudo apt install libqt4-declarative zip fcitx-libs
 ### 7. 安装窗口管理器（i3）
 
 安装 i3 窗口管理器
+```
 $ sudo apt install i3
+```
+可使用如下命令生成默认的配置文件
+```
+$ i3-config-wizard
+```
+配置
+```
+bindsym $mod+shift+x exec i3lock 锁屏
+$mod + shift + r 使配置文件生效
+exec firefox  表示启动 i3 时候，启动 firefox
+feh 桌面相关
+sudo apt install feh
+feh --bg-scale /path/to/destop.jpg
+exec_always feh --bg-scale /path/to/destop.jpg
+
+# 查询是什么
+sudo apt install arandr
+
+
+定义变量
+set $workspace "1: Terminal"
+
+
+# 指定某个软件在指定的workspace
+
+# 安装 FortAwesome / Fort Awesome 添加 icon
+cp fonts ~/.fonts
+fortawesome.github.io/cheatsheet
+
+# 配置字体和字号
+San Franceisco Fonts
+
+# 配置 gtk
+sudo apt install lxapperance
+
+# 取色
+http://www.color.picker.com
+```
 https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
 
 ### 8. 安装 Java 开发环境
