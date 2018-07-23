@@ -481,7 +481,7 @@ https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
     ```
 * 安装字体
     首先是下载想要安装的字体,可参考如下网站.  
-    [Github](https://github.com), [fontsquirrel](http://www.fontsquirrel.com)  
+    [Github](https://github.com), [fontsquirrel](https://www.fontsquirrel.com)  
     然后在 `/usr/share/fonts/` 创建相应的字体目录  
     ```
     sudo mkdir /usr/share/fonts/opentype/SourceCodePro
