@@ -479,6 +479,17 @@ https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
     $ cd elecontronic-wechat
     $ ./elecontronic-wechat
     ```
+* 安装字体
+    首先是下载想要安装的字体,可参考如下网站.  
+    [Github](https://github.com), [fontsquirrel](http://www.fontsquirrel.com)  
+    然后在 `/usr/share/fonts/` 创建相应的字体目录  
+    ```
+    sudo mkdir /usr/share/fonts/opentype/SourceCodePro
+    ```
+    将下载的字体解压到刚刚创建的目录中,然后执行如下命令:
+    ```
+    sudo fc-cache -f -v    使字体生效
+    ```
 
 * 安装 QQ
 
