@@ -479,7 +479,7 @@ https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
     $ cd elecontronic-wechat
     $ ./elecontronic-wechat
     ```
-* 安装字体
+* 安装字体  
     首先是下载想要安装的字体,可参考如下网站.  
     [Github](https://github.com), [fontsquirrel](https://www.fontsquirrel.com)  
     然后在 `/usr/share/fonts/` 创建相应的字体目录  
