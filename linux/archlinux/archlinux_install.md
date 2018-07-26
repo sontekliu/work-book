@@ -7,6 +7,8 @@ https://xiaix.me/records/
 
 http://rackpull.com/linux/dual-boot-arch-linux-windows/
 
+http://rackpull.com/linux/dual-boot-arch-linux-windows/
+
 ```
 pacman -S grub
 pacman -S ntfs-3g    #  否则 os-prober 发现不了 win
