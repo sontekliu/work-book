@@ -130,4 +130,26 @@ export LANGUAGE=zh_CN:en_US
 export LC_TYPE=zh_CN.UTF-8
 ```
 
+### 11.  安装 screenfetch
+```
+$ sudo pacman -S screenfetch
+$ screenfetch    #  显示当前系统图标
+```
 
+### 12 按装 wps-office
+```
+$ sudo pacman -S wps-office
+```
+启动 work，excel，ppt 命令分别是 `wps`，`et`，`wpp`
+
+### 13 安装 FTP 工具
+
+```
+$ sudo pacman -S filezilla
+```
+
+### 14. 安装邮件客户端
+
+```
+$ sudo pacman -S thunderbird
+```
