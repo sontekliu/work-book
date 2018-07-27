@@ -92,4 +92,42 @@ $ sudo pacman -S google-chrome
 $ sudo pacman -S wqy-microhei
 ```
 
-### 
+### 9. install ssh zsh oh-my-zsh
+
+```
+$ sudo pacman -S openssh
+$ sudo pacman -S zsh
+```
+安装 oh-my-zsh
+
+```
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+### 10 安装中文输入法
+
+```
+$ sudo pacman -S fcitx fcitx-im fcitx-googlepinyin fcitx-sogoupinyin fcitx-configtool
+```
+编辑 `~/.xinitrc` 文件，添加如下：
+```
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+```
+
+编辑 `i3` 配置文件 `~/.config/i3/config`，使其启动 `i3` 的时候启动 `fcitx`，在该文件最后添加如下：
+```
+exec fcitx
+```
+此时，启动 `i3` 的时候在屏幕又下角，可以看到小键盘图标了。   
+鼠标右击小键盘图标，选择 `configure -> +` 选择相应的输入法即可
+汉化：
+使其切换中文输入法，编辑 `~/.xinitrc` 文件，添加如下：
+```
+export LANG=zh_CN.UTF-8
+export LANGUAGE=zh_CN:en_US
+export LC_TYPE=zh_CN.UTF-8
+```
+
+
