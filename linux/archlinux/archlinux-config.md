@@ -153,3 +153,34 @@ $ sudo pacman -S filezilla
 ```
 $ sudo pacman -S thunderbird
 ```
+
+### 15 安装 nodejs
+```
+$ sudo pacman -S nodejs npm
+```
+
+### 16 安装 QQ
+首先编辑 `/etc/pacman.conf` 将如下内容注释掉  
+
+```
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+```
+更新仓库
+```
+$ sudo pacman -Syu
+```
+安装 wine
+```
+$ sudo pacman -S wine
+```
+
+安装 QQ
+```
+$ sudo pacman -S deepin-qq-im
+```
+
+
+
+
+
