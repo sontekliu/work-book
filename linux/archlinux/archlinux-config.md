@@ -159,7 +159,14 @@ $ sudo pacman -S thunderbird
 $ sudo pacman -S nodejs npm
 ```
 
-### 16 安装 QQ
+### 16 安装 shadowsocks(没有shadowsocks帐号的可忽略此步)
+```
+$ sudo pacman -S shadowsocks-qt5
+$ ss-qt5	# 启动客户端
+```
+
+
+### 17 安装 QQ
 首先编辑 `/etc/pacman.conf` 将如下内容注释掉  
 
 ```
@@ -179,6 +186,7 @@ $ sudo pacman -S wine
 ```
 $ sudo pacman -S deepin-qq-im
 ```
+
 
 
 
