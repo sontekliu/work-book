@@ -165,6 +165,23 @@ $ sudo pacman -S shadowsocks-qt5
 $ ss-qt5	# 启动客户端
 ```
 
+### 17 同步时间
+查看当前时间
+```
+$ timedatectl status
+```
+设置时区
+```
+$ sudo timedatectl set-timezone <Zone>/<SubZone>
+$ sudo timedatectl set-timezone Asia/Shanghai
+```
+同步时间
+```
+$ sudo pacman -S opnentpd
+$ sudo systemctl restart openntpd
+$ sudo systemctl enable openntpd
+```
+
 
 ### 17 安装 QQ
 首先编辑 `/etc/pacman.conf` 将如下内容注释掉  
