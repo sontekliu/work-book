@@ -471,6 +471,8 @@ https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
     根据其 wiki 提示进行安装即可  
     如果是 `Chromium` 浏览器还需要安装插件，下载插件地址请点击[这里](https://github.com/FelisCatus/SwitchyOmega)  
     找到其对应的发行版，然后安装 `Chromium` 插件，对其进行配置即可。
+    注意：
+    如果安装不上插件，则将 `crx` 后缀的插件改成 `zip` 然后对其进行解压，然后将开发者模式打开，加载解压的文件夹即可
 
 * 安装微信  
     访问 [Github](https://github.com/geeeeeeeeek/electronic-wechat) 按照上面的说明一步一步操作即可
