@@ -17,7 +17,7 @@ noipv4ll
 # Generate SLAAC address using the Hardware Address of the interface
 #slaac hwaddr
 # OR generate Stable Private IPv6 Addresses based from the DUID
-slaac private
+# slaac private
 # noipv4ll
 ```
 
@@ -114,7 +114,7 @@ $ sudo netctl start enp5s0          # 启动服务
 $ sudo reboot
 ```
 
-### 2. netctl 配置动态IP (可能需要支持IPv6才行)
+### 2. netctl 配置动态IP
 `netctl` 配置动态 IP 和 配置静态 IP  的方式差不多，有一些细节可参考上面的内容，下面只说一下差别。
 
 首先，复制示例配置文件到 `/etc/netctl/` 目录中，命令如下：
@@ -243,7 +243,7 @@ $ nameserver 8.8.8.8
 ```
 
 
-[参考资料](https://www.ostechnix.com/configure-static-dynamic-ip-address-arch-linux/)
+参考资料：https://www.ostechnix.com/configure-static-dynamic-ip-address-arch-linux/ [点击这里](https://www.ostechnix.com/configure-static-dynamic-ip-address-arch-linux/)
 
 
 
