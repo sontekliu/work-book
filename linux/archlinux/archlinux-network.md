@@ -206,6 +206,24 @@ DHCP=ipv4
 $ sudo reboot
 ```
 
+### 5. 手动配置网络
+```
+# 查看服务状态
+$ sudo systemctl status dhcpcd
+# 重启服务
+$ sudo systemctl restart dhcpcd
+
+# 设置 IP 地址
+$ sudo addr add 192.168.3.76/24 dev enp5s0
+# 设置网关
+$ sudo ip route add default via 192.168.3.1
+
+# 配置 DNS
+$ sudo vim /etc/resolv.conf
+$ nameserver 114.114.114.114
+$ nameserver 8.8.8.8
+```
+
 
 [参考资料](https://www.ostechnix.com/configure-static-dynamic-ip-address-arch-linux/)
 
