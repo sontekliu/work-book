@@ -1,7 +1,7 @@
 # Arch Linux 网络配置
 
-> 可以使用 systemd-networkd, dhcpcd, netctl, network-manager等配置 Archlinux 网络
-> dhcpcd 是 Arch Linux 默认提供的网络配置工具，功能比较强大，network-manager 默认没有安装 需要 安装
+> 可以使用 systemd-networkd, dhcpcd, netctl, network-manager等配置 Archlinux 网络  
+> dhcpcd 是 Arch Linux 默认提供的网络配置工具，功能比较强大，network-manager 默认没有安装 如果需要此配置网络，则还得需要安装。
 
 ### 1. netctl 配置静态 IP
 
@@ -34,7 +34,7 @@ $ ip link
 
 复制示例配置文件到 `/etc/netctl/` 目录中，命令如下：
 ```
-$ sudo cp /etc/netclt/ethernet-static  /etc/netctl/enp5s0
+$ sudo cp /etc/netctl/ethernet-static  /etc/netctl/enp5s0
 ```
 以网络接口的名称重命名示例配置文件。  
 
@@ -101,7 +101,7 @@ $ sudo reboot
 
 首先，复制示例配置文件到 `/etc/netctl/` 目录中，命令如下：
 ```
-$ sudo cp /etc/netclt/ethernet-dhcp  /etc/netctl/enp5s0
+$ sudo cp /etc/netctl/ethernet-dhcp  /etc/netctl/enp5s0
 ```
 以网络接口的名称重命名示例配置文件。
 
@@ -135,11 +135,11 @@ IP=dhcp
 ```
 关闭 `dhcpcd` 的网络服务，开启 `netctl` 服务
 ```
-$ sudo systemctl enable dhcpcd        # 停止服务
-$ sudo systemctl start dhcpcd     # 开机不启动
+$ sudo systemctl enable dhcpcd    # 开机启动
+$ sudo systemctl start dhcpcd     # 启动服务
 
-$ sudo netctl stop enp5s0         # 开机启动
-$ sudo netctl disable enp5s0          # 启动服务
+$ sudo netctl stop enp5s0         # 停止服务
+$ sudo netctl disable enp5s0      # 开机不启动
 ```
 重启测试是否生效
 ```
@@ -165,13 +165,13 @@ DNS=8.8.8.8
 ```
 关闭之前的网络服,如果之前是 `dhcpcd` 或者 `netctl` 均关闭，以免造成干扰
 ```
-$ sudo systemctl stop dhcpcd
-$ sudo systemctl disable dhcpcd
+$ sudo systemctl stop dhcpcd         # 停止服务
+$ sudo systemctl disable dhcpcd      # 开机不启动
 
-$ sudo netctl stop enp5s0
-$ sudo netctl disable enp5s0
+$ sudo netctl stop enp5s0            # 停止服务
+$ sudo netctl disable enp5s0         # 开机不启动
 ```
-启动服务
+启动 `systemd-networkd` 和 `systemd-resolved` 服务
 ```
 sudo systemctl enable systemd-networkd
 sudo systemctl start systemd-networkd
@@ -192,6 +192,21 @@ $ sudo reboot
 ```
 $ sudo touch /etc/systemd/network/enp5s0.network
 ```
+
+添加如下内容：
+```
+[Match]
+Name=enp5s0
+
+[Network]
+DHCP=ipv4
+```
+重启测试是否生效
+```
+$ sudo reboot
+```
+
+
 [参考资料](https://www.ostechnix.com/configure-static-dynamic-ip-address-arch-linux/)
 
 
