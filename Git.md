@@ -43,6 +43,7 @@
 * [Judas.n](http://code.youmeek.com)
 * [FOOFISH](https://foofish.net)
 * [Linux大鹏](http://roclinux.cn)
+* [ArchLinux&Vim](http://0x3f.org)
 
 
 
