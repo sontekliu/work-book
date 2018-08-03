@@ -4,6 +4,7 @@
 > dhcpcd 是 Arch Linux 默认提供的网络配置工具，功能比较强大，network-manager 默认没有安装 需要 安装
 
 ### 1. netctl 配置静态 IP
+
 `netctl` 是 `base` 组的成员，所以系统中已默认安装了。`netctl` 是一个命令行应用程序
 ，使用配置文件来管理网络链接。在 `/etc/netctl/examples` 目录下面有一些网络配置的示例。  
 ```
@@ -39,7 +40,6 @@ $ sudo cp /etc/netclt/ethernet-static  /etc/netctl/enp5s0
 
 编辑此文件，此文件默认内容为：
 ```
-
 Description='A basic static ethernet connection'
 Interface=eth0
 Connection=ethernet
@@ -60,37 +60,139 @@ DNS=('192.168.1.1')
 ```
 修改后如下：
 ```
-
 Description='A basic static ethernet connection'
 # 你的网络接口
 Interface=enp5s0
 Connection=ethernet
 IP=static
-# 你的IP地址
-Address=('192.168.3.76/24')
+# 你的IP地址,注意中间是空格
+Address=('192.168.3.76/24' '192.168.3.12/24')
 # 路由配置
-Routes=('192.168.3.76/24 via 192.168.3.1')
+# Routes=('192.168.0.0/24 via 192.168.3.1')
 # 网关
-Gateway='192.168.3.1'
-# DNS 配置
-DNS=('114.114.114.114','8.8.8.8')
+Gateway=('192.168.3.1')
+# DNS 配置,注意中间是空格
+DNS=('114.114.114.114' '8.8.8.8')
+
+## For IPv6 autoconfiguration
+#IP6=stateless
+
+## For IPv6 static address configuration
+#IP6=static
+#Address6=('1234:5678:9abc:def::1/64' '1234:3456::123/96')
+#Routes6=('abcd::1234')
+#Gateway6='1234:0:123::abcd'
+```
+关闭 `dhcpcd` 的网络服务，开启 `netctl` 服务
+```
+$ sudo systemctl stop dhcpcd        # 停止服务
+$ sudo systemctl disable dhcpcd     # 开机不启动
+
+$ sudo netctl enable enp5s0         # 开机启动
+$ sudo netctl start enp5s0          # 启动服务
+```
+重启测试是否生效
+```
+$ sudo reboot
 ```
 
+### 2. netctl 配置动态IP (可能需要支持IPv6才行)
+`netctl` 配置动态 IP 和 配置静态 IP  的方式差不多，有一些细节可参考上面的内容，下面只说一下差别。
 
+首先，复制示例配置文件到 `/etc/netctl/` 目录中，命令如下：
+```
+$ sudo cp /etc/netclt/ethernet-dhcp  /etc/netctl/enp5s0
+```
+以网络接口的名称重命名示例配置文件。
+
+编辑此文件，此文件默认内容为：
+```
+Description='A basic dhcp ethernet connection'
+Interface=eth0
+Connection=ethernet
+IP=dhcp
+#DHCPClient=dhcpcd
+#DHCPReleaseOnStop=no
+## for DHCPv6
+#IP6=dhcp
+#DHCP6Client=dhclient
+## for IPv6 autoconfiguration
+#IP6=stateless
+```
+修改后如下：
+```
+Description='A basic dhcp ethernet connection'
+Interface=enp5s0
+Connection=ethernet
+IP=dhcp
+#DHCPClient=dhcpcd
+#DHCPReleaseOnStop=no
+## for DHCPv6
+#IP6=dhcp
+#DHCP6Client=dhclient
+## for IPv6 autoconfiguration
+#IP6=stateless
+```
+关闭 `dhcpcd` 的网络服务，开启 `netctl` 服务
+```
+$ sudo systemctl enable dhcpcd        # 停止服务
+$ sudo systemctl start dhcpcd     # 开机不启动
+
+$ sudo netctl stop enp5s0         # 开机启动
+$ sudo netctl disable enp5s0          # 启动服务
+```
+重启测试是否生效
+```
+$ sudo reboot
+```
+
+### 3. 使用 systemd-network 配置静态IP
+
+首先，在 `/etc/systemd/network/` 目录下创建文件，默认此目录无任何文件，命令如下:
+```
+$ sudo touch /etc/systemd/network/enp5s0.network
+```
+添加如下内容：
+```
+[Match]
+Name=enp5s0
+
+[Network]
+Address=192.168.3.12/24
+Gateway=192.168.3.1
+DNS=114.114.114.114
+DNS=8.8.8.8
+```
+关闭之前的网络服,如果之前是 `dhcpcd` 或者 `netctl` 均关闭，以免造成干扰
+```
+$ sudo systemctl stop dhcpcd
+$ sudo systemctl disable dhcpcd
+
+$ sudo netctl stop enp5s0
+$ sudo netctl disable enp5s0
+```
+启动服务
+```
+sudo systemctl enable systemd-networkd
+sudo systemctl start systemd-networkd
+
+sudo systemctl enable systemd-resolved
+sudo systemctl start systemd-resolved
+```
+注意，`systemd-resolved` 服务是可选的，如果不启动服务，则需要在 `/etc/resolv.conf` 中配置 `DNS`。如果启动该服务则只需要在 `/etc/systemd/network/enp5s0.network` 中配置 `DNS` 即可。
+
+重启测试是否生效
+```
+$ sudo reboot
+```
+
+### 4. 使用 systemd-networkd 配置动态 IP
+使用 `systemd-networkd` 配置动态 IP 和配置静态 IP 类似，可参考以上内容，这里只是说一下差别。  
+在 `/etc/systemd/network/` 目录下创建文件，命令如下：
+```
+$ sudo touch /etc/systemd/network/enp5s0.network
+```
 [参考资料](https://www.ostechnix.com/configure-static-dynamic-ip-address-arch-linux/)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
