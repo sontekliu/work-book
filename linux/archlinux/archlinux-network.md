@@ -3,6 +3,24 @@
 > 可以使用 systemd-networkd, dhcpcd, netctl, network-manager等配置 Archlinux 网络  
 > dhcpcd 是 Arch Linux 默认提供的网络配置工具，功能比较强大，network-manager 默认没有安装 如果需要此配置网络，则还得需要安装。
 
+`Arch Linux` 安装之后，默认获取动态 IP 地址为 `IPv6`，如果想动态获取 `IPv4` 需要修改配置文件，修改文件为：`/etc/dhcpcd.conf`
+原内容如下：
+```
+# Generate SLAAC address using the Hardware Address of the interface
+#slaac hwaddr
+# OR generate Stable Private IPv6 Addresses based from the DUID
+slaac private
+noipv4ll
+```
+修改后内容如下：
+```
+# Generate SLAAC address using the Hardware Address of the interface
+#slaac hwaddr
+# OR generate Stable Private IPv6 Addresses based from the DUID
+slaac private
+# noipv4ll
+```
+
 ### 1. netctl 配置静态 IP
 
 `netctl` 是 `base` 组的成员，所以系统中已默认安装了。`netctl` 是一个命令行应用程序
