@@ -97,4 +97,53 @@ hide_edge_borders none|vertical|horizontal|both|smart
 for_window [class="urxvt"] border pixel 1
 for_window [title="x200: ~/work"] floating enable
 
+# 设置变量
+set $<name> <value>
+set $m Mod1
+bindsym $m+Shift+r restart
+
+# 自动将不同的客户端应用放到特殊的工作区间
+assign <criteria> [->] [workspace] [number] <workspace>
+assign <criteria> [->] output left|right|up|down|primary|<output>
+# Examples
+assign [class="URxvt"] 2
+assign [class="^URxvt$"] 2  # 精确匹配
+assign [class="^URxvt$"] -> 2  # 工作区名字 ->2 
+assign [class="^URxvt$"] -> work # 指定到工作区名字
+assign [class="^URxvt$"] -> number 2 # 指定到工作区，不管名字
+
+# 在 i3 启动的时候,启动相应的应用
+exec [--no-startup-id] <command>
+exec_always [--no-startup-id] <command>
+exec chromium
+exec_always --no-startup-id urxvt
+
+# 自动将工作区放到特殊的屏幕,主要用于多个显示器的情况
+workspace <workspace> output <output>
+workspace 1 output VGA1
+workspace "2: Vim" output LVDS1
+
+
+# 改变颜色
+<colorclass> <border> <background> <text> <indicator> <child_border>
+colorclass 可以是
+client.focused  : 当前焦点的客户端
+client.focused_inactive: 当前焦点容器的一个客户端,但是现在没有处在焦点中
+client.unfocused: 一个容器中没有焦点的客户端
+client.urgent:  激活其紧急的客户端
+client.placeholder : 背景和文本颜色用于绘制占位符窗口内容(当恢复布局时),边界和指示符被忽略
+client.background : 用于绘制客户端窗口的背景颜色,客户机窗口的背景将被渲染,只有不覆盖此窗口
+整个区域的客户端才能显示颜色,请注意,此类只使用单个颜色.
+# example
+client.focused          #4c7899     #285577     #ffffff     #2e9ef4     #285577
+client.focused_inactive #333333     #5f676a     #ffffff     #484e50     #5f676a
+client.unfocuses        #333333     #222222     #888888     #292d2e     #222222
+client.urgent           #2f343a     #900000     #ffffff     #900000     #900000
+client.placeholder      #000000     #0c0c0c     #ffffff     #000000     #0c0c0c
+client.backgrund        #ffffff
+
+
+
+
+
 ```
