@@ -487,6 +487,9 @@ https://www.devpy.me/your-guide-to-a-practical-linux-desktop-with-i3wm/
     然后在 `/usr/share/fonts/` 创建相应的字体目录  
     ```
     sudo mkdir /usr/share/fonts/opentype/SourceCodePro
+    或者将字体安装到家目录下
+    mkdir ~/.fonts
+    将字体拷贝到创建的目录下面
     ```
     将下载的字体解压到刚刚创建的目录中,然后执行如下命令:
     ```
