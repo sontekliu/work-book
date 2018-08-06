@@ -21,6 +21,7 @@
 # sudo pacman -S evince   # PDF 阅读器
 # sudo pacman -S gvfs-mtp # 查看挂载的U盘等设备，结合 thunar 一起使用即可
 # sudo pacman -S shadowsocks-qt5  # 科学上网，可选
+# git clone git@github.com:FortAwesome/Font-Awesome.git ~/.fonts/
 
 # 设置 mod 键，Mod1==Alt  Mod4==Win
 set $mod Mod4
@@ -131,9 +132,9 @@ bindsym $mod+Print exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Picture/shots/'
 #   工作区间
 ###############################
 # 定义变量
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1:"
+set $ws2 "2:"
+set $ws3 "3:"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"

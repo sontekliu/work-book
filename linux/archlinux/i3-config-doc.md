@@ -167,4 +167,7 @@ http://www.johnlozano.me/post/configuring-i3/
 https://blog.csdn.net/k_y_z_s/article/details/79363852   
 https://www.jianshu.com/p/9717322753fc   
 https://www.jianshu.com/p/f65bb6ab3e56   
-https://blog.csdn.net/github_37128837/article/details/78078526
+h ttps://blog.csdn.net/github_37128837/article/details/78078526
+https://github.com/FortAwesome/Font-Awesome
+http://dotshare.it/
+https://github.com/flumm/Themes
