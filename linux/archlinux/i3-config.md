@@ -15,12 +15,22 @@
 # sudo pacman -S rofi
 # sudo pacman -S compton
 # sudo pacman -S feh
+# sudo pacman -S scrot
+# sudo pacman -S pcmanfm  # 文件管理器
+# sudo pacman -S thunar   # 文件管理器
+# sudo pacman -S evince   # PDF 阅读器
+# sudo pacman -S gvfs-mtp # 查看挂载的U盘等设备，结合 thunar 一起使用即可
+# sudo pacman -S shadowsocks-qt5  # 科学上网，可选
 
 # 设置 mod 键，Mod1==Alt  Mod4==Win
 set $mod Mod4
 
 # 设置窗口的字体和字号，也适用于 bar
-font pango:monospace 10
+# font pango:monospace 10
+font pango:Monaco 10
+# font pango:Courier New 12
+# font pango:WenQuanYi Zen Hei 12
+# font pango:Noto Sans CJK SC 12
 
 # 使用鼠标+$mod 键拖拽浮动接口，$mod+shift+space 可使窗口浮动
 floating_modifier $mod
@@ -30,7 +40,6 @@ floating_modifier $mod
 ############################
 # 开启终端
 # bindsym $mod+Return exec i3-sensible-terminal
-# exec --no-startup-id compton -b
 bindsym $mod+Return exec urxvt -sh 60
 # 关闭窗口
 bindsym $mod+Shift+q kill
@@ -74,7 +83,7 @@ bindsym $mod+e layout toggle split
 
 # 浮动当前窗口
 bindsym $mod+Shift+space floating toggle
-# change focus between tiling / floating windows
+# 浮动窗口和平铺窗口切换焦点
 bindsym $mod+space focus mode_toggle
 
 # 焦点改成父容器
@@ -90,6 +99,33 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # 锁屏
 bindsym $mod+shift+x exec i3lock
+
+# mod + Shift + 减号 隐藏窗口
+# mod + 减号 显示窗口
+bindsym $mod+minus move scratchpad
+bindsym $mod+plus  scratchpad show
+
+# 打开文件管理器
+# bindsym Ctrl+Mod1+f exec pcmanfm &>/dev/null&
+bindsym Ctrl+Mod1+f exec thunar &>/dev/null&
+bindsym Ctrl+Mod1+d exec evince &>/dev/null&
+
+# 调整窗口边框样式
+bindsym $mod+u    border none
+bindsym $mod+n    border normal
+bindsym $mod+o    border pixel 2
+bindsym $mod+b    border toggle
+
+# 工作区的切换
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+# 截焦点屏幕
+bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Picture/shots/'
+# 截全屏
+bindsym $mod+Print exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Picture/shots/'
+
+
 
 ###############################
 #   工作区间
@@ -128,6 +164,34 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+################################
+# 在指定的工作区间打开应用
+################################
+assign [class="URxvt"] $ws1
+assign [class="google-chrome-stable"] $ws2
+assign [class="idea"] $ws3
+
+# 新窗口的默认布局
+for_window [class="URxvt"] layout tabbed
+#隐藏相接的两个窗口之间的边框  none|vertical|horizontal|both
+hide_edge_borders none
+# 设置焦点是否跟随鼠标移动 yes|no
+focus_follows_mouse yes
+# 设置新开启的窗口的样式，none|pixel|normal  
+# noraml 显示title , pixel 不显示title
+new_window pixel 2
+new_float pixel 2
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+
 
 #################################
 #  启用模式
@@ -152,16 +216,62 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+#################################
+# 电源管理
+#################################
+set $mode_system  lock(L) logout(O) reboot(R) shutdown(S) exit(Esc)
+bindsym $mod+c mode "$mode_system"
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock -c '#000000', mode "default"
+    bindsym o exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+c mode "default"
+}
+
 ##################################
 #   i3_bar config
 ##################################
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
-        status_command i3status
+    status_command i3status
+    # 显示模式  dock|hide|invisible
+    # dock:一直停靠，hide:通过按键显示和隐藏,invisible:强制隐藏
+    mode dock
+    # hidden_state hide
+    # modifier $mod
+    # 显示位置 top|buttom
+    position top
+    # 分隔符
+    separator_symbol "|"
+    # 托盘输出显示 none|primary|<output>
+    # tray_output HDMI2
+    tray_output primary
+    # 托盘内容之间的间距
+    tray_padding 3
+    i3bar_command /usr/bin/i3bar
+    # 设置字体
+    font pango:Monaco 10
+    # 显示工作区安妮
+    workspace_buttons yes
+    colors {
+        background #000000
+        statusline #ffffff
+        separator #ffffff
+        
+        # colorclass        border      background     text
+        focused_workspace   #4c7899      #285577     #ffffff
+        active_workspace    #333333      #5f676a     #ffffff
+        inactive_workspace  #333333      #222222     #888888
+        urgent_workspace    #2f343a      #900000     #ffffff
+        binding_mode        #2f343a      #900000     #ffffff
+    }
+
 }
 
+exec --no-startup-id compton -b
 exec_always --no-startup-id feh --bg-scale "/home/sontek/Picture/desktop/1.jpg"
 exec --no-startup-id ss-qt5
 exec --no-startup-id fcitx
-
