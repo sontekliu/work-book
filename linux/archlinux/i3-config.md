@@ -10,14 +10,17 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # 使用此配置文件需要安装的软件包
+# sudo pacman -S i3
+# sudo pacman -S dmenu
 # sudo pacman -S rofi
 # sudo pacman -S compton
+# sudo pacman -S feh
 
 # 设置 mod 键，Mod1==Alt  Mod4==Win
 set $mod Mod4
 
 # 设置窗口的字体和字号，也适用于 bar
-font pango:monospace 8
+font pango:monospace 10
 
 # 使用鼠标+$mod 键拖拽浮动接口，$mod+shift+space 可使窗口浮动
 floating_modifier $mod

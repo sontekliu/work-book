@@ -161,6 +161,9 @@ https://github.com/ID1258/oh-my-i3/blob/master/README.md
 https://fontawesome.com/cheatsheet
 http://0x3f.org/
 
-https://gist.github.com/hbpasti
-http://www.johnlozano.me/post/configuring-i3/
+https://gist.github.com/hbpasti  
+http://www.johnlozano.me/post/configuring-i3/  
 
+https://blog.csdn.net/k_y_z_s/article/details/79363852   
+https://www.jianshu.com/p/9717322753fc   
+https://www.jianshu.com/p/f65bb6ab3e56   
