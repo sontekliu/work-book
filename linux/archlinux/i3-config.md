@@ -148,6 +148,13 @@ bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Picture/shots/'
 # 截全屏
 bindsym $mod+Print exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Picture/shots/'
 
+#  Bind your audio keyboard keys to change volume and pause/play
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute  
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute  
+bindsym XF86AudioMute exec amixer -q set Master mute  
+bindsym XF86AudioPlay exec playerctl play-pause  
+bindsym XF86AudioNext exec playerctl next  
+bindsym XF86AudioPrev exec playerctl previous  
 
 
 ###############################
@@ -155,25 +162,25 @@ bindsym $mod+Print exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Picture/shots/'
 ###############################
 # 定义变量
 # terminal
-set $ws1 "1:"
+set $ws1 "1:Terminal "
 # Chrome
-set $ws2 "2:"
+set $ws2 "2:Chrome "
 # Code
-set $ws3 "3:"
+set $ws3 "3:Code "
 # Edit
-set $ws4 "4:"
+set $ws4 "4:Vim "
 # Github
-set $ws5 "5:"
+set $ws5 "5:Github "
 # Email
-set $ws6 "6:"
+set $ws6 "6:Email "
 # Image
-set $ws7 "7:"
+set $ws7 "7:Image  
 # Music
-set $ws8 "8:"
+set $ws8 "8:Music "
 # Video
-set $ws9 "9:" 
+set $ws9 "9:Video " 
 # Desktop
-set $ws10 "10:"
+set $ws10 "10:Desktop "
 # 切换到工作区间
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -197,15 +204,17 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+
 ################################
 # 在指定的工作区间打开应用
 ################################
 # assign [class="URxvt"] $ws1
 # assign [class="google-chrome-stable"] $ws2
-# assign [class="idea"] $ws3
+assign [class="^wechat$"] $ws9
 
 # 新窗口的默认布局
 # for_window [class="URxvt"] layout tabbed
+for_window [class="^wechat$"] floating enable 
 #隐藏相接的两个窗口之间的边框  none|vertical|horizontal|both
 hide_edge_borders none
 # 设置焦点是否跟随鼠标移动 yes|no
@@ -214,6 +223,8 @@ focus_follows_mouse yes
 # noraml 显示title , pixel 不显示title
 new_window pixel 2
 new_float pixel 2
+
+
 
 ################################
 # i3-gaps
@@ -325,7 +336,7 @@ bar {
     # hidden_state hide
     # modifier $mod
     # 显示位置 top|buttom
-    position top
+    # position top
     # 分隔符
     separator_symbol "|"
     # 托盘输出显示 none|primary|<output>
