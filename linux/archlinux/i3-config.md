@@ -21,6 +21,7 @@
 # sudo pacman -S evince   # PDF 阅读器
 # sudo pacman -S gvfs-mtp # 查看挂载的U盘等设备，结合 thunar 一起使用即可
 # sudo pacman -S conky
+# sudo pacman -S alsa-utils
 # sudo pacman -S shadowsocks-qt5  # 科学上网，可选
 # git clone git@github.com:FortAwesome/Font-Awesome.git ~/.fonts/
 
@@ -209,12 +210,13 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # 在指定的工作区间打开应用
 ################################
 # assign [class="URxvt"] $ws1
-# assign [class="google-chrome-stable"] $ws2
+assign [class="netease-cloud-music"] $ws8
 assign [class="wechat"] $ws9
 
 # 新窗口的默认布局
 # for_window [class="URxvt"] layout tabbed
 for_window [class="wechat"] floating enable 
+for_window [class="netease-cloud-music"] floating enable 
 #隐藏相接的两个窗口之间的边框  none|vertical|horizontal|both
 hide_edge_borders none
 # 设置焦点是否跟随鼠标移动 yes|no
