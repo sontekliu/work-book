@@ -315,7 +315,7 @@ mode "$mode_system" {
 #   i3_bar config
 ##################################
 bar {
-    status_command i3status
+    status_command i3status --config ~/.config/i3/i3status.conf
     # 显示模式  dock|hide|invisible
     # dock:一直停靠，hide:通过按键显示和隐藏,invisible:强制隐藏
     mode dock
