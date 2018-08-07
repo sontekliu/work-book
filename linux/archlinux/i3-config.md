@@ -315,6 +315,7 @@ mode "$mode_system" {
 #   i3_bar config
 ##################################
 bar {
+    # status_command i3status
     status_command i3status --config ~/.config/i3/i3status.conf
     # 显示模式  dock|hide|invisible
     # dock:一直停靠，hide:通过按键显示和隐藏,invisible:强制隐藏
@@ -336,20 +337,20 @@ bar {
     # 显示工作区安妮
     workspace_buttons yes
     colors {
-        background #000000
+        background #787878
         statusline #ffffff
         separator #ffffff
         
         # colorclass        border      background     text
-        focused_workspace   #4c7899      #285577     #ffffff
-        active_workspace    #333333      #5f676a     #ffffff
-        inactive_workspace  #333333      #222222     #888888
-        urgent_workspace    #2f343a      #900000     #ffffff
-        binding_mode        #2f343a      #900000     #ffffff
+        focused_workspace   #9D6A47      #9D6A47     #ffffff
+        active_workspace    #333333      #787878     #ffffff
+        inactive_workspace  #333333      #787878     #ffffff
+        urgent_workspace    #2f343a      #787878     #ffffff
+        binding_mode        #2f343a      #787878     #ffffff
     }
 }
 
-exec --no-startup-id compton -b
+exec --no-startup-id compton --config ~/.config/i3/compton.conf -bc
 exec_always --no-startup-id feh --bg-scale "/home/sontek/Picture/desktop/2.jpg"
 exec --no-startup-id ss-qt5
 exec --no-startup-id fcitx
