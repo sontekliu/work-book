@@ -333,14 +333,14 @@ bar {
     tray_output primary
     # 托盘内容之间的间距
     tray_padding 3
-    i3bar_command /usr/bin/i3bar -t
+    i3bar_command /usr/bin/i3bar
     # 设置字体
     font pango:Monaco 10
     # 显示工作区安妮
     workspace_buttons yes
     height 28
     colors {
-        background #787878
+        background #010101
         statusline #ffffff
         separator #ffffff
         
@@ -354,6 +354,6 @@ bar {
 }
 
 exec --no-startup-id compton --config ~/.config/i3/compton.conf -bc
-exec_always --no-startup-id feh --bg-scale "/home/sontek/Picture/desktop/2.jpg"
+exec_always --no-startup-id feh --bg-scale "/home/sontek/Picture/desktop/5.jpg"
 exec --no-startup-id ss-qt5
 exec --no-startup-id fcitx
