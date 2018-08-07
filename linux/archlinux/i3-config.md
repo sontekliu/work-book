@@ -23,6 +23,26 @@
 # sudo pacman -S shadowsocks-qt5  # 科学上网，可选
 # git clone git@github.com:FortAwesome/Font-Awesome.git ~/.fonts/
 
+set $background #272827
+set $foreground #657b83
+set $cursor     #EAD49B
+set $color0     #1E272B
+set $color1     #685742
+set $color2     #9D6A47
+set $color3     #B36D43
+set $color4     #78824B
+set $color5     #D99F57
+set $color6     #C9A554
+set $color7     #EAD49B
+set $color8     #666666
+set $color9     #685742
+set $color10    #9D6A47
+set $color11    #B36D43
+set $color12    #78824B
+set $color13    #D99F57
+set $color14    #C9A554
+set $color15    #EAD49B
+
 # 设置 mod 键，Mod1==Alt  Mod4==Win
 set $mod Mod4
 
@@ -39,9 +59,9 @@ floating_modifier $mod
 ############################
 #   快捷键绑定
 ############################
-# 开启终端
+# 开启终端  -sh 透明度，值越大越透明
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec urxvt -sh 60
+bindsym $mod+Return exec urxvt -sh 40
 # 关闭窗口
 bindsym $mod+Shift+q kill
 
@@ -90,7 +110,7 @@ bindsym $mod+space focus mode_toggle
 # 焦点改成父容器
 bindsym $mod+a focus parent
 # focus the child container
-#bindsym $mod+d focus child
+# bindsym $mod+d focus child
 
 # 重新加载配置文件
 bindsym $mod+Shift+c reload
@@ -109,11 +129,12 @@ bindsym $mod+plus  scratchpad show
 # 打开文件管理器
 # bindsym Ctrl+Mod1+f exec pcmanfm &>/dev/null&
 bindsym Ctrl+Mod1+f exec thunar &>/dev/null&
+# 打开PDF 阅读器
 bindsym Ctrl+Mod1+d exec evince &>/dev/null&
 
 # 调整窗口边框样式
 bindsym $mod+u    border none
-bindsym $mod+n    border normal
+bindsym $mod+n    border normal 2
 bindsym $mod+o    border pixel 2
 bindsym $mod+b    border toggle
 
@@ -132,16 +153,26 @@ bindsym $mod+Print exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Picture/shots/'
 #   工作区间
 ###############################
 # 定义变量
+# terminal
 set $ws1 "1:"
+# Chrome
 set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+# Code
+set $ws3 "3:"
+# Edit
+set $ws4 "4:"
+# Github
+set $ws5 "5:"
+# Email
+set $ws6 "6:"
+# Image
+set $ws7 "7:"
+# Music
+set $ws8 "8:"
+# Video
+set $ws9 "9:" 
+# Desktop
+set $ws10 "10:"
 # 切换到工作区间
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -168,12 +199,12 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 ################################
 # 在指定的工作区间打开应用
 ################################
-assign [class="URxvt"] $ws1
-assign [class="google-chrome-stable"] $ws2
-assign [class="idea"] $ws3
+# assign [class="URxvt"] $ws1
+# assign [class="google-chrome-stable"] $ws2
+# assign [class="idea"] $ws3
 
 # 新窗口的默认布局
-for_window [class="URxvt"] layout tabbed
+# for_window [class="URxvt"] layout tabbed
 #隐藏相接的两个窗口之间的边框  none|vertical|horizontal|both
 hide_edge_borders none
 # 设置焦点是否跟随鼠标移动 yes|no
@@ -183,14 +214,61 @@ focus_follows_mouse yes
 new_window pixel 2
 new_float pixel 2
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+################################
+# i3-gaps
+################################
+# 容器内部间距
+gaps inner 10
+# 容器外部间距
+gaps outer 12
+# smart_gaps on
+# smart_borders on
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
 
-client.background       #ffffff
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+
+# class                 border          background          text        indicator   child_border
+client.focused          $foreground     $background     $foreground     $color2     $color2
+client.focused_inactive $foreground     $background     $foreground     $color4     $color4
+client.unfocused        $foreground     $background     $foreground     $color4     $color4
+client.urgent           $foreground     $background     $foreground     $color4     $color4
+client.placeholder      $foreground     $background     $foreground     $color4     $color4
+client.background       $background
 
 
 
@@ -269,10 +347,9 @@ bar {
         urgent_workspace    #2f343a      #900000     #ffffff
         binding_mode        #2f343a      #900000     #ffffff
     }
-
 }
 
 exec --no-startup-id compton -b
-exec_always --no-startup-id feh --bg-scale "/home/sontek/Picture/desktop/1.jpg"
+exec_always --no-startup-id feh --bg-scale "/home/sontek/Picture/desktop/2.jpg"
 exec --no-startup-id ss-qt5
 exec --no-startup-id fcitx
