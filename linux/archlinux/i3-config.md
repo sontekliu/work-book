@@ -20,6 +20,7 @@
 # sudo pacman -S thunar   # 文件管理器
 # sudo pacman -S evince   # PDF 阅读器
 # sudo pacman -S gvfs-mtp # 查看挂载的U盘等设备，结合 thunar 一起使用即可
+# sudo pacman -S conky
 # sudo pacman -S shadowsocks-qt5  # 科学上网，可选
 # git clone git@github.com:FortAwesome/Font-Awesome.git ~/.fonts/
 
@@ -217,6 +218,7 @@ new_float pixel 2
 ################################
 # i3-gaps
 ################################
+for_window [class="^.*"] border pixel 0
 # 容器内部间距
 gaps inner 10
 # 容器外部间距
@@ -331,11 +333,12 @@ bar {
     tray_output primary
     # 托盘内容之间的间距
     tray_padding 3
-    i3bar_command /usr/bin/i3bar
+    i3bar_command /usr/bin/i3bar -t
     # 设置字体
     font pango:Monaco 10
     # 显示工作区安妮
     workspace_buttons yes
+    height 28
     colors {
         background #787878
         statusline #ffffff
