@@ -9,8 +9,8 @@
 
 ### 2018.08.03
 * Arch linux 网络配置  (Over)
-* 解决 urxvt 复制,及其配置
-* i3 配置
-* 安装 QQ
+* 解决 urxvt 复制,及其配置 (Over)
+* i3 配置   (Over)
+* 安装 QQ  
 * Vim
 
