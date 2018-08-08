@@ -3,6 +3,9 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! 安装 urxvt
 !sudo pacman -S rxvt-unicode
+!sudo pacman -S urxvt-perls
+!yaourt font-size
+!yaourt urxvt-fullscreen
 !使配置生效
 ! $ xrdb -load ~/.Xresources
 
@@ -12,8 +15,14 @@ URxvt.preeditType:Root
 ! Sogou入法设置
 URxvt.inputMethod:fcitx
 URxvt.termName: rxvt-unicode
-!! 括号内表示透明度
+URxvt.geometry:80x30
+URxvt.title:Prongs-Rxvt
+! 透明设置
+URxvt.transparent:false
 URxvt.inheritPixmap:true
+URxvt.tintColor:white
+URxvt.shading:10
+!! 括号内表示透明度
 URxvt.background:[90]#000000
 URxvt.foreground: #FFFFFF
 URxvt.color0: rgb:00/00/00
@@ -33,45 +42,60 @@ URxvt.color13: rgb:AD/7F/A8
 URxvt.color14: rgb:34/E2/E2
 URxvt.color15: rgb:EE/EE/EC
 URxvt.colorBD: rgb:ff/ff/ff
+URxvt.colorUL: #00FF00
 !! 字体设置
 Xft.dpi:96
-URxvt.font: xft:Monaco:pixelsize=18:style=Regular:antialias=true
-URxvt.boldFont: xft:Monaco:pixelsize=18:style=Bold:antialias=true
-URxvt.letterSpace:0
+URxvt.font:                     xft:Monaco:size=14:antialias=true
+URxvt.boldFont:                 xft:Monaco:bold:size=14:antialias=true
+URxvt.letterSpace:              0
+URxvt.linespace:                10
 !!滚动条设置
-URxvt.scrollBar:False
-URxvt.scrollBar_right:True
-URxvt.scrollBar_floating:False
-URxvt.scrollstyle:plain
+URxvt.scrollBar:                False
+URxvt.scrollBar_right:          True
+URxvt.scrollBar_floating:       False
+URxvt.scrollstyle:              plain
 !!滚屏设置
-URxvt.mouseWheelScrollPage:True
-URxvt.scrollTtyOutput:False
-URxvt.scrollWithBuffer:True
-URxvt.scrollTtyKeypress:True
+URxvt.mouseWheelScrollPage:     True
+URxvt.scrollTtyOutput:          False
+URxvt.scrollWithBuffer:         True
+URxvt.scrollTtyKeypress:        True
 !!光标闪烁
-URxvt.cursorBlink:True
-URxvt.saveLines:3000
+URxvt.cursorBlink:              True
+URxvt.saveLines:                3000
 !!边框
-URxvt.borderLess:False
+URxvt.borderLess:               False
 
 !! Perl extensions
-URxvt.perl-ext-common: default,matcher,font-size
+URxvt.perl-ext-common: default,matcher,font-size,clipboard,url-select,keyboard-select,tabbed,fullscreen
 !! Open urls in browser with Control-Click
-URxvt.urlLauncher: /usr/bin/firefox
-URxvt.matcher.button: C1
-!! Change font size on Control-Plus/Minus
-URxvt.keysym.Control-0x2b: perl:font-size:increase
-URxvt.keysym.Control-0x2d: perl:font-size:decrease
+URxvt.urlLauncher:              google-chrome-stable
+URxvt.matcher.button:           1
+URxvt.url-select.lanucher:      google-chrome-stable
+URxvt.url-select.underline:     true
+URxvt.keysym.C-u:               perl:url-select:select_next
+URxvt.keysym.C-Escape:          perl:keyboard-select:activate
+URxvt.keysym.C-s:               perl:keyboard-select:search
 
-!! Yeah, I am one of those, who use these keys in Vim :-(
-URxvt.keysym.Home:          \033[1~
-URxvt.keysym.End:           \033[4~
-URxvt.keysym.Control-Up:    \033[1;5A
-URxvt.keysym.Control-Down:  \033[1;5B
-URxvt.keysym.Control-Left:  \033[1;5D
-URxvt.keysym.Control-Right: \033[1;5C
+!   Key	            Description
+! Shift+Down	    New tab
+! Shift+Left	    Go to left tab
+! Shift+Right	    Go to right tab
+! Ctrl+Left	        Move tab to the left
+! Ctrl+Right	    Move tab to the right
+! Ctrl+d	        Close tab
+URxvt.tabbed.tabbar-fg:         2
+URxvt.tabbed.tabbar-bg:         0
+URxvt.tabbed.tab-fg:            3
+URxvt.tabbed.tab-bg:            0
 
+URxvt.keysym.F11:               perl:fullscreen:switch
 
+URxvt.keysym.C-Plus:            perl:font-size:increase
+URxvt.keysym.C-Minux:           perl:font-size:decrease
+URxvt.keysym.C-equal:           perl:font-size:reset
+URxvt.keysym.C-slash:           perl:font-size:show
+
+##################### Rofi config ################################
 rofi.color-enabled: true
 rofi.color-window: #272827, #13bf9d, #13bf9d
 rofi.color-normal: #272827, #657b83, #272827, #272827, #13bf9d
@@ -81,7 +105,7 @@ rofi.color-urgent: #272827, #657b83, #272827, #272827, #13bf9d
 rofi.separator-style: solid
 rofi.sidebar-mode: false
 rofi.lines: 5
-rofi.font: Source Code Pro Semibold 10.5
+rofi.font: Monaco 12
 rofi.bw: 1
 rofi.columns: 2
 rofi.padding: 5

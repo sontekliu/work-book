@@ -212,11 +212,13 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # assign [class="URxvt"] $ws1
 assign [class="netease-cloud-music"] $ws8
 assign [class="wechat"] $ws9
+assign [class="youdao-dict"] $ws10
 
 # 新窗口的默认布局
 # for_window [class="URxvt"] layout tabbed
 for_window [class="wechat"] floating enable 
 for_window [class="netease-cloud-music"] floating enable 
+for_window [class="youdao-dict"] floating enable 
 #隐藏相接的两个窗口之间的边框  none|vertical|horizontal|both
 hide_edge_borders none
 # 设置焦点是否跟随鼠标移动 yes|no
