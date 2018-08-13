@@ -14,3 +14,17 @@
 * 安装 QQ  
 * Vim
 
+
+### 2018.08.13
+* JAVA 基础, IO, 并发, 集合
+* JVM
+* NIO, Netty, Dubbo, gRPC
+* Spring boot, Spring cloud, Mybatis
+* Redis, MongoDB, Memcached
+* Kafka, RabbitMQ
+* MySQL, Oracle
+* Linux/Unix Shell
+* 设计模式
+* 微服务
+* Maven, Git(SVN)
+* Zookeeper
