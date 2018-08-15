@@ -189,6 +189,13 @@ $ sudo pacman -S gnome-tweak-tool
 ```
 编辑 `~/.xinitrc` 文件,添加如下内容:`exec gnome-session`,将原来的 `exec i3` 注释掉. 重启电脑
 
+美化桌面
+安装图标库和主题
+```
+$yaourt -S numix-circle-icon-theme-git
+$yaourt -S gtk-theme-arc-git
+$sudo pacman -S docky
+```
 
 ### 18 安装 QQ
 首先编辑 `/etc/pacman.conf` 将如下内容注释掉  
@@ -208,7 +215,7 @@ $ sudo pacman -S wine
 
 安装 QQ
 ```
-$ sudo pacman -S deepin-qq-im
+$ sudo pacman -S deepin.com.qq.im
 ```
 
 
