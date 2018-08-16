@@ -1,32 +1,60 @@
+" 定义前缀键
+let mapleader = ";"
+" 设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <Leader>y "+y
+" 设置快捷键将系统剪贴板内容粘贴至vim
+nmap <Leader>p "+p
+
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'elzr/vim-json'
 " markdown 语法高亮
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 " markdown 实时预览
 Plugin 'suan/vim-instant-markdown'
+Plugin 'kien/ctrlp.vim'
+Plugin 'elzr/vim-json'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
+" Vim colorscheme 
 Plugin 'vim-scripts/summerfruit256.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'vim-scripts/phd'
+
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'derekwyatt/vim-fswitch'
+Plugin 'kshenoy/vim-signature'
+Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/indexer.tar.gz'
+Plugin 'vim-scripts/DfrankUtil'
+Plugin 'vim-scripts/Vimprj'
+Plugin 'dyng/ctrlsf.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-scripts/DrawIt'
+Plugin 'SirVer/ultisnips'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'derekwyatt/vim-protodef'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'gcmt/wildfire.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'lilydjwg/fcitx.vim'
 Plugin 'vimcn/vimcdoc'
-Plugin 'taglist.vim'
-" Plugin 'tpope/vim-surround'
-" Plugin 'rudes/vim-java'
-" Plugin 'vim-scripts/taglist.vim'
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'javacomplete.vim'
-" Plugin 'L9'
-" Plugin 'eclipse.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'rudes/vim-java'
+Plugin 'vim-scripts/taglist.vim'
+"Plugin 'javacomplete.vim'
+Plugin 'L9'
+Plugin 'eclipse.vim'
 call vundle#end()
 "侦测文件类型，特定文件类型载入相关缩进，允许插件
 filetype plugin indent on
@@ -37,12 +65,20 @@ endif
 
 " 启动Vim时，不显示援助乌干达儿童的提示
 set shortmess=atI
+
 """""""""""""""""""""""""""""""""""""""""""""""""
 " 高亮，配色方案配置
 """""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
+set background=dark
+" 开启语法高亮
+syntax enable
+" 允许用指定语法高亮配色方案替换默认方案
 syntax on
-colorscheme ron
+" colorscheme solarized
+" colorscheme molokai
+colorscheme phd
+" colorscheme ron
 "显示标尺
 set ruler
 "搜索字符高亮显示
@@ -60,8 +96,6 @@ set lazyredraw
 " 突出显示当前行(加下划线)/高亮显示当前列
 " set cursorline
 " set cursorcolumn
-
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -158,15 +192,18 @@ set tm=500
 set wildmenu
 " 查找到文件头部或者尾部之后停止查找，默认是折回继续查找
 " set nowrapscan
-" 禁止长行自动回绕
-" set nowrap
+" 禁止折行
+set nowrap
 " GUI隐藏工具栏/菜单栏
 set guioptions-=T
 set guioptions-=m
+" 禁止显示滚动条
 set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
+
+
 "禁止使用上下左右键
 map <UP> <NOP>
 map <DOWN> <NOP>
@@ -193,8 +230,7 @@ inoremap <RIGHT> <NOP>
 imap <C-B> bi**<Esc>ea**<Space><Esc> 
 nmap <C-B> bi**<Esc>ea**<Space><Esc>  
 "去除搜索高亮 CTRL+n
-noremap <C-N> :nohlsearch<CR>
-let mapleader=","
+noremap <C-x> :nohlsearch<CR>
 " jk 键代替ESC键 
 inoremap jk <Esc> 
 " H 代替 ^ 表示跳转到行首
@@ -207,13 +243,11 @@ noremap <space> :
 noremap <C-a> ggVG
 
 
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""
 " 插件配置
-"""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""
 "taglist config
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Ctags_Cmd='/usr/bin/ctags'
 let Tlist_Sort_Type='name'
 let Tlist_Show_One_File=1
 let Tlist_Use_Right_Window=1
@@ -226,16 +260,34 @@ noremap <F8> :TlistToggle<CR>
 
 " Markdown config
 let g:vim_markdown_folding_disabled=1
-"NERDTree config
-noremap <F2> :NERDTreeToggle<CR>
-"javacomplete config
-if has("autocmd")
-	autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-	autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
-	autocmd Filetype java inoremap <buffer> . .<C-X><C-O><C-P>
-endif
 
-set tags=/home/sontek/opt/myapp/jdk1.8.0_121/tags
+"NERDTree config
+noremap <C-t> :NERDTreeToggle<CR>
+" 关闭NERDTree快捷键
+" map <Leader>t :NERDTreeToggle<CR>
+" 显示行号
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+" 是否显示隐藏文件
+let NERDTreeShowHidden=0
+" 设置宽度
+let NERDTreeWinSize=30
+" 在终端启动vim时，共享NERDTree
+let g:nerdtree_tabs_open_on_console_startup=1
+" 忽略一下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+" 显示书签列表
+let NERDTreeShowBookmarks=1
+
+
+"javacomplete config
+"if has("autocmd")
+"	autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+"	autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+"	autocmd Filetype java inoremap <buffer> . .<C-X><C-O><C-P>
+"endif
+
+" set tags=/home/sontek/opt/myapp/jdk1.8.0_121/tags
 " set tags=/home/sontek/opt/gitspace/work-base/tags,/home/sontek/opt/myapp/jdk1.8.0_121/tags,/home/sontek/opt/respo/tags
 " set tags=/home/sontek/opt/gitspace/work-base/tags,/home/sontek/opt/myapp/jdk1.8.0_121/tags,/home/sontek/opt/respo/tags
 
@@ -243,4 +295,4 @@ set tags=/home/sontek/opt/myapp/jdk1.8.0_121/tags
 " 让配置立即生效
 " autocmd BufWritePost $MYVIMRC source $MYVIMRC
 "
-"
+
