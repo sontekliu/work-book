@@ -5,7 +5,7 @@
 1. 启动虚拟机时的首个界面，选择使用图形界面安装的方式  
 ![开始安装](./images/debian-install/1.png)  
 
-2. 选择语言，最好选择 English，也可以选择简体中文
+2. 选择语言，最好选择 English，也可以选择简体中文
 ![选择语言](./images/debian-install/2.png)  
 
 3. 选择所在的地区，按实际情况选择即可，此处选择 China
