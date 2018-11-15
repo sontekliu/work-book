@@ -81,19 +81,22 @@
 15. 安装系统  
 ![安装](./images/debian-install/49.png)  
 
-16. 配置包管理，是否启用网络镜像  
+16. 选择需要安装的软件，默认桌面环境是 GNOME 
+![选择安装软件](./images/debian-install/60.png)
+
+17. 配置包管理，是否启用网络镜像  
 ![是否启用镜像](./images/debian-install/50.png)  
 ![选择镜像地区](./images/debian-install/51.png)  
 ![选择163镜像](./images/debian-install/52.png)  
 ![配置代理](./images/debian-install/53.png)  
 ![完成镜像设置](./images/debian-install/54.png)  
 
-17. 安装 GRUB 到磁盘
+18. 安装 GRUB 到磁盘
 ![安装 GRUB](./images/debian-install/55.png)  
 ![安装 GRUB](./images/debian-install/56.png)  
 
-18. 安装完成并重启
+19. 安装完成并重启
 ![安装完成](./images/debian-install/57.png)  
 
-19. 大功告成，看到登录界面
+20. 大功告成，看到登录界面
 ![登录界面](./images/debian-install/58.png)  
