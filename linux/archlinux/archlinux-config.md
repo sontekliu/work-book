@@ -26,7 +26,7 @@ sontek ALL=(ALL) ALL
 ### 3. 安装显示服务
 
 ```
-$ sudo pacman -S xorg 
+$ sudo pacman -S xorg-server
 $ sudo pacman -S xorg-xinit
 ```
 
