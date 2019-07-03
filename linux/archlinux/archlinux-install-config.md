@@ -188,12 +188,6 @@ $ timedatectl status
 $ sudo timedatectl set-timezone <Zone>/<SubZone>
 $ sudo timedatectl set-timezone Asia/Shanghai
 ```
-同步时间
-```
-$ sudo pacman -S opnentpd
-$ sudo systemctl restart openntpd
-$ sudo systemctl enable openntpd
-```
 
 ### 17 安装桌面环境(gnome)
 ```
@@ -202,13 +196,6 @@ $ sudo pacman -S gnome-tweak-tool
 ```
 编辑 `~/.xinitrc` 文件,添加如下内容:`exec gnome-session`,将原来的 `exec i3` 注释掉. 重启电脑
 
-美化桌面
-安装图标库和主题
-```
-$yaourt -S numix-circle-icon-theme-git
-$yaourt -S gtk-theme-arc-git
-$sudo pacman -S docky
-```
 
 ### 18 安装 QQ
 首先编辑 `/etc/pacman.conf` 将如下内容注释掉  
@@ -230,9 +217,5 @@ $ sudo pacman -S wine
 ```
 $ sudo pacman -S deepin.com.qq.im
 ```
-
-
-
-
-
+现在可以在应用里面找到 QQ 并进行启动。但是如果不安装桌面环境，仅仅使用窗口管理器的话，例如：i3,则不能启动QQ .
 
