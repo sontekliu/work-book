@@ -119,7 +119,22 @@
 
 我的镜像文件内容如下：
 ```
-todo 
+## China
+Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch
+## China
+Server = http://mirrors.163.com/archlinux/$repo/os/$arch
+## China
+Server = http://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch
+## China
+Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+## China
+Server = http://mirrors.cqu.edu.cn/archlinux/$repo/os/$arch
+## China
+Server = http://mirror.lzu.edu.cn/archlinux/$repo/os/$arch
+## China
+Server = http://mirrors.zju.edu.cn/archlinux/$repo/os/$arch
+## China
+Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 ```
 
 ### 12. 安装基本系统
