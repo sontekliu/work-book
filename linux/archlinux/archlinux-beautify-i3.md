@@ -10,29 +10,63 @@ i3是一个软件包组，默认会安装 `i3-gaps`、`i3-wm`、`i3blocks`、`i3
 
 ### 2. i3的使用
 默认情况下，`$mod` 键是 `Alt` 键，可以修改成其他键，一般修改为 `win` 键，即 `Alt` 键和 `Ctrl` 键之间的键。
-* $mod + Enter 开启终端，默认占满整个屏幕。再次按下将再启动一个终端，并且平分两个屏幕
-* $mod + j 可以切换到左边的终端
-* $mod + ; 可以切换到右边的终端
-* $mod + k 可以切换到下边的终端
-* $mod + l 可以切换到上边的终端
+```
+set $mod Mod1	# 设置 $mod 键为 Alt
+set $mod Mod4   # 设置 $mod 键为 win
+
+font pango:monospace 8  设置字体和字号
+```
+
+* $mod + Enter 开启终端，默认占满整个屏幕。再次按下将再启动一个终端，并且垂直平分两个屏幕
+* $mod + shift + q 关闭当前活动的窗口
+* $mod + d 显示应用的名称，你可以输入相应的应用并启动,$PATH 中的应用
+
+* $mod + j 可以将焦点切换到左边
+* $mod + ; 可以将焦点切换到右边
+* $mod + k 可以将焦点切换到下边
+* $mod + l 可以将焦点切换到上边
+
+* $mod + Left 	可以将焦点切换到左边
+* $mod + Right 	可以将焦点切换到右边
+* $mod + Down 	可以将焦点切换到下边
+* $mod + Up 	可以将焦点切换到上边
+
+* $mod + Shift + j 可以将窗口移动到左边
+* $mod + Shift + ; 可以将窗口移动到右边
+* $mod + Shift + k 可以将窗口移动到下边
+* $mod + Shift + l 可以将窗口移动到上边
+
+* $mod + Shift + Left 	可以将窗口移动到左边
+* $mod + Shift + Right 	可以将窗口移动到右边
+* $mod + Shift + Down 	可以将窗口移动到下边
+* $mod + Shift + Up 	可以将窗口移动到上边
 
 * $mod + v 水平平分屏幕，即，再次启动终端时,将水平切分屏幕
 * $mod + h 垂直平分屏幕，即，再次启动终端时,将垂直切分屏幕
 
+* $mod + f 全屏显示当前窗口,多次按会来回切换
+
 * $mod + w 按标签的形式显示窗口
 * $mod + s 按堆积的形式显示窗口
 * $mod + e 按水平或者垂直的形式显示窗口
-* $mod + f 全屏显示当前窗口
+
+* $mod + a		使焦点集中到父级窗口
+* $mod + shift + Space 	使窗口浮动在其他窗口上
+* $mod + Space 		浮动窗口与平铺窗口来回切换
 
 * $mod + num 切换到某个工作区，num的值是 1-9 还有 0.
 * $mod + shift + num 将当前活动的窗口移动到对应的工作区
-* $mod + d 显示应用的名称，你可以输入相应的应用并启动,$PATH 中的应用
-* $mod + shift + q 关闭当前活动的窗口
-* $mod + shift + e 注销
-* $mod + shift + r 重新启动 i3, 修改配置文件后可以使其生效
-* $mod + shift + Space 使窗口浮动在其他窗口上
 
-以上是 i3 默认情况下的基本使用。
+* $mod + shift + e 注销 i3
+* $mod + shift + c 重新加载 i3 配置文件
+* $mod + shift + r 重新启动 i3, 修改配置文件后可以使其生效
+
+以上均是在 i3 的默认模式下的操作，i3 还有其他模式，如 `resize`
+
+* $mod + r 进入 resize 模式,按 回车， ESC，或者再次按 $mod + r 则恢复默认模式
+`resize` 模式可以按上下左右键或者 `jkl;` 键调整窗口大小
+
+以上是 i3 默认的配置
 
 ### 3. i3 配置与美化
 配置文件的位置，全局配置文件 `/etc/i3/config`,用户配置文件：`～/.config/i3/config`
