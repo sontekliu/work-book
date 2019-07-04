@@ -141,7 +141,7 @@ Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 使用 pacstrap 脚本，安装 base, base-devel 组,若想安装其他的也可以添加到后面，并用空格隔开。也可以在 `Chroot` 之后，使用 `pacman` 安装。
 
 ```
-# pacstrap /mnt base base-devel vim git net-tools curl wget
+# pacstrap /mnt base base-devel vim git net-tools curl wget zsh openssh sudo screenfetch
 ```
 
 ### 13. 生成 fatab

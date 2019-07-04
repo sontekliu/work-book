@@ -28,7 +28,7 @@ sontek ALL=(ALL) ALL
 ```
 $ sudo pacman -S xorg-server xterm xorg-xeyes xorg-xclock
 $ sudo pacman -S xorg-xinit
-$ sudo pacman -S xf6-video-vesa
+$ sudo pacman -S xf86-video-vesa
 ```
 执行 `startx` 可以看一下效果，可以看到会显示一个特别简陋的图形界面
 
