@@ -18,3 +18,20 @@ bindsym $mod + d exec rofi -show run
 
 
 
+```
+rofi.color-enabled: true
+rofi.color-window: #272827, #13bf9d, #13bf9d
+rofi.color-normal: #272827, #657b83, #272827, #272827, #13bf9d
+rofi.color-active: #272827, #657b83, #272827, #272827, #13bf9d
+rofi.color-urgent: #272827, #657b83, #272827, #272827, #13bf9d
+
+rofi.separator-style: solid
+rofi.sidebar-mode: false
+rofi.lines: 5
+rofi.font: Monaco 12
+rofi.bw: 1
+rofi.columns: 2
+rofi.padding: 5
+rofi.fixed-num-lines: true
+rofi.hide-scrollbar: true
+```
