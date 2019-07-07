@@ -16,8 +16,7 @@ bindsym $mod + d exec rofi -show run
 
 ### 3. 配置样式
 
-
-
+编辑 `~/.Xresources` 配置文件，添加如下内容：
 ```
 rofi.color-enabled: true
 rofi.color-window: #272827, #13bf9d, #13bf9d

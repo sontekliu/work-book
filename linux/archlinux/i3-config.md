@@ -45,81 +45,10 @@ set $color13    #D99F57
 set $color14    #C9A554
 set $color15    #EAD49B
 
-# 设置 mod 键，Mod1==Alt  Mod4==Win
-set $mod Mod4
-
-# 设置窗口的字体和字号，也适用于 bar
-# font pango:monospace 10
-font pango:Monaco 10
-# font pango:Courier New 12
-# font pango:WenQuanYi Zen Hei 12
-# font pango:Noto Sans CJK SC 12
-
-# 使用鼠标+$mod 键拖拽浮动接口，$mod+shift+space 可使窗口浮动
-floating_modifier $mod
-
-############################
-#   快捷键绑定
-############################
-# 开启终端  -sh 透明度，值越大越透明
-# bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec urxvt -sh 40
-# 关闭窗口
-bindsym $mod+Shift+q kill
-
-# 开启菜单，程序启动器
 # bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run
-# 改变焦点,semicolon 是分好
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-# 可使用上下左右键改变焦点
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
-# 移动焦点窗口
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-# 也可以使用上下左右键移动焦点窗口
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
-# 纵向显示窗口
-bindsym $mod+h split h
-# 横向显示窗口
-bindsym $mod+v split v
-# 全屏显示窗口
-bindsym $mod+f fullscreen toggle
-
-# 改变容器的布局规则 堆叠(stacking),标签(tabbed)，分屏(split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# 浮动当前窗口
-bindsym $mod+Shift+space floating toggle
-# 浮动窗口和平铺窗口切换焦点
-bindsym $mod+space focus mode_toggle
-
-# 焦点改成父容器
-bindsym $mod+a focus parent
-# focus the child container
-# bindsym $mod+d focus child
-
-# 重新加载配置文件
-bindsym $mod+Shift+c reload
-# 重启 i3
-bindsym $mod+Shift+r restart
-# 退出 i3
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # 锁屏
 bindsym $mod+shift+x exec i3lock
 
@@ -286,31 +215,6 @@ client.unfocused        $foreground     $background     $foreground     $color4 
 client.urgent           $foreground     $background     $foreground     $color4     $color4
 client.placeholder      $foreground     $background     $foreground     $color4     $color4
 client.background       $background
-
-
-
-#################################
-#  启用模式
-#################################
-bindsym $mod+r mode "resize"
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # 返回默认的模式
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
 
 #################################
 # 电源管理
