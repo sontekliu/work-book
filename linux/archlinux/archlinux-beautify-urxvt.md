@@ -1,17 +1,22 @@
 # Archlinux 美化 urxvt 
 
+### 1. 首先安装 `urxvt`
+
+```
+$ sudo pacman -S rxvt-unicode
+$ sudo pacman -S urxvt-perls
+$ yaourt font-size
+$ yaourt urxvt-fullscreen
+使配置生效
+$ xrdb -load ~/.Xresources
+```
+
+### 2. 编辑 `~/.Xresources` 配置文件
 
 ```
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!    urxvt 配置文件
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! 安装 urxvt
-!sudo pacman -S rxvt-unicode
-!sudo pacman -S urxvt-perls
-!yaourt font-size
-!yaourt urxvt-fullscreen
-!使配置生效
-! $ xrdb -load ~/.Xresources
 
 !urxvt 配置
 !!$HOME/.Xresources
@@ -97,8 +102,6 @@ URxvt.font:             xft:Monospace:size=14:antialias=true:style=Regular
 URxvt.boldFont:         xft:Monospace:bold:size=14:antialias=true:style=Regular
 ! URxvt.font:             xft:Monaco:size=12:antialias=true:style=Regular
 ! URxvt.boldFont:         xft:Monaco:bold:size=12:antialias=true:style=Regular
-! URxvt.font:xft:Monospace:size=14:style=Regular:antialias=true,xft:WenQuanYi Bitmap Song:size=14:style=Regular:antialias=true
-! URxvt.boldfont:xft:Monospace:size=14:style=Bold:antialias=true,xft:WenQuanYi Bitmap Song:size=14:style=Bold:antialias=true
 URxvt.letterSpace:              0
 URxvt.lineSpace:                1
 !!滚动条设置，不显示滚动条
@@ -138,6 +141,7 @@ URxvt.keysym.C-s:               perl:keyboard-select:search
 ! Ctrl+Left	    Move tab to the left
 ! Ctrl+Right	    Move tab to the right
 ! Ctrl+d	    Close tab
+! URxvt 选项卡配置
 URxvt.tabbed.tabbar-fg:         2
 URxvt.tabbed.tabbar-bg:         0
 URxvt.tabbed.tab-fg:            3
@@ -221,6 +225,23 @@ URxvt.urgentOnBell: True
 !URxvt.underlineURLs: true
 !URxvt.urlButton: 1
 ```
+
+### 3. 透明启动 urxvt
+
+* 3.1 首先安装 `compton`。
+```
+$ sudo pacman -S compton
+```
+* 3.2 i3 中配置开机启动
+```
+exec --no-startup-id compton -b
+```
+* 3.3 配置 urxvt 透明参数
+```
+bindsym $mod + Return exec urxvt -sh 40  # 1-100 透明参数
+```
+
+### Rofi 菜单设置
 
 ```
 ##################### Rofi config ################################
