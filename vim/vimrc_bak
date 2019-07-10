@@ -1,0 +1,303 @@
+" 关闭 vi 兼容模式
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vimcn/vimcdoc'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" markdown 语法高亮
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+" markdown 实时预览
+Plugin 'suan/vim-instant-markdown'
+ " Plugin 'kien/ctrlp.vim'
+ " Plugin 'elzr/vim-json'
+ " Plugin 'scrooloose/nerdcommenter'
+ " Plugin 'scrooloose/nerdtree'
+ " Plugin 'Xuyuanp/nerdtree-git-plugin'
+ " Plugin 'scrooloose/syntastic'
+ " " Vim colorscheme 
+ " Plugin 'vim-scripts/summerfruit256.vim'
+ " Plugin 'flazz/vim-colorschemes'
+ " Plugin 'altercation/vim-colors-solarized'
+ " Plugin 'tomasr/molokai'
+ " Plugin 'vim-scripts/phd'
+ " 
+ " Plugin 'nathanaelkane/vim-indent-guides'
+ " Plugin 'derekwyatt/vim-fswitch'
+ " Plugin 'kshenoy/vim-signature'
+ " Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
+ " Plugin 'majutsushi/tagbar'
+ " Plugin 'vim-scripts/indexer.tar.gz'
+ " Plugin 'vim-scripts/DfrankUtil'
+ " Plugin 'vim-scripts/Vimprj'
+ " Plugin 'dyng/ctrlsf.vim'
+ " Plugin 'terryma/vim-multiple-cursors'
+ " Plugin 'vim-scripts/DrawIt'
+ " Plugin 'SirVer/ultisnips'
+ " "Plugin 'Valloric/YouCompleteMe'
+ " Plugin 'derekwyatt/vim-protodef'
+ " Plugin 'fholgado/minibufexpl.vim'
+ " Plugin 'gcmt/wildfire.vim'
+ " Plugin 'sjl/gundo.vim'
+ " Plugin 'Lokaltog/vim-easymotion'
+ " Plugin 'lilydjwg/fcitx.vim'
+ " Plugin 'tpope/vim-surround'
+ " Plugin 'rudes/vim-java'
+ " Plugin 'vim-scripts/taglist.vim'
+ " "Plugin 'javacomplete.vim'
+ " Plugin 'L9'
+ " Plugin 'eclipse.vim'
+call vundle#end()
+
+" 侦测文件类型，载入文件类型插件，为特定文件类型载入相关缩进文件
+filetype plugin indent on
+
+""""""""""""""""""""""""""""""
+" Global Config
+""""""""""""""""""""""""""""""
+let mapleader=","
+map R :source $MYVIMRC<CR>
+set shortmess=atI
+" 设置历史记录
+set history=500
+if version >= 603
+    set helplang=cn
+    set encoding=utf-8
+endif
+
+
+""""""""""""""""""""""""""""""
+" 颜色配置
+""""""""""""""""""""""""""""""
+set t_Co=256
+let &t_ut=''
+set background=dark
+" 启动代码高亮
+syntax enable
+syntax on
+" 设置配色方案
+colorscheme ron
+
+""""""""""""""""""""""""""""""
+" Space and Tab
+""""""""""""""""""""""""""""""
+" Tab 就是空格
+set expandtab
+" 设置 TAB 键是 4 个空格
+set tabstop=4
+" 编辑模式下按一下 TAB 表示 4 个空格,退格键可以一次删除4个空格
+set softtabstop=4
+" 设定<<和>>命令移动时的宽度为 4
+set shiftwidth=4
+set smarttab
+    
+
+"""""""""""""""""""""""""""""
+" 外观设置
+"""""""""""""""""""""""""""""
+" 显示行好
+set number
+" 行号的宽度
+set numberwidth=4
+" 底部 bar 显示最后执行的命令
+set showcmd
+" 高亮当前行,根据配色方案的不同而不同
+" set cursorline
+" command bar 的高度
+set cmdheight=2
+" 显示状态栏, 1 表示不显示状态栏
+set laststatus=2
+" 命令行按 TAB 键自动补全
+set wildmenu
+" redraw only when we need to
+set lazyredraw
+" 高亮匹配
+set showmatch
+" 匹配括号高亮的时间,单位是十分之一秒
+set matchtime=2
+" 显示模式
+set showmode
+" 设置文本宽度,超过该宽度自动换行
+set textwidth=120
+set colorcolumn=120
+" 不换行
+set wrap
+" 显示标尺
+set ruler
+" 光标移动到顶部和底部时，保持3行行距
+set scrolloff=3
+" 长行，右移动到不能显示的文字上，Vim 会自动让你看到后面的5个字符
+set sidescroll=5
+" m表示允许在两个汉字中间换行，B表示将两行为一行的时候不要在两个汉字之间加入空格
+set fo+=mB
+
+
+
+
+"""""""""""""""""""""""""""""
+" Search 
+"""""""""""""""""""""""""""""
+" 高亮匹配
+set hlsearch
+" 边搜索边匹配
+set incsearch
+" 打开文件时，去除高亮
+exec "nohlsearch"
+" 回车关闭高亮
+nnoremap <leader><space> :nohlsearch<CR>
+" 搜索时忽略大小写
+set ignorecase
+" 只能大小写
+set smartcase
+
+
+
+
+
+
+"""""""""""""""""""""""""""""
+" 鼠标相关
+"""""""""""""""""""""""""""""
+set mouse=a
+set selection=exclusive
+set selectmode=mouse,key
+
+
+
+
+"""""""""""""""""""""""""""""
+" 折叠
+"""""""""""""""""""""""""""""
+" 启用折叠
+set foldenable
+" set nofen  关闭折叠
+" 0 表示打开文件时都是折叠的，99 表示均不折叠, 10 表示光标附近的不折叠
+set foldlevelstart=10
+" 设置折叠嵌套层级
+set foldnestmax=5
+" 根据缩进进行折叠
+set foldmethod=indent
+" <space> open/close fold
+nnoremap <space> za
+
+
+
+
+"""""""""""""""""""""""""""""
+" Key RemMap
+"""""""""""""""""""""""""""""
+" 禁止使用上下左右键
+map <UP> <NOP>
+map <DOWN> <NOP>
+map <LEFT> <NOP>
+map <RIGHT> <NOP>
+inoremap <UP> <NOP>
+inoremap <DOWN> <NOP>
+inoremap <LEFT> <NOP>
+inoremap <RIGHT> <NOP>
+" 垂直移动,适用于折行的情况
+nnoremap j gj
+nnoremap k gk
+" Insert 模式 jk == <esc>
+inoremap jk <esc>
+" 设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <leader>y "+y
+" 设置快捷键将系统剪贴板内容粘帖至 vim
+nmap <leader>p "+p
+
+" 分屏相关
+map sl :set splitright<CR>:vsplit<CR>
+map sh :set nosplitright<CR>:vsplit<CR>
+map sj :set splitbelow<CR>:split<CR>
+map sk :set nosplitbelow<CR>:split<CR>
+" 标签相关
+map <leader>t :tabnew<CR>
+map tt :tabNext<CR>
+map tc :tabclose<CR>
+
+
+
+
+"""""""""""""""""""""""""""""
+" 其他设置
+"""""""""""""""""""""""""""""
+set clipboard+=unnamed
+" iskeyword 指定哪儿些字母可以出现在一个单词中，
+" @ 表示所有字母，48-57表示0-9，192-255是可以显示的拉丁字符
+" 可以添加其他字符，例如，set iskeyword+=-,
+set iskeyword+=@,48-57,_,192-255
+" 被分割的窗口间显示空白，便于阅读
+" set fillchars=vert:\ ,stl:\, stlnc:\
+" backspace 可以正常处理 eol,start,indent
+set backspace=eol,start,indent
+" 允许空格键和光标跨越行边界
+set whichwrap+=<,>,h,l
+" 关闭错误提示响铃
+set noerrorbells
+set novisualbell
+set t_vb=
+" 隐藏工具栏
+set guioptions-=T
+" 隐藏菜单栏
+set guioptions-=m
+" 禁止显示滚动条
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+" 自动读入
+set autoread
+" 设置魔术
+set magic
+" 在处理未保存或只读文件的时候，弹出确认
+set confirm
+set completeopt=preview,menu
+
+
+
+"""""""""""""""""""""""""""""
+" font 
+"""""""""""""""""""""""""""""
+set guifont=Courier_New:h12:cANSI
+
+
+
+
+"""""""""""""""""""""""""""""
+" 智能缩进
+"""""""""""""""""""""""""""""
+" 设置自动缩进
+set autoindent
+set smartindent
+set cindent
+
+
+
+
+"""""""""""""""""""""""""""""
+" 编码设置
+"""""""""""""""""""""""""""""
+set encoding=utf-8
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312
+set fileencodings=utf-8
+set termencoding=utf-8
+set langmenu=zh_CN.UTF-8
+set helplang=cn
+
+
+
+
+"""""""""""""""""""""""""""""
+" backup 相关
+"""""""""""""""""""""""""""""
+set nobackup
+set noswapfile
+" 自动保存
+set autowrite
+
+
+
+
