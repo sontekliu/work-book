@@ -16,13 +16,12 @@ Plug 'suan/vim-instant-markdown'
  " Plug 'scrooloose/nerdtree'
  " Plug 'Xuyuanp/nerdtree-git-plugin'
  " Plug 'scrooloose/syntastic'
- " " Vim colorscheme 
+ " Vim colorscheme 
  " Plug 'vim-scripts/summerfruit256.vim'
  " Plug 'flazz/vim-colorschemes'
  " Plug 'altercation/vim-colors-solarized'
  " Plug 'tomasr/molokai'
  " Plug 'vim-scripts/phd'
- " 
  " Plug 'nathanaelkane/vim-indent-guides'
  " Plug 'derekwyatt/vim-fswitch'
  " Plug 'kshenoy/vim-signature'
@@ -52,6 +51,8 @@ call plug#end()
 " 侦测文件类型，载入文件类型插件，为特定文件类型载入相关缩进文件
 filetype plugin indent on
 
+
+
 """"""""""""""""""""""""""""""
 " Global Config
 """"""""""""""""""""""""""""""
@@ -66,10 +67,11 @@ if version >= 603
 endif
 
 
+
 """"""""""""""""""""""""""""""
 " 颜色配置
 """"""""""""""""""""""""""""""
-set t_Co=256
+" set t_Co=256
 let &t_ut=''
 set background=dark
 " 启动代码高亮
@@ -77,20 +79,24 @@ syntax enable
 syntax on
 " 设置配色方案
 colorscheme ron
+" 鼠标相关
+set mouse=a
+set selection=exclusive
+set selectmode=mouse,key
 
-""""""""""""""""""""""""""""""
-" Space and Tab
-""""""""""""""""""""""""""""""
-" Tab 就是空格
-set expandtab
-" 设置 TAB 键是 4 个空格
-set tabstop=4
-" 编辑模式下按一下 TAB 表示 4 个空格,退格键可以一次删除4个空格
-set softtabstop=4
-" 设定<<和>>命令移动时的宽度为 4
-set shiftwidth=4
-set smarttab
-    
+
+
+"""""""""""""""""""""""""""""
+" 编码设置
+"""""""""""""""""""""""""""""
+set encoding=utf-8
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312
+set fileencodings=utf-8
+set termencoding=utf-8
+set langmenu=zh_CN.UTF-8
+set helplang=cn
+
+
 
 """""""""""""""""""""""""""""
 " 外观设置
@@ -118,8 +124,8 @@ set matchtime=2
 " 显示模式
 set showmode
 " 设置文本宽度,超过该宽度自动换行
-set textwidth=120
-set colorcolumn=120
+set textwidth=100
+set colorcolumn=100
 " 不换行
 set wrap
 " 显示标尺
@@ -133,6 +139,27 @@ set fo+=mB
 
 
 
+"""""""""""""""""""""""""""""
+" font 
+"""""""""""""""""""""""""""""
+set guifont=Courier_New:h12:cANSI
+
+
+
+""""""""""""""""""""""""""""""
+" Space and Tab
+""""""""""""""""""""""""""""""
+" Tab 就是空格
+set expandtab
+" 设置 TAB 键是 4 个空格
+set tabstop=4
+" 编辑模式下按一下 TAB 表示 4 个空格,退格键可以一次删除4个空格
+set softtabstop=4
+" 设定<<和>>命令移动时的宽度为 4
+set shiftwidth=4
+set smarttab
+
+    
 
 """""""""""""""""""""""""""""
 " Search 
@@ -152,19 +179,6 @@ set smartcase
 
 
 
-
-
-
-"""""""""""""""""""""""""""""
-" 鼠标相关
-"""""""""""""""""""""""""""""
-set mouse=a
-set selection=exclusive
-set selectmode=mouse,key
-
-
-
-
 """""""""""""""""""""""""""""
 " 折叠
 """""""""""""""""""""""""""""
@@ -179,7 +193,6 @@ set foldnestmax=5
 set foldmethod=indent
 " <space> open/close fold
 nnoremap <space> za
-
 
 
 
@@ -204,7 +217,6 @@ inoremap jk <esc>
 vnoremap <leader>y "+y
 " 设置快捷键将系统剪贴板内容粘帖至 vim
 nmap <leader>p "+p
-
 " 分屏相关
 map sl :set splitright<CR>:vsplit<CR>
 map sh :set nosplitright<CR>:vsplit<CR>
@@ -214,7 +226,6 @@ map sk :set nosplitbelow<CR>:split<CR>
 map <leader>t :tabnew<CR>
 map tt :tabNext<CR>
 map tc :tabclose<CR>
-
 
 
 
@@ -256,34 +267,12 @@ set completeopt=preview,menu
 
 
 """""""""""""""""""""""""""""
-" font 
-"""""""""""""""""""""""""""""
-set guifont=Courier_New:h12:cANSI
-
-
-
-
-"""""""""""""""""""""""""""""
 " 智能缩进
 """""""""""""""""""""""""""""
 " 设置自动缩进
 set autoindent
 set smartindent
 set cindent
-
-
-
-
-"""""""""""""""""""""""""""""
-" 编码设置
-"""""""""""""""""""""""""""""
-set encoding=utf-8
-set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312
-set fileencodings=utf-8
-set termencoding=utf-8
-set langmenu=zh_CN.UTF-8
-set helplang=cn
-
 
 
 
@@ -295,6 +284,28 @@ set noswapfile
 " 自动保存
 set autowrite
 
+
+
+"""""""""""""""""""""""""""""
+" 插件配置
+"""""""""""""""""""""""""""""
+" markdown  禁用折叠
+let g:vim_markdown_folding_disabled = 1
+" 窗口自适应,TOC (Table Of Content)
+let g:vim_markdown_toc_autofit = 1
+" let g:vim_markdown_conceal = 0
+" JSON 语法高亮，需要 elzr/vim-json 插件的支持
+let g:vim_markdown_json_frontmatter = 1
+" 使用项目列表时，增加子列表时，缩排的空格数
+let g:vim_markdown_new_list_item_indent = 4
+
+" 关闭即时更新
+" 1. 一段时间没有任何输入时更新
+" 2. 离开 insert mode 时更新
+" 3. 存储文档时更新
+let g:instant_markdown_slow = 1
+" 自动启动浏览器, :InstantMarkdownPreview，也可以启动
+let g:instant_markdown_autostart = 1
 
 
 
