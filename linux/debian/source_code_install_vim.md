@@ -57,8 +57,9 @@ git clean -fdx
     --prefix=/usr/local/vim \  # 安装目录
     --with-features=huge \  # 启用最多的 feature
     --enable-multibyte \    # 多字节语言支持
+    --enable-mzschemeinterp \    # 多字节语言支持
     --enable-largefile \    
-    --enable-cscope=yes \   
+    --enable-cscope \   
     --enable-perlinterp=dynamic \
     --enable-rubyinterp=dynamic \
     --enable-luainterp=dynamic \
