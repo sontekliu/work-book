@@ -6,7 +6,7 @@
 
 ### 2. Vim 配置
 
-- [荒野無燈-Vimrc](https://gitee.https://gitee.com/8ox86/vimrccom/8ox86/vimrc)  
+- [荒野無燈-Vimrc](https://gitee.https://gitee.com/8ox86/vimrccom/8ox86/vimrc)
 - [荒野無燈-Gitee](https://gitee.com/8ox86)
 - [荒野無燈-Blog](http://80x86.io)
 - [Vim-wiki](https://vim.fandom.com/wiki/Open_vimrc_file)

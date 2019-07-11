@@ -238,9 +238,10 @@ set clipboard+=unnamed
 " 可以添加其他字符，例如，set iskeyword+=-,
 set iskeyword+=@,48-57,_,192-255
 " 被分割的窗口间显示空白，便于阅读
-" set fillchars=vert:\ ,stl:\, stlnc:\
+set fillchars=vert:\ ,stl:\, stlnc:\
 " backspace 可以正常处理 eol,start,indent
 set backspace=eol,start,indent
+set backspace=2
 " 允许空格键和光标跨越行边界
 set whichwrap+=<,>,h,l
 " 关闭错误提示响铃
@@ -262,7 +263,12 @@ set autoread
 set magic
 " 在处理未保存或只读文件的时候，弹出确认
 set confirm
+" 代码补全
 set completeopt=preview,menu
+" 通过使用：commands 告诉我们文件的哪一行被改过
+set report=0
+" 让配置立即生效
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 
 
