@@ -54,24 +54,24 @@ make clean
 git clean -fdx
 
 ./configure \
-    --prefix=/usr/local/ \  # 安装目录
+    --prefix=/usr/local/vim \  # 安装目录
     --with-features=huge \  # 启用最多的 feature
     --enable-multibyte \    # 多字节语言支持
+    --enable-largefile \    
     --enable-cscope=yes \   
-    --enable-perlinterp=yes \
-    --enable-rubyinterp=yes \
-    --with-ruby-command=/usr/bin/ruby \
-    --enable-luainterp=yes \
-    --enable-pythoninterp=yes \
-    --enable-python3interp=yes \
-    --enable-tclinterp=yes \
-    --enable-gui=auto \
+    --enable-perlinterp=dynamic \
+    --enable-rubyinterp=dynamic \
+    --enable-luainterp=dynamic \
+    --enable-pythoninterp=dynamic \
+    --enable-python3interp=dynamic \
+    --enable-tclinterp=dynamic \
+    --enable-gui=no \
     # --enable-gnome-check \
-    --enable-sniff \
     --enable-xim \
     --enable-fontset \
+    --enable-terminal \
     --with-x \
-    --with-compiledby=$USER  # 可有可无
+    --with-compiledby="sontek" # 可有可无
 
 make && src/vim --version
 
