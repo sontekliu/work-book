@@ -1,6 +1,6 @@
 # Vim 安装 Markdown 插件
 
-### 1. 安装 markdown 高亮
+### 1. 安装 markdown 高亮(需要 Python 支持)
 
 在 `~/.vim/vimrc` 下面添加插件，如下：
 
