@@ -28,5 +28,6 @@ call plug#end()
 
 ```shell
 $ sudo pacman -S nodejs
+$ sudo npm -g install instant-markdown-d
 ```
 
