@@ -146,6 +146,7 @@ export LC_TYPE=zh_CN.UTF-8
 ### 11.  安装 screenfetch
 ```
 $ sudo pacman -S screenfetch
+$ sudo pacman -S neofetch
 $ screenfetch    #  显示当前系统图标
 ```
 
