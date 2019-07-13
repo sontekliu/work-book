@@ -247,4 +247,79 @@ $ nameserver 8.8.8.8
 
 
 
+### 6. archlinux 无线网络配置
+
+* 1. 首先获取接口名称：
+
+```
+# iw dev 
+输出如下：
+phy#0 
+    Interface wlp0s19f2u1
+            ifindex3
+            wdev 0x1
+            addr 12:34:56:78:9a:bc
+            type managed
+            channel 1 (2412 MHz), width: 40 MHz, center1: 2422 MHz
+```
+`wlp0s19f2u1` 是无线接口名称。
+
+* 2. 检查链接状态
+```
+# iw dev wlp0s19f2u1 link
+Not connected.
+```
+表示未链接到无线网络
+
+* 3. 激活网线网络接口
+```
+# ip link set wlp0s19f2u1 up
+```
+* 4. 查看无线网络接口启用状态
+```
+# ip link show wlp0s19f2u1
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
+    link/ether 12:34:56:78:9a:bc brd ff:ff:ff:ff:ff:ff
+```
+`<BROADCAST,MULTICAST,UP,LOWER_UP>` 中的`UP` 显示接口已经打开。
+
+* 5. 查看可接入的无线网
+```
+# iw dev wlp0s19f2u1 scan | less
+```
+其中 `SSID` 是无线网络名称
+
+* 6. 链接到无线网络
+    - 链接到无加密的无线网络
+    ```
+    # iw wlp0s19f2u1 connect SSID
+    ```
+    - 链接到 WPA/WPA2 加密类型的网络
+    ```
+    # wpa_supplicant -i wlp0s19f2u1 -c <(wpa_passphrase SSID PASSWORD)
+    # iw dev wlp0s19f2u1 link  查看链接情况
+    ```
+* 7. 获取ip地址
+    - DHCP
+    ```
+    # dhcpcd wlp0s19f2u1
+    ```
+    - 静态 IP
+    ```
+    # ip addr add 192.168.0.2/24 dev wlp0s19f2u1
+    # ip route add default via 192.168.0.1
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
