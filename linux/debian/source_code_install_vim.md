@@ -71,7 +71,7 @@ git clean -fdx
     --enable-xim \
     --enable-fontset \
     --enable-terminal \
-    --with-x \
+    # --with-x \
     --with-compiledby="sontek" # 可有可无
 
 make && src/vim --version
