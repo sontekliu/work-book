@@ -11,9 +11,9 @@ Plug 'plasticboy/vim-markdown'
 " markdown 实时预览
 Plug 'suan/vim-instant-markdown'
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdcommenter'
  " Plug 'kien/ctrlp.vim'
  " Plug 'elzr/vim-json'
  " Plug 'scrooloose/syntastic'
@@ -334,3 +334,47 @@ inoreabbrev <expr> __
           \ <SID>isAtStartOfLine('__') ?
           \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 " vim-table-mode end
+
+" NERDTree start
+" 定义快捷键
+map <F3> :NERDTreeToggle<CR>
+" 自动打开 NERDTree
+" autocmd vimenter * NERDTree
+
+autocmd StdinReadPre * let s:std_in=1
+" 没有指定文件时，自动打开 NERDTree
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"  打开目录时，自动打开 NERDTree
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+" 只剩下目录结构时，自动关闭
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" 显示行号
+let g:NERDTreeShowLineNumbers=1
+" 显示宽度
+let g:NERDTreeWinSize=32
+" 显示隐藏文件,1:显示，0:隐藏
+let g:NERDTreeShowHidden=0
+" 忽略文件
+let g:NERDTreeIgnore=['\.DS_Store', '\.swp']
+" 显示书签
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+" NERDTree end
+
+
+" nerdtree git plugin start 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+" nerdtree git plugin end
