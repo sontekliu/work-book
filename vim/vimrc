@@ -104,6 +104,7 @@ set helplang=cn
 """""""""""""""""""""""""""""
 " 显示行好
 set number
+set relativenumber
 " 行号的宽度
 set numberwidth=4
 " 底部 bar 显示最后执行的命令
