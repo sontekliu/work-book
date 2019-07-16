@@ -26,6 +26,7 @@ $ sudo pacman -Rs package_name
 
 升级整个系统
 ```
+$ sudo pacman -S archlinux-keyring
 $ sudo pacman -Syu
 ```
 
