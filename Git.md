@@ -46,6 +46,7 @@
 * [ArchLinux&Vim](http://0x3f.org)
 * [ArchLinux&Vim推荐](http://www.mikewootc.com/index.html)
 * [52Gvim](https://www.52gvim.com)
+* [Thinking in linux ](https://www.linuxsong.org)
 
 
 
