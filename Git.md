@@ -45,6 +45,7 @@
 * [Linux大鹏](http://roclinux.cn)
 * [ArchLinux&Vim](http://0x3f.org)
 * [ArchLinux&Vim推荐](http://www.mikewootc.com/index.html)
+* [52Gvim](https://www.52gvim.com)
 
 
 
