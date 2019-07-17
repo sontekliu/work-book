@@ -252,4 +252,37 @@ vim /etc/hosts
 最后，通过执行 `reboot` 重启系统，`systemd` 将自动卸载仍然挂载的任何分区。不要忘记移除安装介质，然后使用 root 帐户登录到新系统。
 
 
-### 21. 安装交换文件
+### 21. 交换文件的创建与删除
+
+> 1. 创建交换文件
+
+```shell
+# fallocate -l 512M  /swapfile  # root 用户，文件单位是 M/G
+# chmod 600 /swapfile           # 修改权限，交换文件全局可读是一个巨大的本地漏洞
+# mkswap /swapfile              # 格式化交换文件
+# swapon /swapfile              # 启用交换文件
+# vim /etc/fstab                # 编辑 /etc/fstab 文件, 添加如下内容
+
+/swapfile   none  swap    defaults    0   0
+```
+
+> 2. 删除交换文件
+
+```shell
+# swapoff -a                    # 停用 swapfile
+# rm -rf /swapfile              # 删除 swapfile
+# 从 /etc/fstab 中删除相关条目
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
