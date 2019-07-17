@@ -53,7 +53,7 @@ creating : /Users/sontek/.config/ranger/scope.sh            # 用于指定预览
 
 ### 3. 配置 Ranger
 
-默认情况下，在 `archlinux` 中是可以预览图片的，但是在 `MacOS` 中是不能预览图片的，需做如下修改
+- 默认情况下，在 `archlinux` 中是可以预览图片的，但是在 `MacOS` 中是不能预览图片的，需做如下修改
 
 ```
 $ vim ~/.config/ranger/rc.conf
@@ -64,11 +64,21 @@ set preview_images_method iterm2
 
 ---
 
-启动 `ranger` 时，使用边框环绕。
+- 启动 `ranger` 时，使用边框环绕。
 
 ```
 set draw_borders outline    # separators, outline, both, none
 ```
+
+---
+
+- 与版本管理器集成
+
+```
+set vcs_aware true
+```
+
+
 
 ### 4. Ranger 快捷键
 
