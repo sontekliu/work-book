@@ -2,10 +2,10 @@
 
 ### 1. 安装 alsa-utils
 
-首先确认是否已安装 `alas-utils`
+首先确认是否已安装 `alsa-utils`
 
 ```shell
-$ sudo pacman -S alas-utils
+$ sudo pacman -S alsa-utils
 ```
 
 ### 2. 运行 alsamixer 调试音量
