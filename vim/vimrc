@@ -14,6 +14,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
  " Plug 'kien/ctrlp.vim'
  " Plug 'elzr/vim-json'
  " Plug 'scrooloose/syntastic'
@@ -42,7 +43,6 @@ Plug 'scrooloose/nerdcommenter'
  " Plug 'sjl/gundo.vim'
  " Plug 'Lokaltog/vim-easymotion'
  " Plug 'lilydjwg/fcitx.vim'
- " Plug 'tpope/vim-surround'
  " Plug 'rudes/vim-java'
  " Plug 'vim-scripts/taglist.vim'
  " Plug 'javacomplete.vim'
@@ -379,3 +379,16 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 " nerdtree git plugin end
+
+" vim-surround start
+vmap " S"
+vmap ' S'
+vmap ` S`
+vmap [ S[
+vmap ( S(
+vmap { S{
+vmap } S}
+vmap ] S]
+vmap ) S)
+vmap > S>
+" vim-surround end
