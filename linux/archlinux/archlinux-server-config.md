@@ -2,10 +2,7 @@
 
 ### 软件安装
 
-* pacman -S ranger
-* pacman -S zsh
-* pacman -S git
-* pacman -S neoffetch
+* pacman -S wget curl net-tools neoffetch zsh git ranger lrzsz
 * pacman -S thrift
 * pacman -S nodejs
 * pacman -S npm
