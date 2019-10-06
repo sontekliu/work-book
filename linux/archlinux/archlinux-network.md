@@ -249,6 +249,13 @@ $ nameserver 8.8.8.8
 
 ### 6. archlinux 无线网络配置
 
+* 安装软件
+
+```shell
+sudo pacman -S iw
+sudo pacman -S dialog
+```
+
 * 1. 首先获取接口名称：
 
 ```
@@ -263,6 +270,15 @@ phy#0
             channel 1 (2412 MHz), width: 40 MHz, center1: 2422 MHz
 ```
 `wlp0s19f2u1` 是无线接口名称。
+
+如果获取不到无线接口名称，那可能是无线网卡驱动没有安装好，具体检查无线网卡驱动安装，参看如下：
+
+https://wiki.archlinux.org/index.php/Wireless_network_configuration_(简体中文)#安装_driver/firmware
+
+我的无线网卡是博通系列，可参考如下：
+
+http://linuxwireless.sipsolutions.net/en/users/Drivers/b43/#Other_distributions_not_mentioned_above
+
 
 * 2. 检查链接状态
 ```
@@ -310,16 +326,18 @@ Not connected.
     # ip route add default via 192.168.0.1
     ```
 
+* 8. 遇到的问题
 
+```
+The interface of network profile 'wlan0-ssid' is already up
+```
 
+将接口 down 即可解决，再次重启即可
 
-
-
-
-
-
-
-
+```shell
+# ip link set wlan0 down
+# netctl start wlan0-ssid
+```
 
 
 
