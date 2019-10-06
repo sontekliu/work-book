@@ -70,14 +70,15 @@
 ```
 然后根据提示进行分区即可。我的分区如下：
 
-序号       | 分区         | 大小
------------|--------------|------------
-    1      | `/`          | 20G
-    2      | `/boot`      | 200M
-    3      | `/home`      | 剩下所有
+|序号      | 分区         | 大小
+|----------|--------------|------------
+|   1      | `/`          | 20G
+|   2      | `/boot`      | 200M
+|   3      | `/home`      | 剩下所有
 没有 swap 分区，因为 swap 分区和 swap 文件的效果是一样的，故使用 swapfile 代替 swap 分区
 
 使用如下命令查看分区情况
+
 ```
 # fdisk -l /dev/sda
 ```
@@ -141,7 +142,7 @@ Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 使用 pacstrap 脚本，安装 base, base-devel 组,若想安装其他的也可以添加到后面，并用空格隔开。也可以在 `Chroot` 之后，使用 `pacman` 安装。
 
 ```
-# pacstrap /mnt base base-devel vim git net-tools curl wget zsh openssh sudo screenfetch
+# pacstrap /mnt base base-devel vim git net-tools curl wget zsh openssh sudo neofetch
 ```
 
 ### 13. 生成 fatab
