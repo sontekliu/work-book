@@ -31,10 +31,6 @@
 # ls /sys/firmware/efi/efivars
 ```
 
-如果目录不存在，系统可能以 BIOS 或 CSM 模式启动，详见您的主板手册。关于 UEFI 说明请自行查阅资料。
-
-> 我的默认不支持 UEFI，以下操作均是以非 UEFI 的方式操作
-
 ### 6. 配置网络
 
 1. 查看系统是否启用了网络接口，命令如下：
@@ -64,17 +60,33 @@
 ```
 列表中以 `loop`，`rom` 或者 `airoot` 结束的可忽略
 
-使用 `fdisk` 创建分区
+使用 `parted` 创建分区
 ```
-# fdisk /dev/sda
+# parted /dev/sda
+GNU Parted 3.2
+Using /dev/sda
+Welcome to GNU Parted! Type 'help' to view a list of commands
+(parted) mklabel
+New disk label type? gpt
+Warning: The existing disk label on /dev/sda will be destoryed and all data on this disk will be
+lost. Do you want to continue? 
+Yes/No? yes
+(parted) quit
+information: You may need to update /etc/fstab
 ```
-然后根据提示进行分区即可。我的分区如下：
 
-|序号      | 分区         | 大小
-|----------|--------------|------------
-|   1      | `/`          | 20G
-|   2      | `/boot`      | 200M
-|   3      | `/home`      | 剩下所有
+分区
+
+```shell
+# cfdisk /dev/sda
+```
+
+| 分区        | 挂载点      | 大小 | 文件系统         |
+|-------------|-------------|------|------------------|
+| `/dev/sda1` | `/`         | 30G  | Linux filesystem |
+| `/dev/sda2` | `/boot/EFI` | 500M | EFI System       |
+| `/dev/sda3` | `/home`     | 30G  | Linux filesystem |
+
 
 没有 swap 分区，因为 swap 分区和 swap 文件的效果是一样的，故使用 swapfile 代替 swap 分区
 
@@ -88,7 +100,9 @@
 分区建立好之后，都要使用适当的文件系统进行格式化，本文使用 `ext4` 文件系统。
 
 ```
-# mkfs.ext4 /dev/sdaX
+# mkfs.ext4 /dev/sda1
+# mkfs.ext4 /dev/sda3
+# mkfs.vfat /dev/sda2 或者 mkfs.fat -F32 /dev/sda2
 ```
 如果创建了交换分区，使用 `mkswap` 将其初始化
 
@@ -99,8 +113,6 @@
 
 ### 10. 挂载分区
 
-首先在 `/mnt` 目录下创建 `boot` 和 `home` 目录。
-
 将根分区挂载到 `/mnt` 下，例如：
 ```
 # mount /dev/sda1 /mnt
@@ -109,9 +121,9 @@
 
 ```
 # cd /mnt
-# mkdir boot & mkdir home
+# mkdir -p boot/EFI & mkdir home
 # mount /dev/sda1 /mnt
-# mount /dev/sda2 /mnt/boot
+# mount /dev/sda2 /mnt/boot/EFI
 # mount /dev/sda3 /mnt/home
 ```
 
@@ -233,11 +245,10 @@ vim /etc/hosts
 安装 grub
 ```
 # pacman -S intel-ucode
+# pacman -S os-prober
 # pacman -S grub efibootmgr
-# grub-install --target=i386-pc /dev/sda
 # grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=grub
 ```
-注意，其中 `/dev/sda` 是要安装 `GRUB` 的磁盘，而**不是**分区 `/dev/sda1`
 
 安装完成之后，GRUB 在每次启动的时候载入配置文件 `/boot/grub/grub.cfg` 可以使用工具生成该配置文件。
 ```
