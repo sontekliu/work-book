@@ -30,17 +30,17 @@ $ sudo apt-get install \
     libxpm-dev
 ```
 
-configure                    | feature             | dependency
------------------------------|---------------------|----------------------
---enable-pythoninterp        | python              | python-dev
---enable-python3interp       | python3             | python3-dev
---enable-rubyinterp          | ruby                | ruby-dev
---enable-luainterp           | lua                 | liblua5.2-dev
---enable-perlinterp          | perl                | libperl-dev
---enable-tclinterp           | tcl                 | libtcl8.6
---enable-gui                 | gVim                | libgonmenui-dev
-                             | clipboard           | libx11-dev libxt-dev
-                             | xpm                 | libxpm-dev
+|configure                    | feature             | dependency
+|-----------------------------|---------------------|----------------------
+|--enable-pythoninterp        | python              | python-dev
+|--enable-python3interp       | python3             | python3-dev
+|--enable-rubyinterp          | ruby                | ruby-dev
+|--enable-luainterp           | lua                 | liblua5.2-dev
+|--enable-perlinterp          | perl                | libperl-dev
+|--enable-tclinterp           | tcl                 | libtcl8.6
+|--enable-gui                 | gVim                | libgonmenui-dev
+|                             | clipboard           | libx11-dev libxt-dev
+|                             | xpm                 | libxpm-dev
 
 ### 3 配置编译选项
 由于编译选项太多,操作比较麻烦,一开始肯定会反复编译,所以将其配置写到一个文件中,反复编译时,
