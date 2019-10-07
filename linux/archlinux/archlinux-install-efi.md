@@ -81,11 +81,11 @@ information: You may need to update /etc/fstab
 # cfdisk /dev/sda
 ```
 
-| 分区        | 挂载点      | 大小 | 文件系统         |
-|-------------|-------------|------|------------------|
-| `/dev/sda1` | `/`         | 30G  | Linux filesystem |
-| `/dev/sda2` | `/boot/EFI` | 500M | EFI System       |
-| `/dev/sda3` | `/home`     | 30G  | Linux filesystem |
+| 分区        | 挂载点      | 大小     | 文件系统         |
+|-------------|-------------|----------|------------------|
+| `/dev/sda1` | `/boot/EFI` | 512M     | EFI System       |
+| `/dev/sda2` | `/`         | 30G      | Linux filesystem |
+| `/dev/sda3` | `/home`     | 剩余所有 | Linux filesystem |
 
 
 没有 swap 分区，因为 swap 分区和 swap 文件的效果是一样的，故使用 swapfile 代替 swap 分区
@@ -100,9 +100,9 @@ information: You may need to update /etc/fstab
 分区建立好之后，都要使用适当的文件系统进行格式化，本文使用 `ext4` 文件系统。
 
 ```
-# mkfs.ext4 /dev/sda1
+# mkfs.vfat /dev/sda1 或者 mkfs.fat -F32 /dev/sda1
+# mkfs.ext4 /dev/sda2
 # mkfs.ext4 /dev/sda3
-# mkfs.vfat /dev/sda2 或者 mkfs.fat -F32 /dev/sda2
 ```
 如果创建了交换分区，使用 `mkswap` 将其初始化
 
@@ -122,8 +122,8 @@ information: You may need to update /etc/fstab
 ```
 # cd /mnt
 # mkdir -p boot/EFI & mkdir home
-# mount /dev/sda1 /mnt
-# mount /dev/sda2 /mnt/boot/EFI
+# mount /dev/sda2 /mnt
+# mount /dev/sda1 /mnt/boot/EFI
 # mount /dev/sda3 /mnt/home
 ```
 
@@ -245,9 +245,8 @@ vim /etc/hosts
 安装 grub
 ```
 # pacman -S intel-ucode
-# pacman -S os-prober
 # pacman -S grub efibootmgr
-# grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=grub
+# grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=grub --recheck
 ```
 
 安装完成之后，GRUB 在每次启动的时候载入配置文件 `/boot/grub/grub.cfg` 可以使用工具生成该配置文件。
