@@ -78,7 +78,7 @@ information: You may need to update /etc/fstab
 分区
 
 ```shell
-# cfdisk /dev/sda
+# cfdisk /dev/sda     # 选择 gpt 分区表
 ```
 
 | 分区        | 挂载点      | 大小     | 文件系统         |
@@ -115,15 +115,15 @@ information: You may need to update /etc/fstab
 
 将根分区挂载到 `/mnt` 下，例如：
 ```
-# mount /dev/sda1 /mnt
+# mount /dev/sda2 /mnt
 ```
 其他分区挂载到响应的目录下。
 
 ```
 # cd /mnt
-# mkdir -p boot/EFI & mkdir home
+# mkdir -p boot/efi && mkdir home
 # mount /dev/sda2 /mnt
-# mount /dev/sda1 /mnt/boot/EFI
+# mount /dev/sda1 /mnt/boot/efi
 # mount /dev/sda3 /mnt/home
 ```
 
@@ -155,7 +155,7 @@ Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 使用 pacstrap 脚本，安装 base, base-devel 组,若想安装其他的也可以添加到后面，并用空格隔开。也可以在 `Chroot` 之后，使用 `pacman` 安装。
 
 ```
-# pacstrap /mnt base base-devel vim git net-tools curl wget zsh openssh sudo neofetch iw
+# pacstrap /mnt base base-devel vim git net-tools wget zsh openssh sudo neofetch iw
 wpa_supplicant dialog
 ```
 
@@ -244,9 +244,9 @@ vim /etc/hosts
 
 安装 grub
 ```
-# pacman -S intel-ucode
-# pacman -S grub efibootmgr
-# grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=grub --recheck
+# pacman -S grub efibootmgr intel-ucode os-prober dosfstools mtools linux-headers linux-lts
+linux-lts-headers
+# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub --recheck
 ```
 
 安装完成之后，GRUB 在每次启动的时候载入配置文件 `/boot/grub/grub.cfg` 可以使用工具生成该配置文件。
