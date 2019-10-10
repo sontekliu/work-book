@@ -86,8 +86,6 @@ bindsym $mod + f    fullscreen toggle
 bindsym $mod + Shift + r    restart
 bindsym $mod + Shift + x    exec    i3lock
 
-# 绑定鼠标（待完善）
-
 # 绑定模式
 # mod + o 进入 mode_launcher 模式，按 f 启动 firefox,按 t 启动 thunderbird
 bindsyn $mod + o mode "mode_launcher"
@@ -176,11 +174,8 @@ client.urgent           #2f343a     #900000     #ffffff     #900000     #900000
 client.placeholder      #000000     #0c0c0c     #ffffff     #000000     #0c0c0c
 client.backgrund        #ffffff
 
-
-
-
-
 ```
+> 参考资料
 
 https://kntan.coding.me/2017/03/20/beautifull-i3/
 
@@ -188,20 +183,22 @@ https://void-shana.moe/linux/i3-conky-%E6%89%93%E9%80%A0%E5%AE%9E%E7%94%A8%E7%BE
 
 http://www.cnblogs.com/vachester/p/5649813.html
 
-http://blog.bantwor.com/2018/02/03/%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84-manjaro-i3/
-
 https://github.com/ID1258/oh-my-i3/blob/master/README.md
 
 https://fontawesome.com/cheatsheet
+
 http://0x3f.org/
 
-https://gist.github.com/hbpasti  
 http://www.johnlozano.me/post/configuring-i3/  
 
-https://blog.csdn.net/k_y_z_s/article/details/79363852   
 https://www.jianshu.com/p/9717322753fc   
+
 https://www.jianshu.com/p/f65bb6ab3e56   
-h ttps://blog.csdn.net/github_37128837/article/details/78078526
+
+https://blog.csdn.net/github_37128837/article/details/78078526
+
 https://github.com/FortAwesome/Font-Awesome
+
 http://dotshare.it/
+
 https://github.com/flumm/Themes
