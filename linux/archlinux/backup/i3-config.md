@@ -1,16 +1,8 @@
 
-
 ### mod + Shift + 减号 隐藏窗口
 ### mod + 减号 显示窗口
 bindsym $mod+minus move scratchpad
 bindsym $mod+plus  scratchpad show
-
-### 打开文件管理器
-> bindsym Ctrl+Mod1+f exec pcmanfm &>/dev/null&
-bindsym Ctrl+Mod1+f exec thunar &>/dev/null&
-### 打开PDF 阅读器
-bindsym Ctrl+Mod1+d exec evince &>/dev/null&
-
 
 ###  Bind your audio keyboard keys to change volume and pause/play
 ```
@@ -21,28 +13,6 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next  
 bindsym XF86AudioPrev exec playerctl previous  
 ```
-
-
-################################
-### 在指定的工作区间打开应用
-################################
-### assign [class="URxvt"] $ws1
-```
-assign [class="netease-cloud-music"] $ws8
-assign [class="wechat"] $ws9
-assign [class="youdao-dict"] $ws10
-```
-
-### 新窗口的默认布局
-> for_window [class="URxvt"] layout tabbed
-```
-for_window [class="wechat"] floating enable 
-for_window [class="netease-cloud-music"] floating enable 
-for_window [class="youdao-dict"] floating enable 
-```
-
-
-
 
 ##################################
 ###   i3_bar config
@@ -85,7 +55,3 @@ bar {
     }
 }
 ```
-
-exec --no-startup-id compton --config ~/.config/i3/compton.conf -bc  
-exec --no-startup-id ss-qt5  
-exec --no-startup-id fcitx  
