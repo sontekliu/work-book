@@ -39,12 +39,15 @@ $ sudo pacman -S xf86-video-vesa
 # sudp systemctl enable sddm.service
 # reboot
 ```
-重启之后，显示登录界面
+重启之后，显示登录界面.
+
+> Ctrl + Alt + F2  # tty login
 
 ### 4. 安装终端模拟器
 安装窗口管理器前要先安装终端模拟器，否则，窗口管理器没有默认启动项
 ```
 $ sudo pacman -S gnome-terminal
+$ sudo pacman -S alacritty
 ```
 
 ### 5. 安装窗口管理器

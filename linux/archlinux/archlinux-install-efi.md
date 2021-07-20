@@ -31,6 +31,21 @@
 # ls /sys/firmware/efi/efivars
 ```
 
+ #### 5.1 Login via SSH
+
+```shell
+$ systemctl start sshd   # 启动 sshd 服务
+$ systemctl status sshd  # 确认 sshd 服务状态
+$ ip addr                # 查看 ip
+$ passwd				 # 设置密码
+```
+
+一顿操作之后，就可以使用宿主机链接了。
+
+```shell
+$ ssh root@ip-address    # 链接，输入密码即可
+```
+
 ### 6. 配置网络
 
 1. 查看系统是否启用了网络接口，命令如下：
@@ -82,8 +97,8 @@ information: You may need to update /etc/fstab
 ```
 
 | 分区        | 挂载点      | 大小     | 文件系统         |
-|-------------|-------------|----------|------------------|
-| `/dev/sda1` | `/boot/EFI` | 512M     | EFI System       |
+| ----------- | ----------- | -------- | ---------------- |
+| `/dev/sda1` | `/boot/efi` | 512M     | EFI System       |
 | `/dev/sda2` | `/`         | 30G      | Linux filesystem |
 | `/dev/sda3` | `/home`     | 剩余所有 | Linux filesystem |
 
@@ -155,7 +170,7 @@ Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 使用 pacstrap 脚本，安装 base, base-devel 组,若想安装其他的也可以添加到后面，并用空格隔开。也可以在 `Chroot` 之后，使用 `pacman` 安装。
 
 ```
-# pacstrap /mnt base base-devel vim git net-tools wget zsh openssh sudo neofetch iw
+# pacstrap /mnt base base-devel rsync vim git net-tools wget zsh openssh sudo neofetch iw
 wpa_supplicant dialog
 ```
 
@@ -179,11 +194,13 @@ Chroot root 到新安装的系统
 
 ```
 # ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+# timedatectl set-ntp true
 ```
 运行 `hwclock` 以生成 `/etc/adjtime`
 
 ```
 # hwclock --systohc
+# date  # 检查时间是否正确
 ```
 
 ### 16. 本地化
@@ -259,15 +276,37 @@ linux-lts-headers
 * 每当修改 `/etc/default/grub` 或者 `/etc/grub.d/` 中的文件之后，都需要再次生成 `/boot/grub/grub.cfg`。
 * 默认的文件路径是 `/boot/grub/grub.cfg`，而非 `/boot/grub/i386-pc/grub.cfg`。
 
-### 20. 重启
+### 20 启动 sshd
+
+编辑 sshd 的配置文件，文件路径为： `/etc/ssh/sshd_config`
+
+```shell
+# vim /etc/ssh/sshd_config
+
+Port 22
+ListenAddress 0.0.0.0
+ListenAddress ::
+PermitRootLogin yes
+PasswordAuthentication yes
+```
+
+启用 sshd
+
+```shell
+# systemctl enable sshd
+# systemctl start sshd
+```
+
+### 21. 重启
 
 输入 `exit` 或按 `Ctrl+D` 退出 `chroot` 环境。  
 可选用 `umount -R /mnt` 手动卸载被挂载的分区
 
 最后，通过执行 `reboot` 重启系统，`systemd` 将自动卸载仍然挂载的任何分区。不要忘记移除安装介质，然后使用 root 帐户登录到新系统。
 
+### 22. 交换文件的创建与删除
 
-### 21. 交换文件的创建与删除
+如果你没有创建交换分区，那么你可以使用交换文件。
 
 > 1. 创建交换文件
 
