@@ -3,19 +3,20 @@
 ### 1. 连接网络
 默认情况下，安装完 `archlinux` 之后，默认是连上网络的。使用如下命令测试：
 
-```
+```shell
 # ping www.baidu.com
 ```
 如果连接不成功，则需要配置网络.
 
 ### 2. 创建普通用户
 
-```
+```shell
 # useradd -m -G wheel sontek
 # passwd sontek
 
  安装 sudo
 # pacman -S sudo 
+
 # vim /etc/sudoers
 
 添加如下内容：
@@ -25,16 +26,16 @@ sontek ALL=(ALL) ALL
 
 ### 3. 安装显示服务
 
-```
+```shell
 $ sudo pacman -S xorg-server xterm xorg-xeyes xorg-xclock
 $ sudo pacman -S xorg-xinit
-$ sudo pacman -S xf86-video-vesa
+$ sudo pacman -S xf86-video-vesa xf86-video-intel nvidia nvidia-utils nvidia-settings
 ```
 执行 `startx` 可以看一下效果，可以看到会显示一个特别简陋的图形界面
 
 除了手动启动 X 的方法外，还可以使用登录管理器（显示管理器）进行图形界面登录。以 sddm 为例:
 
-```
+```shell
 # sudo pacman -S sddm
 # sudp systemctl enable sddm.service
 # reboot
@@ -43,24 +44,52 @@ $ sudo pacman -S xf86-video-vesa
 
 > Ctrl + Alt + F2  # tty login
 
-### 4. 安装终端模拟器
-安装窗口管理器前要先安装终端模拟器，否则，窗口管理器没有默认启动项
-```
-$ sudo pacman -S gnome-terminal
-$ sudo pacman -S alacritty
+### 4. 安装一些必要软件
+
+```shell
+# terminal 终端
+$ sudo pacman -S gnome-terminal       # Gnome 终端
+$ sudo pacman -S alacritty            # 基于GPU渲染的终端
+$ sudo pacman -S xfce4-terminal
+
+$ sudo pacman -S firefox			  # 浏览器
+$ sudo pacman -S google-chrome
+
+$ sudo pacman -S openssh			  # 安装 zsh
+$ sudo pacman -S zsh
+
+$ sudo pacman -S scrot                 # 截屏软件
+$ sudo pacman -S picom                 # 透明
+
+$ sudo pacman -S rofi				   # 软件启动器
+$ sudo pacman -S dmenu                 # 软件启动器
+
+$ sudo pacman -S evince				   # PDF 阅读器
+$ sudo pacman -S thunar                # 文件管理器
+$ sudo pacman -S ranger                # 终端文件管理器
+$ sudo pacman -S netease-cloud-music   # 网易云音乐
+
+# 以下软件根据自己的情况选择安装
+$ sudo pacman -S screenfetch  # 不再使用
+$ sudo pacman -S neofetch
+$ sudo pacman -S thunderbird  # 邮件客户端
+$ sudo pacman -S filezilla    # 安装 FTP 工具
+$ sudo pacman -S nodejs npm   # 安装 nodejs
+$ yay -S wps-office           # 启动 work，excel，ppt 命令分别是 `wps`，`et`，`wpp`
 ```
 
-### 5. 安装窗口管理器
-```
+### 5. 安装窗口管理器(这个放在后面执行)
+```shell
+
 $ sudo pacman -S i3
-$ sudo pacman -S dmenu
 ```
 启动 i3
 copy 文件到家目录
 $ cp /etc/X11/xinit/xinitrc .xinitrc
 编辑此文件，将启动 xterm 的行注释掉,添加启动 i3 项,
 此文件只能存在一个未注释掉的 exec 行
-```
+
+```shell
 #twm &
 #xclock -geometry 50x50-1+1 &
 #xterm -geometry 80x50+494+51 &
@@ -69,132 +98,83 @@ $ cp /etc/X11/xinit/xinitrc .xinitrc
 
 exec i3
 ```
-修改i3 默认启动的终端模拟器，编辑 `~/.config/i3/config`
+修改 i3 默认启动的终端模拟器，编辑 `~/.config/i3/config`
 将如下内容修改如下：
-修改前：
-```
+
+```shell
+修改前
 bindsym $mod+Return exec i3-sensible-terminal
-```
-修改后：
-```
+修改为：
 bindsym $mod+Return exec gnome-terminal
 ```
-
-### 6. 安装 Yaourt
+### 6. 安装 yay
 编辑 /etc/pacman.conf 文件，在最下面添加如下：
 
-```
+```shell
+Color # 将 Color 前面的注释去掉
+
 [archlinuxcn]
 #The Chinese Arch Linux communities packages.
-SigLevel = Optional TrustAll  
+# SigLevel = Optional TrustAll  
+SigLevel = Never 
 Server   = https://mirrors.ustc.edu.cn/archlinuxcn/$arch  
 ```
 
 然后执行安装
+```shell
+$ sudo pacman -S yay
 ```
-$ sudo pacman -Syu yaourt
-```
-
-### 7. 安装浏览器
-```
-$ sudo pacman -S firefox
-$ sudo pacman -S google-chrome
-```
- 启动 firefox 按下 $mod+d 输入 `firefox` 回车
- 启动 chrome 按下 $mod+d 输入 `google-chrome-stable` 回车
 
 ### 8. 安装字体
-```
-$ sudo pacman -S wqy-microhei
+```shell
+$ sudo pacman -S wqy-microhei noto-fonts noto-fonts-cjk ttf-font-awesome
 ```
 
-### 9. install ssh zsh oh-my-zsh
+### 9. 安装 oh-my-zsh
 
-```
-$ sudo pacman -S openssh
-$ sudo pacman -S zsh
-```
-安装 oh-my-zsh
-
-```
+```shell
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 ### 10 安装中文输入法
 
-```
+```shell
 $ sudo pacman -S fcitx fcitx-im fcitx-googlepinyin fcitx-sogoupinyin fcitx-configtool
 ```
 编辑 `~/.xinitrc` 文件，添加如下：
-```
+```shell
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 ```
 
 编辑 `i3` 配置文件 `~/.config/i3/config`，使其启动 `i3` 的时候启动 `fcitx`，在该文件最后添加如下：
-```
+```shell
 exec fcitx
 ```
 此时，启动 `i3` 的时候在屏幕又下角，可以看到小键盘图标了。   
 鼠标右击小键盘图标，选择 `configure -> +` 选择相应的输入法即可
 汉化：
 使其切换中文输入法，编辑 `~/.xinitrc` 文件，添加如下：
-```
+```shell
 export LANG=zh_CN.UTF-8
 export LANGUAGE=zh_CN:en_US
 export LC_TYPE=zh_CN.UTF-8
 ```
 
-### 11.  安装 screenfetch
-```
-$ sudo pacman -S screenfetch
-$ sudo pacman -S neofetch
-$ screenfetch    #  显示当前系统图标
-```
-
-### 12 按装 wps-office
-```
-$ sudo pacman -S wps-office
-```
-启动 work，excel，ppt 命令分别是 `wps`，`et`，`wpp`
-
-### 13 安装 FTP 工具
-
-```
-$ sudo pacman -S filezilla
-```
-
-### 14. 安装邮件客户端
-
-```
-$ sudo pacman -S thunderbird
-```
-
-### 15 安装 nodejs
-```
-$ sudo pacman -S nodejs npm
-```
-
-### 16 安装 shadowsocks(没有shadowsocks帐号的可忽略此步)
-```
-$ sudo pacman -S shadowsocks-qt5
-$ ss-qt5	# 启动客户端
-```
-
 ### 17 同步时间
 查看当前时间
-```
+```shell
 $ timedatectl status
 ```
 设置时区
-```
+```shell
 $ sudo timedatectl set-timezone <Zone>/<SubZone>
 $ sudo timedatectl set-timezone Asia/Shanghai
 ```
 
 ### 17 安装桌面环境(gnome)
-```
+```shell
 $ sudo pacman -S gnome 
 $ sudo pacman -S gnome-tweak-tool
 ```
@@ -204,21 +184,21 @@ $ sudo pacman -S gnome-tweak-tool
 ### 18 安装 QQ
 首先编辑 `/etc/pacman.conf` 将如下内容注释掉  
 
-```
+```shell
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ```
 更新仓库
-```
+```shell
 $ sudo pacman -Syu
 ```
 安装 wine
-```
-$ sudo pacman -S wine
+```shell
+$ sudo pacman -S wines
 ```
 
 安装 QQ
-```
+```shell
 $ sudo pacman -S deepin.com.qq.im
 ```
 现在可以在应用里面找到 QQ 并进行启动。但是如果不安装桌面环境，仅仅使用窗口管理器的话，例如：i3,则不能启动QQ .
